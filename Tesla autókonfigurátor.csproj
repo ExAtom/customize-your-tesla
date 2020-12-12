@@ -55,9 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CloseWindow.xaml.cs">
+      <DependentUpon>CloseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Kezdolap.xaml.cs">
       <DependentUpon>Kezdolap.xaml</DependentUpon>
     </Compile>
+    <Page Include="CloseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tesztablak.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

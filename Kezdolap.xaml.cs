@@ -28,5 +28,11 @@ namespace Tesla_autókonfigurátor
         {
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CloseWindow closeWindow = new CloseWindow();
+            closeWindow.Show();
+        }
     }
 }
