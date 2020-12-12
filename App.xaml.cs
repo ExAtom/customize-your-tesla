@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Tesla_autókonfigurátor
+namespace TeslaCarConfigurator
 {
     /// <summary>
     /// Interaction logic for App.xaml

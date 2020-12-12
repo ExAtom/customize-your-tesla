@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8C72FB7C-6749-49CC-A856-63DF25B99A1B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Tesla_autókonfigurátor</RootNamespace>
-    <AssemblyName>Tesla autókonfigurátor</AssemblyName>
+    <RootNamespace>TeslaCarConfigurator</RootNamespace>
+    <AssemblyName>TeslaCarConfigurator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,26 +58,18 @@
     <Compile Include="CloseWindow.xaml.cs">
       <DependentUpon>CloseWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Kezdolap.xaml.cs">
-      <DependentUpon>Kezdolap.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="CloseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tesztablak.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Tesztablak.xaml.cs">
-      <DependentUpon>Tesztablak.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Kezdolap.xaml">
+    <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,10 +101,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Tesla.png" />
+    <Resource Include="Assets\Tesla.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Tesla2.jpg" />
+    <Resource Include="Assets\Tesla2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
