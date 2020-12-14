@@ -42,7 +42,7 @@ namespace TeslaCarConfigurator
         }
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            Wheels wheelsWindow = new Wheels();
+            WheelConfiguration wheelsWindow = new WheelConfiguration();
             this.Content = wheelsWindow;
         }
     }
