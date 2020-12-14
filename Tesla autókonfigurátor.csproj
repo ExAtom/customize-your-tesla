@@ -55,12 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Battery.cs" />
+    <Compile Include="Data\CarConfiguration.cs" />
     <Compile Include="CloseWindow.xaml.cs">
       <DependentUpon>CloseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Exterior.cs" />
+    <Compile Include="Data\SaveManager.cs" />
+    <Compile Include="Data\Feature.cs" />
+    <Compile Include="Data\SoftwareFeatures.cs" />
+    <Compile Include="Data\Transmission.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Interior.cs" />
+    <Compile Include="Data\Model.cs" />
+    <Compile Include="Data\Painting.cs" />
+    <Compile Include="Data\WheelConfiguration.cs" />
     <Page Include="CloseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,5 +117,6 @@
   <ItemGroup>
     <Resource Include="Assets\Tesla2.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
