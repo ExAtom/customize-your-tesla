@@ -76,6 +76,9 @@
     <Compile Include="Data\Model.cs" />
     <Compile Include="Data\Painting.cs" />
     <Compile Include="Data\WheelConfiguration.cs" />
+    <Compile Include="BatteryConfiguration.xaml.cs">
+      <DependentUpon>BatteryConfiguration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BatteryConfiguration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="WheelConfiguration.xaml">
       <SubType>Designer</SubType>
