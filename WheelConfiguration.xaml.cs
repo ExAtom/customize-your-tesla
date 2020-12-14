@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
     /// <summary>
     /// Interaction logic for WheelConfiguration.xaml
     /// </summary>
-    public partial class WheelConfiguration : Page
+    public partial class WheelConfiguration : PageBase
     {
         public WheelConfiguration()
         {
@@ -37,6 +38,16 @@ namespace TeslaCarConfigurator
             {
                 Menu.Width = 400;
             }
+
+            //Router.ChangeCurrentPage(new WheelConfiguration());
+            //Config.Wheels
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
+
+
 }

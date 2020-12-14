@@ -35,7 +35,7 @@ namespace TeslaCarConfigurator
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             CloseWindow closeWindow = new CloseWindow();
             closeWindow.Show();
