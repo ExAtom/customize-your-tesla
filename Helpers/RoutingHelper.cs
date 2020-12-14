@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using TeslaCarConfigurator.Data;
 
@@ -12,23 +13,26 @@ namespace TeslaCarConfigurator.Helpers
     {
         public PageBase CurrentPage { get; private set; }
 
-        private UIElementCollection container;
+        private Frame container;
         private CarConfiguration carConfiguration;
         
-
-        public RoutingHelper(UIElementCollection container, CarConfiguration carConfiguration)
+        public RoutingHelper(Frame frame)
         {
-            this.container = container;
-            this.carConfiguration = carConfiguration;
+            container = frame;
         }
 
         public void ChangeCurrentPage(PageBase page)
         {
-            container.Clear();
             page.Router = this;
             page.Config = carConfiguration;
             CurrentPage = page;
-            container.Add(page);
+            container.Content = page;
+        }
+
+        public void SetConfig(CarConfiguration carConfiguration)
+        {
+            this.carConfiguration = carConfiguration;
+
         }
     }
 }

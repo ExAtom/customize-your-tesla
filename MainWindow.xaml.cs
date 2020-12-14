@@ -18,32 +18,24 @@ namespace TeslaCarConfigurator
 {
     public partial class MainWindow : Window
     {
+        private RoutingHelper router;
+
         public MainWindow()
         {
             SaveManager.LoadSavedConfigs();
-            InitializeComponent();
             Initialized += OnWindowInitialized;
+            InitializeComponent();
         }
 
         private void OnWindowInitialized(object sender, EventArgs e)
         {
-            
+            router = new RoutingHelper(Container);
+            router.ChangeCurrentPage(new LandingPage());
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            CloseWindow closeWindow = new CloseWindow();
-            closeWindow.Show();
-        }
-        private void btnStart_Click(object sender, RoutedEventArgs e)
-        {
-            WheelConfiguration wheelsWindow = new WheelConfiguration();
-            this.Content = wheelsWindow;
         }
     }
 }
