@@ -60,6 +60,8 @@
     <Compile Include="CloseWindow.xaml.cs">
       <DependentUpon>CloseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\CreditCardInfo.cs" />
+    <Compile Include="Data\CustomerDetails.cs" />
     <Compile Include="Data\Exterior.cs" />
     <Compile Include="Helpers\PageBase.cs" />
     <Compile Include="Helpers\RoutingHelper.cs" />

@@ -10,8 +10,11 @@ namespace TeslaCarConfigurator.Helpers
 {
     public class RoutingHelper
     {
+        public PageBase CurrentPage { get; private set; }
+
         private UIElementCollection container;
         private CarConfiguration carConfiguration;
+        
 
         public RoutingHelper(UIElementCollection container, CarConfiguration carConfiguration)
         {
@@ -24,6 +27,7 @@ namespace TeslaCarConfigurator.Helpers
             container.Clear();
             page.Router = this;
             page.Config = carConfiguration;
+            CurrentPage = page;
             container.Add(page);
         }
     }
