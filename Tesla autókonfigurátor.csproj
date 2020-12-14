@@ -61,7 +61,9 @@
       <DependentUpon>CloseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Exterior.cs" />
-    <Compile Include="Data\SaveManager.cs" />
+    <Compile Include="Helpers\PageBase.cs" />
+    <Compile Include="Helpers\RoutingHelper.cs" />
+    <Compile Include="Helpers\SaveManager.cs" />
     <Compile Include="Data\Feature.cs" />
     <Compile Include="Data\SoftwareFeatures.cs" />
     <Compile Include="Data\Transmission.cs" />

@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace TeslaCarConfigurator.Data
+namespace TeslaCarConfigurator.Helpers
 {
     public static class SaveManager
     {
         public static Dictionary<string, CarConfiguration> SavedConfigs { get; private set; } = new Dictionary<string, CarConfiguration>();
 
         public static List<int> InvalidConfigs { get; private set; } = new List<int>();
+
+        public static bool FileLoadingFailed { get; private set; } = false;
 
         private static string saveLocation = "save.txt";
 
@@ -23,7 +25,18 @@ namespace TeslaCarConfigurator.Data
 
         public static void LoadSavedConfigs()
         {
-            string[] lines = File.ReadAllLines(saveLocation);
+            string[] lines = new string[0];
+            try
+            {
+                lines = File.ReadAllLines(saveLocation);
+            }
+            catch (FileNotFoundException)
+            {
+            }
+            catch (Exception)
+            {
+                FileLoadingFailed = true;
+            }
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];

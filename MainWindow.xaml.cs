@@ -11,17 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
+using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
-    /// <summary>
-    /// Interaction logic for Window2.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
+            SaveManager.LoadSavedConfigs();
             InitializeComponent();
+            Initialized += OnWindowInitialized;
+        }
+
+        private void OnWindowInitialized(object sender, EventArgs e)
+        {
+            
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -34,5 +40,6 @@ namespace TeslaCarConfigurator
             CloseWindow closeWindow = new CloseWindow();
             closeWindow.Show();
         }
+        
     }
 }
