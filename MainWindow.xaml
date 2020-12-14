@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
-        Title="Tesla Autó Konfigurátor" MaxHeight="500" Width="800" MinWidth="545" MaxWidth="1000" x:Name="Windows" SizeChanged="Windows_SizeChanged">
+        Title="Tesla Autó Konfigurátor" Width="800" Height="500" MinWidth="545" MaxWidth="1000" MaxHeight="500" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <Grid>
         <ScrollViewer>
             <StackPanel>
@@ -18,7 +18,7 @@
                 <TextBlock TextWrapping="Wrap" Margin="0,5" TextAlignment="Justify" HorizontalAlignment="Center" FontSize="15"><Run Text="Ennek a programnak a segítségével mindenki saját igénye szerint tudja személyre szabni kedvenc Tesla autóját."/><LineBreak/><Run Text="A rendszer használata egyszerű, (8) ablakon keresztül végigvezet bennünket minden apró részleten, hogy"/><LineBreak/><Run Text="a jármű még inkább passzoljon mindenki "/><Run Text="elképzeléséhez"/><Run Text="."/></TextBlock>
                 <Grid Margin="0,30,0,15">
                     <Button Content="Kilépés" Margin="30,0" Width="125" Height="30" FontSize="15" HorizontalAlignment="Left" Click="Button_Click"/>
-                    <Button Content="Vágjunk bele!" Margin="30,0" Width="125" Height="30" FontSize="15" HorizontalAlignment="Right"/>
+                    <Button Content="Vágjunk bele!" Margin="30,0" Width="125" Height="30" FontSize="15" HorizontalAlignment="Right" Click="btnStart_Click"/>
                 </Grid>
                 <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"><Run Text="A konfigurátort készítette: Csepi Szilveszter, Kékesi Ádám és Menyhárt Attila a JÁGISZ 11./A osztályos tanulói 2020.12-ban"/><LineBreak/><Run Text="Minden jog fenntartva!"/></TextBlock>
             </StackPanel>
