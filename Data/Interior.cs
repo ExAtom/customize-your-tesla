@@ -26,8 +26,8 @@ namespace TeslaCarConfigurator.Data
         // napfényvédő roló
         public bool HasSunlightProtection { get; set; }
 
-        // sötétített tükrök
-        public bool HasDarkenedMirrors { get; set; }
+        // sötétített ablak
+        public bool HasDarkenedWindows { get; set; }
 
         // kárpitozás anyaga
         public string Material => AvailableMaterials[MaterialIndex];
@@ -58,9 +58,9 @@ namespace TeslaCarConfigurator.Data
             byte sunlightProtection = (byte)(booleans & sunlightProtectionMask);
             HasSunlightProtection = sunlightProtection > 0;
 
-            byte darkenedMirrorsMask = 0b_0001_0000;
-            byte darkenedMirrors = (byte)(booleans & darkenedMirrorsMask);
-            HasDarkenedMirrors = darkenedMirrors > 0;
+            byte darkenedWindowsMask = 0b_0001_0000;
+            byte darkenedWindows = (byte)(booleans & darkenedWindowsMask);
+            HasDarkenedWindows = darkenedWindows > 0;
 
             MaterialIndex = bytes[1];
             if (MaterialIndex >= AvailableMaterials.Count)
@@ -75,13 +75,13 @@ namespace TeslaCarConfigurator.Data
             }
         }
 
-        public Interior(bool hasSeatHeating, bool hasSteeringWheelHeating, bool hasSpineSupport, bool hasSunlightProtection, bool hasDarkenedMirrors, byte materialIndex, byte colorIndex)
+        public Interior(bool hasSeatHeating, bool hasSteeringWheelHeating, bool hasSpineSupport, bool hasSunlightProtection, bool hasDarkenedWindows, byte materialIndex, byte colorIndex)
         {
             HasSeatHeating = hasSeatHeating;
             HasSteeringWheelHeating = hasSteeringWheelHeating;
             HasSpineSupport = hasSpineSupport;
             HasSunlightProtection = hasSunlightProtection;
-            HasDarkenedMirrors = hasDarkenedMirrors;
+            HasDarkenedWindows = hasDarkenedWindows;
             MaterialIndex = materialIndex;
             ColorIndex = colorIndex;
         }
@@ -92,9 +92,9 @@ namespace TeslaCarConfigurator.Data
             byte steeringWheel = (byte)((HasSteeringWheelHeating ? 0 : 1) * 2);
             byte spineSupport = (byte)((HasSpineSupport ? 1 : 0) * 4);
             byte sunlightProtection = (byte)((HasSunlightProtection ? 1 : 0) * 8);
-            byte darkenedMirrors = (byte)((HasDarkenedMirrors ? 1 : 0) * 16);
+            byte darkenedWindows = (byte)((HasDarkenedWindows ? 1 : 0) * 16);
             
-            byte booleanBytes = (byte)(seatHeating + steeringWheel + spineSupport + sunlightProtection + darkenedMirrors);
+            byte booleanBytes = (byte)(seatHeating + steeringWheel + spineSupport + sunlightProtection + darkenedWindows);
 
             return new byte[] { booleanBytes,MaterialIndex,ColorIndex };
         }

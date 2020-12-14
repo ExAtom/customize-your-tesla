@@ -20,21 +20,32 @@ namespace TeslaCarConfigurator.Data
             }
         }
 
+        // Sziszi
         public Model CarModel { get; set; }
 
+        // Ádosz
         public Battery Battery { get; set; }
 
+        // Sziszi
         public Painting Painting { get; set; }
 
+        // Sziszi
         public WheelConfiguration Wheels { get; set; }
 
+        // Ádosz
         public Transmission Transmission { get; set; }
 
+        // Attila
         public Interior Interior { get; set; }
 
+        // Attila
         public Exterior Exterior { get; set; }
 
+        // Attila
         public SoftwareFeatures SoftwareFeatures { get; set; }
+
+        // Ádosz
+        public CustomerDetails CustomerDetails { get; set; }
 
         public CarConfiguration()
         {

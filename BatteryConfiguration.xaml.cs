@@ -10,32 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
-    public partial class MainWindow : Window
+    public partial class BatteryConfiguration : PageBase
     {
-        private RoutingHelper router;
-
-        public MainWindow()
+        public BatteryConfiguration()
         {
-            SaveManager.LoadSavedConfigs();
-            Initialized += OnWindowInitialized;
             InitializeComponent();
-        }
-
-        private void OnWindowInitialized(object sender, EventArgs e)
-        {
-            router = new RoutingHelper(Container);
-            router.ChangeCurrentPage(new LandingPage());
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
+
+            if (Windows.ActualWidth <= 710)
+            {
+                Menu.Width = 230;
+            }
+            else
+            {
+                Menu.Width = 400;
+            }
         }
     }
 }
