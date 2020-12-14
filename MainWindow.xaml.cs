@@ -40,6 +40,10 @@ namespace TeslaCarConfigurator
             CloseWindow closeWindow = new CloseWindow();
             closeWindow.Show();
         }
-        
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            Wheels wheelsWindow = new Wheels();
+            this.Content = wheelsWindow;
+        }
     }
 }

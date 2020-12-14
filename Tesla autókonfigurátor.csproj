@@ -76,6 +76,9 @@
     <Compile Include="Data\Model.cs" />
     <Compile Include="Data\Painting.cs" />
     <Compile Include="Data\WheelConfiguration.cs" />
+    <Compile Include="WheelConfiguration.xaml.cs">
+      <DependentUpon>WheelConfiguration.xaml</DependentUpon>
+    </Compile>
     <Page Include="CloseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WheelConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,6 +128,12 @@
   <ItemGroup>
     <Resource Include="Assets\Tesla2.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\InfosBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Wheel1.png" />
+    <Resource Include="Assets\Wheel2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
