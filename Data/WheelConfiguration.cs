@@ -24,6 +24,10 @@ namespace TeslaCarConfigurator.Data
         public WheelConfiguration(byte[] bytes)
         {
             TypeIndex = bytes[0];
+            if (TypeIndex >= AvailableWheelTypes.Count)
+            {
+                throw new Exception();
+            }
         }
     
         public override byte[] ToBytes()
