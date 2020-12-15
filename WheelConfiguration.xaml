@@ -37,7 +37,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <RadioButton x:Name="rbWheel1" GroupName="wheels" IsChecked="True" Click="rbWheelSet_Click">
+                        <RadioButton x:Name="rbWheel1" GroupName="wheels"  Checked="rbWheelSet_Checked">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel1.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <StackPanel>
@@ -47,7 +47,7 @@
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="rbWheel2" GroupName="wheels" Click="rbWheelSet_Click">
+                        <RadioButton x:Name="rbWheel2" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel2.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Sport SP002" Width="70"/>
@@ -55,7 +55,7 @@
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="rbWheel3" GroupName="wheels" Click="rbWheelSet_Click">
+                        <RadioButton x:Name="rbWheel3" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel3.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Turbine T54" Width="70"/>
@@ -63,7 +63,7 @@
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
-                        <RadioButton x:Name="rbWheel4" GroupName="wheels" Click="rbWheelSet_Click">
+                        <RadioButton x:Name="rbWheel4" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel4.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Silver SU478" Width="70"/>

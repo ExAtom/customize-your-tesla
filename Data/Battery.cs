@@ -10,7 +10,7 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
-        public static List<byte> AvailableCapacities { get; private set; } = new List<byte>() { 60, 70, 80, 90, 100 };
+        public static List<byte> AvailableCapacities { get; private set; } = new List<byte>() { 60, 70, 80, 90, 100, 110 };
 
         // kapacitás kWh-ban
         public byte Capacity => AvailableCapacities[CapacityIndex];

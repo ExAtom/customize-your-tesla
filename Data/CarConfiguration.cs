@@ -49,7 +49,15 @@ namespace TeslaCarConfigurator.Data
 
         public CarConfiguration()
         {
-
+            CarModel = new Model(0);
+            Battery = new Battery(0);
+            Painting = new Painting(0, false);
+            Wheels = new WheelConfiguration(0);
+            Transmission = new Transmission(TransmissionType.Manual);
+            Interior = new Interior(false,false,false,false,false,0,0);
+            Exterior = new Exterior(false, false);
+            SoftwareFeatures = new SoftwareFeatures(false, false, false, false);
+            CustomerDetails = new CustomerDetails();
         }
 
         public CarConfiguration(string token)

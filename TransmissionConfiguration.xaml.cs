@@ -16,21 +16,17 @@ using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
-    public partial class BatteryConfiguration : PageBase
+    public partial class TransmissionConfiguration : PageBase
     {
-        private List<string[]> chosenBatteryTexts;
+        private List<string[]> chosenTransmissionTexts;
 
 
-        public BatteryConfiguration()
+        public TransmissionConfiguration()
         {
-            chosenBatteryTexts = new List<string[]>()
+            chosenTransmissionTexts = new List<string[]>()
             {
-                new string[2]{ "Ez a legkisebb választható akkumulátor, amit olyanoknak ajánlunk, akik kis távolságokra használnák.", "Ára: 50.000FT" },
-                new string[2]{ "A 70 kWh-s akkumulátor már egy kicsivel erősebb, ideális választás városok között ingázóknak.", "Ára: 80.000FT" },
-                new string[2]{ "A 80 kWh-s akkumulátor már 2 heti folyamatos városi használatot is képes kibírni.", "Ára: 100.000FT" },
-                new string[2]{ "Ezt az akkumulátort azoknak ajánljuk, akik naponta hosszabb távokat szeretnének megtenni.", "Ára: 130.000FT" },
-                new string[2]{ "A 100 kWh-s akkumulátort azoknak terveztük, akik naponta körbejárják az országot.", "Ára: 160.000FT" },
-                new string[2]{ "A legerősebb akkumulátorunk olyanok igényeit is tökéletesen kielégíti, akik folyamatosan úton vannak Közép-Európa szerte.", "Ára: 210.000FT" },
+                new string[2]{ "", "Alapból jár hozzá" },
+                new string[2]{ "A 70 kWh-s akkumulátor már egy kicsivel erősebb, ideális választás városok között ingázóknak.", "Ára: 30.000FT" },
             };
             InitializeComponent();
 
@@ -64,7 +60,7 @@ namespace TeslaCarConfigurator
             RadioButton rb = (RadioButton)sender;
             string name = rb.Name;
             byte index = byte.Parse(name.Replace("rbBatteryType", ""));
-            string[] texts = chosenBatteryTexts[index];
+            string[] texts = chosenTransmissionTexts[index];
             tbInfos.Text = texts[0];
             tbPrice.Text = texts[1];
             if (Config == null)

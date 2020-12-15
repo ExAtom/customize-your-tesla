@@ -43,7 +43,39 @@ namespace TeslaCarConfigurator
             //Config.Wheels
         }
 
-        private void rbWheelSet_Click(object sender, RoutedEventArgs e)
+        public override void OnAttachedToFrame()
+        {
+            byte chosenTypeIndex = Config?.Wheels?.TypeIndex ?? 0;
+            RadioButton selected = null;
+
+            if (chosenTypeIndex == 0)
+            {
+                selected = rbWheel1;
+            }
+
+            if (chosenTypeIndex == 1)
+            {
+                selected = rbWheel2;
+            }
+
+            if (chosenTypeIndex == 2)
+            {
+                selected = rbWheel3; 
+            }
+
+            if (chosenTypeIndex == 3)
+            {
+                selected = rbWheel4;
+            }
+
+            if (selected == null)
+            {
+                return;
+            }
+            selected.IsChecked = true;
+        }
+
+        private void rbWheelSet_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton currentButton = (RadioButton)sender;
             if (currentButton.Name == "rbWheel1")
@@ -66,6 +98,14 @@ namespace TeslaCarConfigurator
                 tbInfos.Text = "A Silver SU478-as típus különlegessége speciális kialakítása révén, hogy téli és nyári abroncsként egyaránt funkciónál, így nem kell azt cserélgetni. Leginkább városi és országúti terepre ajánljuk.";
                 tbPrice.Text = "Ára: 69.000 Ft";
             }
+
+            if (Config == null)
+            {
+                return;
+            }
+
+            byte index = (byte)(byte.Parse(currentButton.Name.Replace("rbWheel", "")) - 1);
+            Config.Wheels.TypeIndex = index;
         }
     }
 
