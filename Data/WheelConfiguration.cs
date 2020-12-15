@@ -10,7 +10,7 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; set; } = 1;
 
-        public static List<string>  AvailableWheelTypes{ get; set; } = new List<string>();
+        public static List<string>  AvailableWheelTypes{ get; set; } = new List<string>() { "Aero FX530", "Sport SP002", "Turbine T54", "Silver SU478" };
 
         public string Type => AvailableWheelTypes[TypeIndex];
 

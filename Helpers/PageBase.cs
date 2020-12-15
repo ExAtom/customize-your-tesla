@@ -14,6 +14,9 @@ namespace TeslaCarConfigurator.Helpers
 
         public CarConfiguration Config { get;  set; }
 
-        
+        public virtual void OnAttachedToFrame()
+        {
+
+        }
     }
 }

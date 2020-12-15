@@ -19,15 +19,15 @@
             <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
                 <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
-                    <Button Width="80" Margin="20,0" Name="btnLandingPage" Click="btnSwitchPage_Click">Kezdőlap</Button>
-                    <Button Width="80" Margin="20,0" Name="btnModelPage" Click="btnSwitchPage_Click">Model</Button>
-                    <Button Width="80" Margin="20,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
-                    <Button Width="80" Margin="20,0" Name="btnTransmissionPage" Click="btnSwitchPage_Click">Váltó</Button>
-                    <Button Width="80" Margin="20,0" Name="btnPaintingPage" Click="btnSwitchPage_Click">Festés</Button>
-                    <Button Width="80" Margin="20,0" Name="btnWheelConfiguration" Click="btnSwitchPage_Click">Kerekek</Button>
-                    <Button Width="80" Margin="20,0" Name="btnExteriorPage" Click="btnSwitchPage_Click">Külső</Button>
-                    <Button Width="80" Margin="20,0" Name="btnInteriorPage" Click="btnSwitchPage_Click">Belső</Button>
-                    <Button Width="80" Margin="20,0" Name="btnSoftwarePage" Click="btnSwitchPage_Click">Szoftver</Button>
+                    <Button Width="70" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click">Kezdőlap</Button>
+                    <Button Width="70" Margin="10,0" Name="btnModelPage" Click="btnSwitchPage_Click">Model</Button>
+                    <Button Width="70" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
+                    <Button Width="70" Margin="10,0" Name="btnTransmissionPage" Click="btnSwitchPage_Click">Váltó</Button>
+                    <Button Width="70" Margin="10,0" Name="btnPaintingPage" Click="btnSwitchPage_Click">Festés</Button>
+                    <Button Width="70" Margin="10,0" Name="btnWheelConfiguration" Click="btnSwitchPage_Click">Kerekek</Button>
+                    <Button Width="70" Margin="10,0" Name="btnExteriorPage" Click="btnSwitchPage_Click">Külső</Button>
+                    <Button Width="70" Margin="10,0" Name="btnInteriorPage" Click="btnSwitchPage_Click">Belső</Button>
+                    <Button Width="70" Margin="10,0" Name="btnSoftwarePage" Click="btnSwitchPage_Click">Szoftver</Button>
                     <Button Width="120" Margin="20,0" Name="btnCustomerDetailsPage" Click="btnSwitchPage_Click">Megrendelő adatai</Button>
                 </StackPanel>
 

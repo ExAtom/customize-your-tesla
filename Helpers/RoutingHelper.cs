@@ -39,6 +39,7 @@ namespace TeslaCarConfigurator.Helpers
             page.Config = carConfiguration;
             CurrentPage = page;
             container.Content = page;
+            page.OnAttachedToFrame();
             CurrentPageChanged?.Invoke();
         }
 
