@@ -82,6 +82,9 @@
     <Compile Include="BatteryConfiguration.xaml.cs">
       <DependentUpon>BatteryConfiguration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModelConfiguration.xaml.cs">
+      <DependentUpon>ModelConfiguration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
     <Page Include="BatteryConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ModelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WheelConfiguration.xaml">
       <SubType>Designer</SubType>
@@ -152,6 +159,12 @@
   <ItemGroup>
     <Resource Include="Assets\Wheel3.png" />
     <Resource Include="Assets\Wheel4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ModelsBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
