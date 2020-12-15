@@ -12,13 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
-    /// <summary>
-    /// Interaction logic for LandingPage.xaml
-    /// </summary>
     public partial class LandingPage : PageBase
     {
         public LandingPage()
@@ -34,9 +32,17 @@ namespace TeslaCarConfigurator
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+            if (!Router.HasConfig || ConfirmConfigOverride())
+            {
+                Router.SetConfig(new CarConfiguration());
+            }
             Router.ChangeCurrentPage(new WheelConfiguration());
-            
         }
 
+        private bool ConfirmConfigOverride()
+        {
+            var result = MessageBox.Show("Már elkezdett konfigurálni egy Tesla autót. Szeretné azt a konfigot felülírni?", "Új konfig", MessageBoxButton.YesNo);
+            return result == MessageBoxResult.Yes;
+        }
     }
 }
