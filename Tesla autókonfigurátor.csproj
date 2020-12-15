@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PaintingPage.xaml.cs">
+      <DependentUpon>PaintingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransmissionConfiguration.xaml.cs">
       <DependentUpon>TransmissionConfiguration.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Page Include="PaintingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TransmissionConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
