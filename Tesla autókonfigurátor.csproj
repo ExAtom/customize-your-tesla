@@ -151,9 +151,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Tesla.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Tesla2.jpg" />
   </ItemGroup>
   <ItemGroup>
