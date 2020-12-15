@@ -8,29 +8,33 @@ namespace TeslaCarConfigurator.Data
 {
     public class Transmission : Feature
     {
-
         public static int ByteLength { get; private set; } = 1;
+        public List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Számítógéppel vezérelt" };
 
         // típus
-        public TransmissionType Type { get; set; }
+        public string Type => AvailableTransmissions[TypeIndex];
 
-        public Transmission(TransmissionType type)
+        public byte TypeIndex { get; set; }
+
+        public Transmission(byte typeIndex)
         {
-            Type = type;
+            TypeIndex = typeIndex;
         }
 
         public Transmission(byte[] bytes)
         {
             byte data = bytes[0];
-            Type = (TransmissionType)data;
-
+            TypeIndex = data;
+            if (TypeIndex >= AvailableTransmissions.Count)
+            {
+                throw new Exception();
+            }
         }
 
         public override byte[] ToBytes()
         {
-            byte data = (byte)Type;
 
-            return new byte[] { data };
+            return new byte[] { TypeIndex };
         }
 
         public override int CalculateAdditionalPrices()
@@ -39,8 +43,4 @@ namespace TeslaCarConfigurator.Data
         }
     }
 
-    public enum TransmissionType
-    {
-        Automatic, Manual
-    }
 }

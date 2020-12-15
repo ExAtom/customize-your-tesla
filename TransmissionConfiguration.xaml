@@ -11,7 +11,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <DockPanel>
                 <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
-                    <TextBlock TextWrapping="Wrap" Text="Akkumulátor kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
+                    <TextBlock TextWrapping="Wrap" Text="Váltótípus kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
                         <TextBlock.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -36,49 +36,22 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <StackPanel Name="batteryOptionsContainer">
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,40,50,10">
-                            <RadioButton Name="rbBatteryType0" Checked="rbBatteryType_Checked" GroupName="batteries">
+                    <StackPanel Name="transmissionOptionsContainer" Margin="0,50,0,0"  >
+                        <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
+                            <RadioButton Name="rbTransmissionType0" Checked="rbTransmissionType_Checked" GroupName="transmission">
                                 <WrapPanel>
-                                    <TextBlock Text="60 kWh"/>
+                                    <TextBlock Text="Manuális"/>
                                 </WrapPanel>
                             </RadioButton>
                         </Viewbox>
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbBatteryType1" Checked="rbBatteryType_Checked" GroupName="batteries">
+                        <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
+                            <RadioButton Name="rbTransmissionType1" Checked="rbTransmissionType_Checked" GroupName="transmission">
                                 <WrapPanel>
-                                    <TextBlock Text="70 kWh"/>
+                                    <TextBlock Text="Számítógéppel vezérelt"/>
                                 </WrapPanel>
                             </RadioButton>
                         </Viewbox>
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbBatteryType2" Checked="rbBatteryType_Checked" GroupName="batteries">
-                                <WrapPanel>
-                                    <TextBlock Text="80 kWh"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbBatteryType3" Checked="rbBatteryType_Checked" GroupName="batteries">
-                                <WrapPanel>
-                                    <TextBlock Text="90 kWh"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbBatteryType4" Checked="rbBatteryType_Checked" GroupName="batteries">
-                                <WrapPanel>
-                                    <TextBlock Text="100 kWh"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
-                        <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbBatteryType5" Checked="rbBatteryType_Checked" GroupName="batteries">
-                                <WrapPanel>
-                                    <TextBlock Text="110 kWh"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
+                        
                     </StackPanel>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
@@ -86,7 +59,7 @@
                     <Canvas>
                         <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
                         <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
-                        <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"><Run Text=""/><Run Text="."/></TextBlock>
+                        <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"/>
                         <TextBlock x:Name="tbPrice" Text="" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-65" Height="27" Width="168" Foreground="White" FontSize="20"></TextBlock>
                     </Canvas>
                 </StackPanel>

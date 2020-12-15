@@ -25,8 +25,8 @@ namespace TeslaCarConfigurator
         {
             chosenTransmissionTexts = new List<string[]>()
             {
-                new string[2]{ "", "Alapból jár hozzá" },
-                new string[2]{ "A 70 kWh-s akkumulátor már egy kicsivel erősebb, ideális választás városok között ingázóknak.", "Ára: 30.000FT" },
+                new string[2]{ "A manuális váltónál a sofőr tud váltani üres, rükverc, és 1-es sebesség között. ", "Alapból jár hozzá" },
+                new string[2]{ "A számítógépes vezérlésű váltót az autó számítógépes rendszere kezeli. A sofőr természetesen tudja a fizikai váltót is használni, de ezen felül hangvezérléssel is válthat. Az önvezetés funkció alapfeltétele. ", "Ára: 60.000FT" },
             };
             InitializeComponent();
 
@@ -35,8 +35,8 @@ namespace TeslaCarConfigurator
 
         public override void OnAttachedToFrame()
         {
-            byte chosenBatteryIndex = Config?.Battery?.CapacityIndex ?? 0;
-            Viewbox selectedVb = (Viewbox)batteryOptionsContainer.Children[chosenBatteryIndex];
+            byte chosenTransmission = Config?.Transmission?.TypeIndex ?? 0;
+            Viewbox selectedVb = (Viewbox)transmissionOptionsContainer.Children[chosenTransmission];
             RadioButton selected = (RadioButton)selectedVb.Child;
             selected.IsChecked = true;
         }
@@ -55,11 +55,11 @@ namespace TeslaCarConfigurator
             }
         }
 
-        private void rbBatteryType_Checked(object sender, RoutedEventArgs e)
+        private void rbTransmissionType_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
             string name = rb.Name;
-            byte index = byte.Parse(name.Replace("rbBatteryType", ""));
+            byte index = byte.Parse(name.Replace("rbTransmissionType", ""));
             string[] texts = chosenTransmissionTexts[index];
             tbInfos.Text = texts[0];
             tbPrice.Text = texts[1];
