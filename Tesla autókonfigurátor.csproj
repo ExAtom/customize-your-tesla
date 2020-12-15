@@ -149,5 +149,9 @@
     <Resource Include="Assets\Wheel1.png" />
     <Resource Include="Assets\Wheel2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Wheel3.png" />
+    <Resource Include="Assets\Wheel4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

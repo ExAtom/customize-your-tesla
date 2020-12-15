@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Wheels" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
+      Title="Kerekek kiválasztása" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <Grid>
         <ScrollViewer>
             <DockPanel>
@@ -36,22 +36,37 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <Viewbox Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50">
-                        <RadioButton GroupName="wheels" Checked="RadioButton_Checked" IsChecked="True">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
+                        <RadioButton x:Name="rbWheel1" GroupName="wheels" IsChecked="True" Click="rbWheelSet_Click">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel1.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <StackPanel>
-                                    <TextBlock Text="Oreo FX503"/>
+                                    <TextBlock Text="Aero FX503" Width="70"/>
                                 </StackPanel>
                             </WrapPanel>
                         </RadioButton>
-                        
                     </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50">
-                        <RadioButton GroupName="wheels">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                        <RadioButton x:Name="rbWheel2" GroupName="wheels" Click="rbWheelSet_Click">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel2.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Sport SP002"/>
+                                <TextBlock Text="Sport SP002" Width="70"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                        <RadioButton x:Name="rbWheel3" GroupName="wheels" Click="rbWheelSet_Click">
+                            <WrapPanel>
+                                <Image Source="Assets/Wheel3.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <TextBlock Text="Turbine T54" Width="70"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
+                        <RadioButton x:Name="rbWheel4" GroupName="wheels" Click="rbWheelSet_Click">
+                            <WrapPanel>
+                                <Image Source="Assets/Wheel4.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <TextBlock Text="Silver SU478" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
@@ -61,7 +76,8 @@
                     <Canvas>
                         <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
                         <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
-                        <TextBlock TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="290" Width="167" Foreground="White" FontSize="15"><Run Text="A ker"/><Run Text="eke"/><Run Text="k kiválasztásakor"/><Run Text=" érdemes figyelembe venni azt, hogy milyen terepviszonyok között kívánjunk használni járművünket. "/><Run Text="Amennyiben városi forgalomra az XYZ típus ajánlatos, ha meg esetleg terepútra szánjuk akkor az ABC a nyerő választás."/></TextBlock>
+                        <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"><Run Text="Az Aero FX530-as típusú kereket legfőképpen városi közlekedésre ajánljuk. Kiváló tapadást bitosít az aszfalhot, így a hirtelen fékezések sem okozhatnak problémát"/><Run Text="."/></TextBlock>
+                        <TextBlock x:Name="tbPrice" Text="Ára: 25.000 Ft" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-65" Height="27" Width="168" Foreground="White" FontSize="20"></TextBlock>
                     </Canvas>
                 </StackPanel>
             </DockPanel>
