@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PaintingPage.xaml.cs">
+      <DependentUpon>PaintingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SavedConfigsPage.xaml.cs">
       <DependentUpon>SavedConfigsPage.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Page Include="PaintingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SavedConfigsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,9 +165,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Tesla.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Tesla2.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +183,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Model1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Color1.png" />
+    <Resource Include="Assets\Color2.png" />
+    <Resource Include="Assets\Color3.png" />
+    <Resource Include="Assets\Color4.png" />
+    <Resource Include="Assets\Color5.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\arrow-circle-right-solid.png" />
