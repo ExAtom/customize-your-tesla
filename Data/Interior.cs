@@ -89,7 +89,7 @@ namespace TeslaCarConfigurator.Data
         public override byte[] ToBytes()
         {
             byte seatHeating = (byte)(HasSeatHeating ? 1 : 0);
-            byte steeringWheel = (byte)((HasSteeringWheelHeating ? 0 : 1) * 2);
+            byte steeringWheel = (byte)((HasSteeringWheelHeating ? 1 : 0) * 2);
             byte spineSupport = (byte)((HasSpineSupport ? 1 : 0) * 4);
             byte sunlightProtection = (byte)((HasSunlightProtection ? 1 : 0) * 8);
             byte darkenedWindows = (byte)((HasDarkenedWindows ? 1 : 0) * 16);

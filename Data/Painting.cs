@@ -40,7 +40,7 @@ namespace TeslaCarConfigurator.Data
 
         public override byte[] ToBytes()
         {
-            byte data = (byte)(IsMetallic ? 0 : 1);
+            byte data = (byte)(IsMetallic ? 1 : 0);
             data += (byte)(ColorIndex << 1);
             return new byte[] { data };
         }

@@ -1,0 +1,56 @@
+﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.SavedConfigsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeslaCarConfigurator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Mentett konfigurációk" Background="#FFC6CBD0" x:Name="Windows">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <DockPanel>
+                <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
+                    <TextBlock TextWrapping="Wrap" Text="Mentett konfigurációk" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-21.161"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-11.613"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                        <TextBlock.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FF435467" Offset="0"/>
+                                <GradientStop Color="#FF1B3755" Offset="1"/>
+                                <GradientStop Color="#FF2F455E" Offset="0.284"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Background>
+                    </TextBlock>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" MaxWidth="200" MinWidth="100" MinHeight="40" Margin="10,10,0,0" Click="btnBackToHome_Click">Vissza a kezdőlapra</Button>
+                    <StackPanel Margin="10,30,0,0">
+                        <TextBlock Name="loadingSaveFailedWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Hiba történt a mentések betöltése közben</TextBlock>
+                        <ListView Name="savedConfigsContainer" HorizontalAlignment="Left" Width="300" MinHeight="200" Focusable="False"/>
+                        <TextBlock Name="overrideWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Vigyázat! Ha betölt egy mentést, a most konfigurált autó elveszik!</TextBlock>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
+                    <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció betöltése kóddal"  FontSize="20" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="20,40,20,0"></TextBlock>
+                    <TextBox Name="tbToken" TextWrapping="Wrap" Margin="20,40,20,0" TextChanged="tbToken_TextChanged"></TextBox>
+                    <Button Name="btnLoadFromToken" Margin="50,40,50,0" Click="btnLoadFromToken_Click" IsEnabled="False">Tovább</Button>
+                    <TextBlock Name="invalidTokenWarning" Foreground="Red" Visibility="Collapsed" Margin="20,30,20,0">A megadott kód érvénytelen.</TextBlock>
+                </StackPanel>
+            </DockPanel>
+        </ScrollViewer>
+    </Grid>
+</helpers:PageBase>

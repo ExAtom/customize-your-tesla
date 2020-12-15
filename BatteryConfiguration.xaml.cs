@@ -73,5 +73,7 @@ namespace TeslaCarConfigurator
             }
             Config.Battery.CapacityIndex = index;
         }
+
+        
     }
 }

@@ -67,7 +67,7 @@ namespace TeslaCarConfigurator
             {
                 return;
             }
-            Config.Battery.CapacityIndex = index;
+            Config.Transmission.TypeIndex = index;
         }
     }
 }

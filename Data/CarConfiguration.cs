@@ -8,7 +8,7 @@ namespace TeslaCarConfigurator.Data
 {
     public class CarConfiguration
     {
-        private string configName;
+        private string configName = "";
 
         public static int MaxNameLength { get; private set; } = 255;
 

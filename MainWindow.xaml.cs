@@ -23,7 +23,6 @@ namespace TeslaCarConfigurator
 
         public MainWindow()
         {
-            SaveManager.LoadSavedConfigs();
             Initialized += OnWindowInitialized;
             InitializeComponent();
         }

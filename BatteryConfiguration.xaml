@@ -79,6 +79,7 @@
                                 </WrapPanel>
                             </RadioButton>
                         </Viewbox>
+
                     </StackPanel>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">

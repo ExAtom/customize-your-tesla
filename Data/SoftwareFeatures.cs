@@ -52,10 +52,10 @@ namespace TeslaCarConfigurator.Data
 
         public override byte[] ToBytes()
         {
-            byte selfdriving = (byte)((HasSelfdriving ? 0 : 1));
-            byte gps = (byte)((HasGps ? 0 : 1) << 1);
-            byte headlight = (byte)((HasHeadlightAssistant ? 0 : 1) << 2);
-            byte adaptiveLights = (byte)((HasAdaptiveLights ? 0 : 1) << 3);
+            byte selfdriving = (byte)((HasSelfdriving ? 1 : 0));
+            byte gps = (byte)((HasGps ? 1 : 0) << 1);
+            byte headlight = (byte)((HasHeadlightAssistant ? 1 : 0) << 2);
+            byte adaptiveLights = (byte)((HasAdaptiveLights ? 1 : 0) << 3);
 
 
             byte data = (byte)(selfdriving + gps + headlight + adaptiveLights);

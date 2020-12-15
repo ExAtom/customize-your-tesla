@@ -9,7 +9,7 @@ namespace TeslaCarConfigurator.Data
     public class Transmission : Feature
     {
         public static int ByteLength { get; private set; } = 1;
-        public List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Számítógéppel vezérelt" };
+        public List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Szoftveres" };
 
         // típus
         public string Type => AvailableTransmissions[TypeIndex];

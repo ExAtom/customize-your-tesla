@@ -10,9 +10,7 @@ namespace TeslaCarConfigurator.Helpers
 {
     public static class SaveManager
     {
-        public static Dictionary<string, CarConfiguration> SavedConfigs { get; private set; } = new Dictionary<string, CarConfiguration>();
-
-        public static List<int> InvalidConfigs { get; private set; } = new List<int>();
+        public static List< CarConfiguration> SavedConfigs { get; private set; } = new List<CarConfiguration>();
 
         public static bool FileLoadingFailed { get; private set; } = false;
 
@@ -44,18 +42,11 @@ namespace TeslaCarConfigurator.Helpers
                 try
                 {
                     CarConfiguration cfg = new CarConfiguration(line);
-                    if (SavedConfigs.ContainsKey(cfg.ConfigName))
-                    {
-                        SavedConfigs[cfg.ConfigName] = cfg;
-                    }
-                    else
-                    {
-                        SavedConfigs.Add(cfg.ConfigName, cfg);
-                    }
+                    SavedConfigs.Add(cfg);
                 }
                 catch (Exception)
                 {
-                    InvalidConfigs.Add(i + 1);
+                    SavedConfigs.Add(null);
                 }
             }
         }

@@ -47,7 +47,7 @@
                         <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
                             <RadioButton Name="rbTransmissionType1" Checked="rbTransmissionType_Checked" GroupName="transmission">
                                 <WrapPanel>
-                                    <TextBlock Text="Számítógéppel vezérelt"/>
+                                    <TextBlock Text="Szoftveres" FontSize="12"/>
                                 </WrapPanel>
                             </RadioButton>
                         </Viewbox>
