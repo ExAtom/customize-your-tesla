@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="ModelConfiguration" Background="#FFC6CBD0">
 
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" TextAlignment="Right" Padding="40,5,100,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,97,0">
                     <TextBlock.RenderTransform>
@@ -40,17 +40,49 @@
                         <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
                         <Canvas>
                             <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="3"/></TextBlock>
-                            <Image Source="Assets/Model1.png" Canvas.Left="34" Canvas.Top="-345" Height="109" Width="183"/>
+                            <Image Source="Assets/Model1.png" Canvas.Left="39" Canvas.Top="-337" Height="90" Width="166"  Stretch="Fill"/>
                             <TextBlock x:Name="tbModel1" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
-                                <RadioButton x:Name="rbWheel2" GroupName="models"/>
+                                <RadioButton x:Name="rbModel1" GroupName="models" Checked="rbModelType_Checked"/>
                             </Viewbox>
                             <TextBlock Text="20.610.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
                         <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
-
+                        <Canvas>
+                            <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="Y"/></TextBlock>
+                            <Image Source="Assets/Model2.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <TextBlock x:Name="tbModel2" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
+                            <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
+                                <RadioButton x:Name="rbModel2" GroupName="models" Checked="rbModelType_Checked"/>
+                            </Viewbox>
+                            <TextBlock Text="35.470.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                        </Canvas>
+                    </StackPanel>
+                    <StackPanel Margin="30,10,0,0">
+                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Canvas>
+                            <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="X"/></TextBlock>
+                            <Image Source="Assets/Model3.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <TextBlock x:Name="tbModel3" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
+                            <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
+                                <RadioButton x:Name="rbModel3" GroupName="models" Checked="rbModelType_Checked"/>
+                            </Viewbox>
+                            <TextBlock Text="41.640.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                        </Canvas>
+                    </StackPanel>
+                    <StackPanel Margin="30,10,0,0">
+                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Canvas>
+                            <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="S"/></TextBlock>
+                            <Image Source="Assets/Model4.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <TextBlock x:Name="tbModel4" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
+                            <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
+                                <RadioButton x:Name="rbModel4" GroupName="models" Checked="rbModelType_Checked"/>
+                            </Viewbox>
+                            <TextBlock Text="53.180.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                        </Canvas>
                     </StackPanel>
                 </WrapPanel>
             </StackPanel>

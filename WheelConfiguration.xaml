@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Kerekek kiválasztása" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer  VerticalScrollBarVisibility="Auto">
             <DockPanel>
                 <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
                     <TextBlock TextWrapping="Wrap" Text="Kerekek kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
@@ -37,7 +37,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <RadioButton x:Name="rbWheel1" GroupName="wheels"  Checked="rbWheelSet_Checked">
+                        <RadioButton x:Name="rbWheel1" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
                                 <Image Source="Assets/Wheel1.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <StackPanel>
