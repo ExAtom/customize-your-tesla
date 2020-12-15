@@ -36,7 +36,7 @@ namespace TeslaCarConfigurator
             {
                 Router.SetConfig(new CarConfiguration());
             }
-            Router.ChangeCurrentPage(new WheelConfiguration());
+            Router.ChangeCurrentPage(new ModelConfiguration());
         }
 
         private bool ConfirmConfigOverride()
