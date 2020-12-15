@@ -6,10 +6,8 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LandingPage">
-
-    
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+      Title="Kezdőlap" Background="#FFC6CBD0">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" Text="Üdvözlünk a Tesla Autó Konfigurátorunkban!" Margin="0,5" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Black" FontSize="30"/>
                 <Rectangle RadiusX="20" Width="370" RadiusY="20" Stroke="Black" StrokeThickness="2" Height="200" Margin="0,20,0,10">

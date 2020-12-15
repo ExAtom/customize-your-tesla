@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
-        Title="CloseWindow" Height="200" Width="500" Left="50" Top="50" ResizeMode="NoResize">
+        Title="Bezárás" Height="200" Width="500" Left="50" Top="50" ResizeMode="NoResize">
     <Grid>
         <TextBlock HorizontalAlignment="Left" FontSize="22" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="473"><Run Text="A program bezárásához ráncigálja meg ezt a csúszkát"/><Run Text=":"/></TextBlock>
         <Slider HorizontalAlignment="Left" Margin="52,110,0,0" VerticalAlignment="Top" Width="389" ValueChanged="Slider_ValueChanged" TickPlacement="BottomRight"/>
