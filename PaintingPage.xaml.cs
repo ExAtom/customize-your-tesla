@@ -49,22 +49,22 @@ namespace TeslaCarConfigurator
             }
             if (currentColor.Name == "rbColor2")
             {
-                tbInfos.Text = "Fekete.";
+                tbInfos.Text = "Máglyafekete fényezésünk a legelegánsabb. Tulajdonosa céltudatosságot sugall. Előnyös választás lehet, hiszen a szennyeződések nehezen vehetőek észre a kaszni felületen.";
                 tbPrice.Text = "Ára: 20.000 Ft";
             }
             if (currentColor.Name == "rbColor3")
             {
-                tbInfos.Text = "Szürke.";
+                tbInfos.Text = "Impozáns szüke metál fényezésünk az elmúlt évek tapasztalatai alapján a legtöbbet választott szín. Tulajdonosa kreatív és társaságkedvelő valamint jó alkalmazkodóképességű.";
                 tbPrice.Text = "Ára: 29.000 Ft";
             }
             if (currentColor.Name == "rbColor4")
             {
-                tbInfos.Text = "Kék.";
+                tbInfos.Text = "A kék a víz, a harmónia, magabiztosság, kreativizmus és béke szimbóluma. Nagy valószínűséggel a járókelőknek is ez fog Önről eszükbe jutni, ha megláták a forgalomban.";
                 tbPrice.Text = "Ára: 38.000 Ft";
             }
             if (currentColor.Name == "rbColor5")
             {
-                tbInfos.Text = "Piros.";
+                tbInfos.Text = "Gyönyörű piros fényezésünk a szerelem és az energia színe. Tulajdonosa általában dinamikus és körültekintő, ugyanakkor hajlamos két végén égetni a gyertyát.";
                 tbPrice.Text = "Ára: 40.500 Ft";
             }
 
