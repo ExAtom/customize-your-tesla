@@ -16,9 +16,6 @@ using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
 {
-    /// <summary>
-    /// Interaction logic for WheelConfiguration.xaml
-    /// </summary>
     public partial class WheelConfiguration : PageBase
     {
         public WheelConfiguration()
