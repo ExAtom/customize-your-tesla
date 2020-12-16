@@ -60,6 +60,17 @@ namespace TeslaCarConfigurator
             Config.Battery.CapacityIndex = index;
         }
 
-        
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            if (Windows.ActualWidth <= 710)
+            {
+                Menu.Width = 230;
+            }
+            else
+            {
+                Menu.Width = 400;
+            }
+        }
     }
 }
