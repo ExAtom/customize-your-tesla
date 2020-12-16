@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ModelConfiguration" Background="#FFC6CBD0">
+      Title="Modell kiválasztása" Background="#FFC6CBD0">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">

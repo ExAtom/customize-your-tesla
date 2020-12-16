@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Akkumulátor" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
+      Title="Váltó kiválasztása" Background="#FFC6CBD0" x:Name="Windows" >
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <DockPanel>

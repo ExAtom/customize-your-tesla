@@ -42,19 +42,7 @@ namespace TeslaCarConfigurator
             
         }
 
-        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
-
-            if (Windows.ActualWidth <= 710)
-            {
-                Menu.Width = 230;
-            }
-            else
-            {
-                Menu.Width = 400;
-            }
-        }
+        
 
         private void btnBackToHome_Click(object sender, RoutedEventArgs e)
         {

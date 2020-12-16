@@ -11,7 +11,7 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
-        public static List<string> AvailableModelNames { get; private set; } = new List<string>() { "Model S" };
+        public static List<string> AvailableModelNames { get; private set; } = new List<string>() { "Model 3", "Model Y","Model X", "Model S" };
 
         public byte ModelNameIndex { get; set; }
 

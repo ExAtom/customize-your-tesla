@@ -39,11 +39,6 @@ namespace TeslaCarConfigurator
             UpdateNavbarState();
         }
 
-        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
-        }
-
         private void btnSwitchPage_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;

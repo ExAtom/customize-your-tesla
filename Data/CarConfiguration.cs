@@ -51,7 +51,7 @@ namespace TeslaCarConfigurator.Data
         {
             CarModel = new Model(0);
             Battery = new Battery(0);
-            Painting = new Painting(0, false);
+            Painting = new Painting(0);
             Wheels = new WheelConfiguration(0);
             Transmission = new Transmission(0);
             Interior = new Interior(false,false,false,false,false,0,0);
