@@ -65,7 +65,7 @@ namespace TeslaCarConfigurator
 
         private void ChangePage(string pageName)
         {
-            Type pageType = Type.GetType($"{nameof(TeslaCarConfigurator)}.{pageName}");
+            Type pageType = Type.GetType($"{nameof(TeslaCarConfigurator)}.{pageName}") ?? Type.GetType($"{nameof(TeslaCarConfigurator)}.{nameof(Pages)}.{pageName}");
             if (pageType != null)
             {
                 PageBase page = (PageBase)Activator.CreateInstance(pageType);

@@ -30,19 +30,23 @@ namespace TeslaCarConfigurator
 
         public override void OnAttachedToFrame()
         {
-            SaveManager.LoadSavedConfigs();
             overrideWarning.Visibility = Router.HasConfig ? Visibility.Visible : Visibility.Collapsed;
-            loadingSaveFailedWarning.Visibility = SaveManager.FileLoadingFailed ? Visibility.Visible : Visibility.Collapsed;
-            for (int i = 0; i < SaveManager.SavedConfigs.Count; i++)
-            {
-                CarConfiguration savedConfig = SaveManager.SavedConfigs[i];
-                UIElement generatedListItem = GenerateSavedItemDisplay(savedConfig,i );
-                savedConfigsContainer.Items.Add(generatedListItem);
-            }
+            UpdateSavedConfigList();
             
         }
 
-        
+        private void UpdateSavedConfigList()
+        {
+            SaveManager.LoadSavedConfigs();
+            loadingSaveFailedWarning.Visibility = SaveManager.FileLoadingFailed ? Visibility.Visible : Visibility.Collapsed;
+            savedConfigsContainer.Items.Clear();
+            for (int i = 0; i < SaveManager.SavedConfigs.Count; i++)
+            {
+                CarConfiguration savedConfig = SaveManager.SavedConfigs[i];
+                UIElement generatedListItem = GenerateSavedItemDisplay(savedConfig, i);
+                savedConfigsContainer.Items.Add(generatedListItem);
+            }
+        }
 
         private void btnBackToHome_Click(object sender, RoutedEventArgs e)
         {

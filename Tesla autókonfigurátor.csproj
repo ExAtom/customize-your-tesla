@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SummaryPage.xaml.cs">
+    <Compile Include="Pages\SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PaintingPage.xaml.cs">
@@ -97,10 +97,13 @@
     <Compile Include="ModelConfiguration.xaml.cs">
       <DependentUpon>ModelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Summary\ModelSummary.xaml.cs">
+      <DependentUpon>ModelSummary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
-    <Page Include="SummaryPage.xaml">
+    <Page Include="Pages\SummaryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,6 +140,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ModelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,5 +217,6 @@
   <ItemGroup>
     <Resource Include="Assets\arrow-circle-right-solid.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

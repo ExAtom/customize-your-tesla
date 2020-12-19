@@ -12,6 +12,8 @@ namespace TeslaCarConfigurator.Data
 
         public static int MaxNameLength { get; private set; } = 255;
 
+        public bool IsSaved { get; set; } = false;
+
         public string ConfigName
         {
             get => configName; set

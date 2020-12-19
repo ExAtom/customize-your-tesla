@@ -10,7 +10,7 @@ namespace TeslaCarConfigurator.Helpers
 {
     public static class SaveManager
     {
-        public static List< CarConfiguration> SavedConfigs { get; private set; } = new List<CarConfiguration>();
+        public static List<CarConfiguration> SavedConfigs { get; private set; } = new List<CarConfiguration>();
 
         public static bool FileLoadingFailed { get; private set; } = false;
 
@@ -24,6 +24,7 @@ namespace TeslaCarConfigurator.Helpers
 
         public static void LoadSavedConfigs()
         {
+            SavedConfigs.Clear();
             string[] lines = new string[0];
             try
             {
@@ -41,7 +42,7 @@ namespace TeslaCarConfigurator.Helpers
                 string line = lines[i];
                 try
                 {
-                    CarConfiguration cfg = new CarConfiguration(line);
+                    CarConfiguration cfg = new CarConfiguration(line) {IsSaved=true };
                     SavedConfigs.Add(cfg);
                 }
                 catch (Exception)
@@ -49,6 +50,37 @@ namespace TeslaCarConfigurator.Helpers
                     SavedConfigs.Add(null);
                 }
             }
+        }
+
+        public static bool IsSaved(CarConfiguration cfg)
+        {
+            return SavedConfigs.Any(c => c != null && c.ConfigName == cfg.ConfigName);
+        }
+
+        public static void SaveState()
+        {
+            File.WriteAllLines(saveLocation, SavedConfigs.Select(c => c == null ? "" : c.ToToken()));
+        }
+
+        public  static void UpdateSavedConfig(CarConfiguration cfg) { 
+            int alreadySavedIndex = SavedConfigs.FindIndex(c => c != null && c.ConfigName == cfg.ConfigName);
+            if (alreadySavedIndex >= 0)
+            {
+                SavedConfigs[alreadySavedIndex] = cfg;
+            }
+            SaveState();
+        }
+
+        public static void SaveNewConfig(CarConfiguration cfg) {
+            SavedConfigs.Add(cfg);
+            cfg.IsSaved = true;
+            SaveState();
+        }
+
+        public static void DeleteConfig(CarConfiguration cfg)
+        {
+            SavedConfigs.RemoveAll(c => c?.ConfigName == cfg.ConfigName);
+            SaveState();
         }
     }
 }
