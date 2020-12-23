@@ -16,7 +16,6 @@ using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 using TeslaCarConfigurator.UserControls.Dropdown;
 using TeslaCarConfigurator.UserControls.Summary;
-using System.Globalization;
 
 namespace TeslaCarConfigurator.Pages
 {
@@ -34,8 +33,6 @@ namespace TeslaCarConfigurator.Pages
         public override void OnAttachedToFrame()
         {
             tbConfigName.Text = Config?.ConfigName ?? "";
-            
-            tbTotalPrice.Text = $"Végösszeg: {Config.TotalPrice.ToString("C", Formatting.CurrencyFormat)}";
             if (Config?.IsSaved == true)
             {
                 SwitchToUpdateView();

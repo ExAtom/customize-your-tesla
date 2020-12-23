@@ -22,8 +22,6 @@ namespace TeslaCarConfigurator.Data
             }
         }
 
-        public int TotalPrice => new Feature[] { CarModel, Battery, Painting, Wheels, Transmission, Interior, Exterior, SoftwareFeatures }.Sum(feature => feature.CalculateAdditionalPrices());
-
         // Sziszi
         public Model CarModel { get; set; }
 
