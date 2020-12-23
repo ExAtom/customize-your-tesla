@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator
@@ -26,7 +27,7 @@ namespace TeslaCarConfigurator
             chosenTransmissionTexts = new List<string[]>()
             {
                 new string[2]{ "A manuális váltónál a sofőr tud váltani üres, rükverc, és 1-es sebesség között. ", "Alapból jár hozzá" },
-                new string[2]{ "A számítógépes vezérlésű váltót az autó számítógépes rendszere kezeli. A sofőr természetesen tudja a fizikai váltót is használni, de ezen felül hangvezérléssel is válthat. Az önvezetés funkció alapfeltétele. ", "Ára: 60.000FT" },
+                new string[2]{ "A számítógépes vezérlésű váltót az autó számítógépes rendszere kezeli. A sofőr természetesen tudja a fizikai váltót is használni, de ezen felül hangvezérléssel is válthat. Az önvezetés funkció alapfeltétele. ", $"Ára: {Transmission.Prices[1]}FT" },
             };
             InitializeComponent();
 

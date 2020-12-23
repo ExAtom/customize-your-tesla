@@ -9,7 +9,10 @@ namespace TeslaCarConfigurator.Data
     public class Transmission : Feature
     {
         public static int ByteLength { get; private set; } = 1;
+
         public List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Szoftveres" };
+
+        public static List<int> Prices { get; private set; } = new List<int>() { 0,60000 };
 
         // típus
         public string Type => AvailableTransmissions[TypeIndex];
@@ -39,7 +42,7 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            throw new NotImplementedException();
+            return Prices[TypeIndex];
         }
     }
 

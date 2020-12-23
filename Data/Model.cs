@@ -13,6 +13,8 @@ namespace TeslaCarConfigurator.Data
 
         public static List<string> AvailableModelNames { get; private set; } = new List<string>() { "Model 3", "Model Y","Model X", "Model S" };
 
+        public static List<int> Prices { get; private set; } = new List<int>() { 20610000, 35470000, 41640000, 53180000 };
+
         public byte ModelNameIndex { get; set; }
 
         public string ModelName => AvailableModelNames[ModelNameIndex];
@@ -38,7 +40,7 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            throw new NotImplementedException();
+            return Prices[ModelNameIndex];
         }
     }
 }

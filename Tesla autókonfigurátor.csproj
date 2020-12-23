@@ -55,7 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SummaryPage.xaml.cs">
+    <Compile Include="Helpers\Formatting.cs" />
+    <Compile Include="Pages\SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PaintingPage.xaml.cs">
@@ -97,10 +98,63 @@
     <Compile Include="ModelConfiguration.xaml.cs">
       <DependentUpon>ModelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Dropdown\Dropdown.xaml.cs">
+      <DependentUpon>Dropdown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dropdown\DropdownHeader.cs" />
+    <Compile Include="UserControls\Dropdown\DropdownItem.cs" />
+    <Compile Include="UserControls\Summary\BatterySummaryHeader.xaml.cs">
+      <DependentUpon>BatterySummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\BatterySummaryContent.xaml.cs">
+      <DependentUpon>BatterySummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml.cs">
+      <DependentUpon>SoftwareFeatureSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml.cs">
+      <DependentUpon>SoftwareFeatureSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummaryHeader.xaml.cs">
+      <DependentUpon>InteriorSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummaryContent.xaml.cs">
+      <DependentUpon>InteriorSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummaryContent.xaml.cs">
+      <DependentUpon>ExteriorSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummaryHeader.xaml.cs">
+      <DependentUpon>ExteriorSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\WheelSummaryHeader.xaml.cs">
+      <DependentUpon>WheelSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\WheelSummaryContent.xaml.cs">
+      <DependentUpon>WheelSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\PaintingSummaryHeader.xaml.cs">
+      <DependentUpon>PaintingSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\PaintingSummaryContent.xaml.cs">
+      <DependentUpon>PaintingSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummaryHeader.xaml.cs">
+      <DependentUpon>TransmissionSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummaryContent.xaml.cs">
+      <DependentUpon>TransmissionSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ModelSummaryHeader.xaml.cs">
+      <DependentUpon>ModelSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ModelSummaryContent.xaml.cs">
+      <DependentUpon>ModelSummaryContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
-    <Page Include="SummaryPage.xaml">
+    <Page Include="Pages\SummaryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,6 +191,74 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ModelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Dropdown\Dropdown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummaryContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\WheelSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\WheelSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\PaintingSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\PaintingSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummaryContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

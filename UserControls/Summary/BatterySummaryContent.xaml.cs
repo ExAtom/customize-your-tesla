@@ -12,39 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TeslaCarConfigurator.Helpers;
+using TeslaCarConfigurator.Data;
 
-namespace TeslaCarConfigurator
+namespace TeslaCarConfigurator.UserControls.Summary
 {
-    public partial class SummaryPage : PageBase
+    
+    public partial class BatterySummaryContent : UserControl
     {
+        private Battery battery;
 
-        public SummaryPage()
+        public BatterySummaryContent(Battery battery)
         {
-            
+            this.battery = battery;
+            Initialized += OnInitialized;
             InitializeComponent();
-
-
         }
 
-        public override void OnAttachedToFrame()
+        private void OnInitialized(object sender, EventArgs e)
         {
-            
-        }
-
-        private void tbConfigName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (Config == null)
+            if (battery == null)
             {
                 return;
             }
-            Config.ConfigName = tbConfigName.Text;
-            UpdateUIState();
-        }
-
-        private void UpdateUIState()
-        {
-
+            tbBattery.Text = $"{battery.Capacity} kWh";
         }
     }
 }
