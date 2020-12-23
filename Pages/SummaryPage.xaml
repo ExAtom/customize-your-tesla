@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TeslaCarConfigurator"
-      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:dropdown="clr-namespace:TeslaCarConfigurator.UserControls.Dropdown"
+                   mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" >
     <Grid>
@@ -36,14 +36,7 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
-                    <TextBlock>Model:</TextBlock>
+                    <dropdown:Dropdown x:Name="summaryDropdown"></dropdown:Dropdown>
 
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">

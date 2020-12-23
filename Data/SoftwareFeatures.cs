@@ -65,7 +65,7 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

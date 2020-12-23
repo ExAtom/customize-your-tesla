@@ -10,7 +10,9 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; set; } = 1;
 
-        public static List<string>  AvailableWheelTypes{ get; set; } = new List<string>() { "Aero FX530", "Sport SP002", "Turbine T54", "Silver SU478" };
+        public static List<string> AvailableWheelTypes { get; set; } = new List<string>() { "Aero FX530", "Sport SP002", "Turbine T54", "Silver SU478" };
+
+        public static List<int> Prices { get; private set; } = new List<int>() { 25000, 82000, 56000, 69000 };
 
         public string Type => AvailableWheelTypes[TypeIndex];
 
@@ -29,15 +31,15 @@ namespace TeslaCarConfigurator.Data
                 throw new Exception();
             }
         }
-    
+
         public override byte[] ToBytes()
         {
-            return new byte[] { TypeIndex};
+            return new byte[] { TypeIndex };
         }
 
         public override int CalculateAdditionalPrices()
         {
-            throw new NotImplementedException();
+            return Prices[TypeIndex];
         }
     }
 }

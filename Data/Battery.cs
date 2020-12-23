@@ -12,6 +12,8 @@ namespace TeslaCarConfigurator.Data
 
         public static List<byte> AvailableCapacities { get; private set; } = new List<byte>() { 60, 70, 80, 90, 100, 110 };
 
+        public static List<int> Prices { get; private set; } = new List<int>() { 70000, 100000, 140000, 170000, 220000, 270000 };
+
         // kapacitás kWh-ban
         public byte Capacity => AvailableCapacities[CapacityIndex];
 
@@ -38,7 +40,7 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            throw new NotImplementedException();
+            return Prices[CapacityIndex];
         }
     }
 }

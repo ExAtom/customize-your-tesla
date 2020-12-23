@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
+using TeslaCarConfigurator.UserControls.Dropdown;
+using TeslaCarConfigurator.UserControls.Summary;
 
 namespace TeslaCarConfigurator.Pages
 {
@@ -34,6 +37,7 @@ namespace TeslaCarConfigurator.Pages
             {
                 SwitchToUpdateView();
             }
+            InitDropdown();
         }
 
         private void tbConfigName_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,6 +56,42 @@ namespace TeslaCarConfigurator.Pages
             btnUpdateConfig.Visibility = Visibility.Visible;
             btnSaveConfig.Content = "Másolat mentése";
             nameInputLabel.Content = "Másolat neve";
+        }
+
+        private void InitDropdown()
+        {
+            Model model = Config.CarModel;
+            Battery battery = Config.Battery;
+            Transmission transmission = Config.Transmission;
+            Painting painting = Config.Painting;
+            Data.WheelConfiguration wheel = Config.Wheels;
+            Exterior exterior = Config.Exterior;
+            Interior interior = Config.Interior;
+            SoftwareFeatures softwareFeatures = Config.SoftwareFeatures;
+
+            DropdownItem modelItem = new DropdownItem(new ModelSummaryContent(model), new ModelSummaryHeader(model));
+            summaryDropdown.AddDropdownItem(modelItem);
+
+            DropdownItem batteryItem = new DropdownItem(new BatterySummaryContent(battery), new BatterySummaryHeader(battery));
+            summaryDropdown.AddDropdownItem(batteryItem);
+
+            DropdownItem transmissionItem = new DropdownItem(new TransmissionSummaryContent(transmission), new TransmissionSummaryHeader(transmission));
+            summaryDropdown.AddDropdownItem(transmissionItem);
+
+            DropdownItem paintingItem = new DropdownItem(new PaintingSummaryContent(painting), new PaintingSummaryHeader(painting));
+            summaryDropdown.AddDropdownItem(paintingItem);
+
+            DropdownItem wheelItem = new DropdownItem(new WheelSummaryContent(wheel), new WheelSummaryHeader(wheel));
+            summaryDropdown.AddDropdownItem(wheelItem);
+
+            DropdownItem exteriorItem = new DropdownItem(new ExteriorSummaryContent(exterior), new ExteriorSummaryHeader(exterior));
+            summaryDropdown.AddDropdownItem(exteriorItem);
+
+            DropdownItem interiorItem = new DropdownItem(new InteriorSummaryContent(interior), new InteriorSummaryHeader(interior));
+            summaryDropdown.AddDropdownItem(interiorItem);
+
+            DropdownItem softwareFeatureItem = new DropdownItem(new SoftwareFeatureSummaryContent(softwareFeatures), new SoftwareFeatureSummaryHeader(softwareFeatures));
+            summaryDropdown.AddDropdownItem(softwareFeatureItem);
         }
 
         private void btnSaveConfig_Click(object sender, RoutedEventArgs e)
