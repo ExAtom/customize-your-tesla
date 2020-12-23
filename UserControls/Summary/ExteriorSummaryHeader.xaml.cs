@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
+using TeslaCarConfigurator.Helpers;
 using TeslaCarConfigurator.UserControls.Dropdown;
 
 namespace TeslaCarConfigurator.UserControls.Summary
@@ -34,7 +35,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             {
                 return;
             }
-            tbPrice.Text = $"+{exterior.CalculateAdditionalPrices()}FT";
+            tbPrice.Text = $"+{exterior.CalculateAdditionalPrices().ToString("C", Formatting.CurrencyFormat)}";
         }
     }
 }
