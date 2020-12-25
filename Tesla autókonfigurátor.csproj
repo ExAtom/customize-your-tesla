@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\Formatting.cs" />
+    <Compile Include="Pages\CustomerDetailsPage.xaml.cs">
+      <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
     <Compile Include="WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\CustomerDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\SummaryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

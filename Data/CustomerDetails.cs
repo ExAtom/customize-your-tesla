@@ -8,8 +8,10 @@ namespace TeslaCarConfigurator.Data
 {
     public class CustomerDetails
     {
+        // keresztnév
         public string Firstname { get; set; }
 
+        // vezetéknév
         public string Lastname { get; set; }
 
         public string EmailAddress { get; set; }
@@ -27,5 +29,10 @@ namespace TeslaCarConfigurator.Data
         public string Address { get; set; }
 
         public CreditCardInfo CreditCard { get; set; }
+
+        public CustomerDetails()
+        {
+            CreditCard = new CreditCardInfo();
+        }
     }
 }
