@@ -18,17 +18,27 @@ namespace TeslaCarConfigurator.UserControls.Inputs
 {
     public partial class PhoneNumberInput : UserControl
     {
+        public static readonly DependencyProperty PhoneNumberProperty =
+            DependencyProperty.Register(nameof(PhoneNumber),
+                                        typeof(PhoneNumber),
+                                        typeof(PhoneNumberInput),
+                                        new PropertyMetadata(null, OnPhoneNumberChanged));
+
+        private static void OnPhoneNumberChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) 
+        {
+            PhoneNumberInput phoneNumberInput = (PhoneNumberInput)d;
+            phoneNumberInput.OnPhoneNumberChanged((PhoneNumber)e.NewValue);
+        }
+
+        public delegate void PhoneNumberChangedEventHandler(object sender, PhoneNumber p);
+
+        public event PhoneNumberChangedEventHandler PhoneNumberChanged;
+
         public PhoneNumber PhoneNumber
         {
             get { return (PhoneNumber)GetValue(PhoneNumberProperty); }
             set { SetValue(PhoneNumberProperty, value); }
         }
-
-        public static readonly DependencyProperty PhoneNumberProperty =
-            DependencyProperty.Register(nameof(PhoneNumber),
-                                        typeof(PhoneNumber),
-                                        typeof(PhoneNumberInput),
-                                        new PropertyMetadata(null));
 
         public PhoneNumberInput()
         {
@@ -40,6 +50,9 @@ namespace TeslaCarConfigurator.UserControls.Inputs
             InitializeComponent();
         }
 
-        
+        private void OnPhoneNumberChanged(PhoneNumber phoneNumber) 
+        {
+            PhoneNumberChanged?.Invoke(this, phoneNumber);
+        }
     }
 }
