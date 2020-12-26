@@ -13,5 +13,7 @@ namespace TeslaCarConfigurator.Services
         public string Flag { get; set; }
 
         public string NativeName { get; set; }
+
+        public string Alpha3Code { get; set; }
     }
 }
