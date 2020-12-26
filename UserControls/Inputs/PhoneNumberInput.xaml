@@ -9,13 +9,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Margin="0,0,20,0">
-            
+        <StackPanel Grid.Column="0" Margin="0,0,5,0">
+            <TextBox Text="{Binding Path=CallingCode, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
         </StackPanel>
-        <StackPanel Grid.Column="1" Margin="20,0,0,0">
-            <TextBox IsEnabled="False" Text=""/>
+        <StackPanel Grid.Column="1" Margin="5,0,0,0">
+            <TextBox IsEnabled="{Binding Path=IsCountrySelected}" Text="{Binding Path=Number, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </Grid>
 </UserControl>

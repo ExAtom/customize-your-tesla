@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\PhoneNumber.cs" />
     <Compile Include="Helpers\Formatting.cs" />
     <Compile Include="Pages\CustomerDetailsPage.xaml.cs">
       <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>

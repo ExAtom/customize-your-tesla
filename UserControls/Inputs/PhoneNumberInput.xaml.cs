@@ -12,31 +12,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 
 namespace TeslaCarConfigurator.UserControls.Inputs
 {
-    /// <summary>
-    /// Interaction logic for PhonenumberInput.xaml
-    /// </summary>
     public partial class PhoneNumberInput : UserControl
     {
-
-
-        public string PhoneNumber
+        public PhoneNumber PhoneNumber
         {
-            get { return (string)GetValue(PhoneNumberProperty); }
+            get { return (PhoneNumber)GetValue(PhoneNumberProperty); }
             set { SetValue(PhoneNumberProperty, value); }
         }
 
-        
         public static readonly DependencyProperty PhoneNumberProperty =
-            DependencyProperty.Register("PhoneNumber", typeof(string), typeof(PhoneNumberInput), new PropertyMetadata(""));
-
-
+            DependencyProperty.Register(nameof(PhoneNumber),
+                                        typeof(PhoneNumber),
+                                        typeof(PhoneNumberInput),
+                                        new PropertyMetadata(null));
 
         public PhoneNumberInput()
         {
+            if (PhoneNumber == null)
+            {
+                PhoneNumber = new PhoneNumber();
+            }
+            DataContext = PhoneNumber;
             InitializeComponent();
         }
+
+        
     }
 }
