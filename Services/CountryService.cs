@@ -23,5 +23,13 @@ namespace TeslaCarConfigurator.Services
             CountryInfo[] countryInfos = JsonSerializer.Deserialize<CountryInfo[]>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             return countryInfos;
         }
+
+        public static async Task<string> DownloadFlag(CountryInfo country)
+        {
+            var response = await httpClient.GetAsync(country.Flag);
+            response.EnsureSuccessStatusCode();
+            string content = await response.Content.ReadAsStringAsync();
+            return content;
+        }
     }
 }
