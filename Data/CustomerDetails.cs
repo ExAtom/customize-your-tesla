@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace TeslaCarConfigurator.Data
 
         public string EmailAddress { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public PhoneNumber PhoneNumber { get; set; }
 
         public string Country { get; set; }
 
@@ -33,6 +34,7 @@ namespace TeslaCarConfigurator.Data
         public CustomerDetails()
         {
             CreditCard = new CreditCardInfo();
+            PhoneNumber = new PhoneNumber();
         }
     }
 }
