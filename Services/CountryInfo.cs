@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeslaCarConfigurator.UserControls.Inputs;
+using System.ComponentModel;
 
 namespace TeslaCarConfigurator.Services
 {
-    public class CountryInfo
+    public class CountryInfo:IDropdownItem
     {
         public string[] CallingCodes { get; set; }
 
@@ -15,5 +17,7 @@ namespace TeslaCarConfigurator.Services
         public string NativeName { get; set; }
 
         public string Alpha3Code { get; set; }
+
+        public string DropdownText => NativeName;
     }
 }
