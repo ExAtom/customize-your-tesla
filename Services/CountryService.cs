@@ -24,9 +24,9 @@ namespace TeslaCarConfigurator.Services
             return countryInfos;
         }
 
-        public static async Task<string> DownloadFlag(CountryInfo country)
+        public static async Task<string> DownloadFlag(IFlag flag)
         {
-            var response = await httpClient.GetAsync(country.Flag);
+            var response = await httpClient.GetAsync(flag.Flag);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
             return content;

@@ -17,7 +17,7 @@ namespace TeslaCarConfigurator.Services
 
         public string Alpha3Code { get; set; }
 
-        public string DropdownText => NativeName;
+        public string DropdownText => Prefix;
 
         public CallingCode(string prefix, string flag, string nativeName, string alpha3Code)
         {
