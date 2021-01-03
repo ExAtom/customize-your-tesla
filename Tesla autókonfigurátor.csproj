@@ -124,8 +124,10 @@
     <Compile Include="SavedConfigsPage.xaml.cs">
       <DependentUpon>SavedConfigsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\CallingCode.cs" />
     <Compile Include="Services\CountryInfo.cs" />
     <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\IFlag.cs" />
     <Compile Include="TransmissionConfiguration.xaml.cs">
       <DependentUpon>TransmissionConfiguration.xaml</DependentUpon>
     </Compile>

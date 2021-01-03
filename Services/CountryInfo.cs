@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace TeslaCarConfigurator.Services
 {
-    public class CountryInfo:IDropdownItem
+    public class CountryInfo:IDropdownItem,IFlag
     {
         public string[] CallingCodes { get; set; }
 

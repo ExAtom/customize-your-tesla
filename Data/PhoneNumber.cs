@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using TeslaCarConfigurator.Services;
 
 namespace TeslaCarConfigurator.Data
 {
@@ -12,10 +13,10 @@ namespace TeslaCarConfigurator.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private string callingCode;
+        private CallingCode callingCode;
         private string number;
 
-        public string CallingCode
+        public CallingCode CallingCode
         {
             get { return callingCode; }
             set
@@ -35,7 +36,7 @@ namespace TeslaCarConfigurator.Data
             }
         }
 
-        public bool IsCountrySelected => CallingCode?.Length > 0;
+        public bool IsCountrySelected => CallingCode != null;
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {

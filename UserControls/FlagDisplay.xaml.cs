@@ -19,14 +19,14 @@ namespace TeslaCarConfigurator.UserControls
 
     public partial class FlagDisplay : UserControl
     {
-        public CountryInfo Country
+        public IFlag Flag
         {
-            get { return (CountryInfo)GetValue(CountryProperty); }
-            set { SetValue(CountryProperty, value); }
+            get { return (IFlag)GetValue(FlagProperty); }
+            set { SetValue(FlagProperty, value); }
         }
 
-        public static readonly DependencyProperty CountryProperty =
-            DependencyProperty.Register("Country", typeof(CountryInfo), typeof(FlagDisplay), new PropertyMetadata(null, OnCountryChanged));
+        public static readonly DependencyProperty FlagProperty =
+            DependencyProperty.Register(nameof(Flag), typeof(IFlag), typeof(FlagDisplay), new PropertyMetadata(null, OnCountryChanged));
 
         private static void OnCountryChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -41,13 +41,13 @@ namespace TeslaCarConfigurator.UserControls
         private async void OnCountryChanged()
         {
             svgContainer.SvgSource = null;
-            if (Country?.Flag == null)
+            if (Flag?.Flag == null)
             {
                 return;
             }
             try
             {
-                string svgData = await CountryService.DownloadFlag(Country);
+                string svgData = await CountryService.DownloadFlag(Flag);
                 svgContainer.SvgSource = svgData;
             }
             catch (Exception)
