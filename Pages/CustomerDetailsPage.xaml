@@ -49,6 +49,9 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Grid.Column="0">
                         <Grid>
@@ -58,17 +61,17 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                 <Label Content="Vezetéknév"/>
-                                <TextBox MinWidth="130" Text="{Binding CustomerDetails.Lastname}"/>
+                                <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                 <StackPanel >
                                     <Label Content="Keresztnév"/>
-                                    <TextBox MinWidth="130" Text="{Binding CustomerDetails.Firstname}"/>
+                                    <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Firstname}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,30,0,0">
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -76,19 +79,66 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                 <Label Content="Telefonszám"/>
-                                <inputs:PhoneNumberInput Filter="{Binding Filter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber}">
-                                    
-                                </inputs:PhoneNumberInput>
+                                <inputs:PhoneNumberInput Filter="{Binding Filter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber}"></inputs:PhoneNumberInput>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                 <StackPanel >
                                     <Label Content="Email-cím"/>
-                                    <TextBox MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBox Height="20" MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
-
+                    <StackPanel Grid.Row="2" Grid.Column="0"  Margin="0,20,0,0">
+                        <TextBlock FontSize="16">Szállítási cím</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,5,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*" />
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                <Label Content="Ország"/>
+                                <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                <StackPanel >
+                                    <Label Content="Irányítószám / ZIP"/>
+                                    <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,15,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                <Label Content="Megye / Régió / Tartomány"/>
+                                <TextBox  Height="20" Text="{Binding CustomerDetails.Province}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                <StackPanel >
+                                    <Label Content="Város"/>
+                                    <TextBox  Height="20" Text="{Binding CustomerDetails.City}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Grid.Column="0" Margin="0,15,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label Content="Utca, házszám, szobaszám"/>
+                                <TextBox  Height="20" Text="{Binding CustomerDetails.Address}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
