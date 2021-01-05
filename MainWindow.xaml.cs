@@ -83,7 +83,7 @@ namespace TeslaCarConfigurator
                 Button navButton = (Button)navButtons[i];
                 navButton.IsEnabled = router.HasConfig && i != buttonIndex;
             }
-            btnNextPage.IsEnabled = router.HasConfig && buttonIndex >= navigationButtonContainer.Children.Count - 1;
+            btnNextPage.IsEnabled = router.HasConfig && buttonIndex < navigationButtonContainer.Children.Count - 1;
         }
 
         private int FindNavButtonIndexByPage(PageBase page) {
