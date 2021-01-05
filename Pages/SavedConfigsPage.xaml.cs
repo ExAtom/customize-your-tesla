@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
-namespace TeslaCarConfigurator
+namespace TeslaCarConfigurator.Pages
 {
     public partial class SavedConfigsPage : PageBase
     {

@@ -1,4 +1,4 @@
-﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.SavedConfigsPage"
+﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.SavedConfigsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

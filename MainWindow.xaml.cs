@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
+using TeslaCarConfigurator.Pages;
 
 namespace TeslaCarConfigurator
 {

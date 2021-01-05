@@ -119,17 +119,17 @@
     <Compile Include="Pages\SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PaintingPage.xaml.cs">
+    <Compile Include="Pages\PaintingPage.xaml.cs">
       <DependentUpon>PaintingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SavedConfigsPage.xaml.cs">
+    <Compile Include="Pages\SavedConfigsPage.xaml.cs">
       <DependentUpon>SavedConfigsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\CallingCode.cs" />
     <Compile Include="Services\CountryInfo.cs" />
     <Compile Include="Services\CountryService.cs" />
     <Compile Include="Services\IFlag.cs" />
-    <Compile Include="TransmissionConfiguration.xaml.cs">
+    <Compile Include="Pages\TransmissionConfiguration.xaml.cs">
       <DependentUpon>TransmissionConfiguration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Battery.cs" />
@@ -146,7 +146,7 @@
     <Compile Include="Data\Feature.cs" />
     <Compile Include="Data\SoftwareFeatures.cs" />
     <Compile Include="Data\Transmission.cs" />
-    <Compile Include="LandingPage.xaml.cs">
+    <Compile Include="Pages\LandingPage.xaml.cs">
       <DependentUpon>LandingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -156,10 +156,10 @@
     <Compile Include="Data\Model.cs" />
     <Compile Include="Data\Painting.cs" />
     <Compile Include="Data\WheelConfiguration.cs" />
-    <Compile Include="BatteryConfiguration.xaml.cs">
+    <Compile Include="Pages\BatteryConfiguration.xaml.cs">
       <DependentUpon>BatteryConfiguration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelConfiguration.xaml.cs">
+    <Compile Include="Pages\ModelConfiguration.xaml.cs">
       <DependentUpon>ModelConfiguration.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Accordion\Accordion.xaml.cs">
@@ -228,7 +228,7 @@
     <Compile Include="UserControls\Summary\ModelSummaryContent.xaml.cs">
       <DependentUpon>ModelSummaryContent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WheelConfiguration.xaml.cs">
+    <Compile Include="Pages\WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\CustomerDetailsPage.xaml">
@@ -243,15 +243,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PaintingPage.xaml">
+    <Page Include="Pages\PaintingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SavedConfigsPage.xaml">
+    <Page Include="Pages\SavedConfigsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TransmissionConfiguration.xaml">
+    <Page Include="Pages\TransmissionConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -263,7 +263,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="LandingPage.xaml">
+    <Page Include="Pages\LandingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -271,11 +271,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BatteryConfiguration.xaml">
+    <Page Include="Pages\BatteryConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ModelConfiguration.xaml">
+    <Page Include="Pages\ModelConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -363,7 +363,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WheelConfiguration.xaml">
+    <Page Include="Pages\WheelConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

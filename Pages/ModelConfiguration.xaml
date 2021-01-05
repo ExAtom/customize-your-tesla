@@ -1,4 +1,4 @@
-﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.ModelConfiguration"
+﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.ModelConfiguration"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -37,10 +37,10 @@
                     </TextBlock.Background><Run Text="Modell "/><Run Text="t"/><Run Text="ípus "/><Run Text="kiválasztása"/></TextBlock>
                 <WrapPanel>
                     <StackPanel Margin="30,10,0,0">
-                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Image Height="405" Width="238" MaxWidth="400" Source="../Assets/ModelsBackground.png" Stretch="Fill"/>
                         <Canvas>
                             <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="3"/></TextBlock>
-                            <Image Source="Assets/Model1.png" Canvas.Left="39" Canvas.Top="-337" Height="90" Width="166"  Stretch="Fill"/>
+                            <Image Source="../Assets/Model1.png" Canvas.Left="39" Canvas.Top="-337" Height="90" Width="166"  Stretch="Fill"/>
                             <TextBlock x:Name="tbModel1" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel1" GroupName="models" Checked="rbModelType_Checked"/>
@@ -49,10 +49,10 @@
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
-                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Image Height="405" Width="238" MaxWidth="400" Source="../Assets/ModelsBackground.png" Stretch="Fill"/>
                         <Canvas>
                             <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="Y"/></TextBlock>
-                            <Image Source="Assets/Model2.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <Image Source="../Assets/Model2.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
                             <TextBlock x:Name="tbModel2" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel2" GroupName="models" Checked="rbModelType_Checked"/>
@@ -61,10 +61,10 @@
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
-                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Image Height="405" Width="238" MaxWidth="400" Source="../Assets/ModelsBackground.png" Stretch="Fill"/>
                         <Canvas>
                             <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="X"/></TextBlock>
-                            <Image Source="Assets/Model3.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <Image Source="../Assets/Model3.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
                             <TextBlock x:Name="tbModel3" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel3" GroupName="models" Checked="rbModelType_Checked"/>
@@ -73,10 +73,10 @@
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
-                        <Image Height="405" Width="238" MaxWidth="400" Source="Assets/ModelsBackground.png" Stretch="Fill"/>
+                        <Image Height="405" Width="238" MaxWidth="400" Source="../Assets/ModelsBackground.png" Stretch="Fill"/>
                         <Canvas>
                             <TextBlock TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-391" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"><Run Text="Tesla Model "/><Run Text="S"/></TextBlock>
-                            <Image Source="Assets/Model4.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
+                            <Image Source="../Assets/Model4.png" Canvas.Left="30" Canvas.Top="-338" Width="182" Height="92" Stretch="Fill"/>
                             <TextBlock x:Name="tbModel4" TextWrapping="Wrap" TextAlignment="Left" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-216" Height="166" Width="168" Foreground="White" FontSize="15"></TextBlock>
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel4" GroupName="models" Checked="rbModelType_Checked"/>
