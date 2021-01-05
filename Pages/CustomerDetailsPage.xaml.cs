@@ -34,7 +34,9 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
 
-            DataContext = Config.CustomerDetails;
+            CustomerDetailsViewModel vm = new CustomerDetailsViewModel(Config.CustomerDetails);
+            DataContext = vm;
+            vm.Init();
         }
 
         

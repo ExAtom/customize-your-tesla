@@ -48,7 +48,7 @@ namespace TeslaCarConfigurator.UserControls
             try
             {
                 string svgData = await CountryService.DownloadFlag(Flag);
-                svgContainer.SvgSource = svgData;
+                Dispatcher.Invoke(() => svgContainer.SvgSource = svgData);
             }
             catch (Exception)
             {

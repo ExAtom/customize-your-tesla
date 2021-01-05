@@ -15,12 +15,15 @@ namespace TeslaCarConfigurator.Services
 
         private static HttpClient httpClient = new HttpClient();
 
-        public static async Task<CountryInfo[]> FetchCountryInfos()
+        public static List<CountryInfo> CachedCountryInfos;
+
+        public static async Task<List<CountryInfo>> FetchCountryInfos()
         {
             var response = await httpClient.GetAsync(apiUrl);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
-            CountryInfo[] countryInfos = JsonSerializer.Deserialize<CountryInfo[]>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            List<CountryInfo> countryInfos = JsonSerializer.Deserialize<List<CountryInfo>>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            CachedCountryInfos = countryInfos;
             return countryInfos;
         }
 

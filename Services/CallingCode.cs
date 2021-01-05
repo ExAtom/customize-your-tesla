@@ -7,7 +7,7 @@ using TeslaCarConfigurator.UserControls.Inputs;
 
 namespace TeslaCarConfigurator.Services
 {
-    public class CallingCode : IDropdownItem,IFlag
+    public class CallingCode : IDropdownItem, IFlag
     {
         public string Prefix { get; set; }
 
@@ -21,7 +21,7 @@ namespace TeslaCarConfigurator.Services
 
         public CallingCode(string prefix, string flag, string nativeName, string alpha3Code)
         {
-            Prefix = prefix;
+            Prefix = "+" + prefix;
             Flag = flag;
             NativeName = nativeName;
             Alpha3Code = alpha3Code;
@@ -29,6 +29,10 @@ namespace TeslaCarConfigurator.Services
 
         public static List<CallingCode> FromCountryInfos(IEnumerable<CountryInfo> countryInfos)
         {
+            if (countryInfos == null)
+            {
+                return new List<CallingCode>();
+            }
             return countryInfos.Aggregate(new List<CallingCode>(), (callingCodes, countryInfo) =>
             {
                 callingCodes.AddRange(countryInfo.CallingCodes.Select(code => new CallingCode(code, countryInfo.Flag, countryInfo.NativeName, countryInfo.Alpha3Code)));

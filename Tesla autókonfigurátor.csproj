@@ -112,6 +112,7 @@
     <Compile Include="Pages\CustomerDetailsPage.xaml.cs">
       <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CustomerDetailsViewModel.cs" />
     <Compile Include="Pages\TestPage.xaml.cs">
       <DependentUpon>TestPage.xaml</DependentUpon>
     </Compile>
