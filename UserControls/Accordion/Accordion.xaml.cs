@@ -13,17 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TeslaCarConfigurator.UserControls.Dropdown
+namespace TeslaCarConfigurator.UserControls.Accordion
 {
     
-    public partial class Dropdown : UserControl
+    public partial class Accordion : UserControl
     {
-        public Dropdown()
+        public Accordion()
         {
             InitializeComponent();
         }
 
-        public void AddDropdownItem(DropdownItem item)
+        public void AddAccordionItem(AccordionItem item)
         {
             container.Children.Add(item.Header);
             container.Children.Add(item.Content);

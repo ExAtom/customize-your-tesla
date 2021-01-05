@@ -14,9 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
-using TeslaCarConfigurator.UserControls.Dropdown;
 using TeslaCarConfigurator.UserControls.Summary;
 using System.Globalization;
+using TeslaCarConfigurator.UserControls.Accordion;
 
 namespace TeslaCarConfigurator.Pages
 {
@@ -72,29 +72,29 @@ namespace TeslaCarConfigurator.Pages
             Interior interior = Config.Interior;
             SoftwareFeatures softwareFeatures = Config.SoftwareFeatures;
 
-            DropdownItem modelItem = new DropdownItem(new ModelSummaryContent(model), new ModelSummaryHeader(model));
-            summaryDropdown.AddDropdownItem(modelItem);
+            AccordionItem modelItem = new AccordionItem(new ModelSummaryContent(model), new ModelSummaryHeader(model));
+            summaryAccordion .AddAccordionItem(modelItem);
 
-            DropdownItem batteryItem = new DropdownItem(new BatterySummaryContent(battery), new BatterySummaryHeader(battery));
-            summaryDropdown.AddDropdownItem(batteryItem);
+            AccordionItem batteryItem = new AccordionItem(new BatterySummaryContent(battery), new BatterySummaryHeader(battery));
+            summaryAccordion .AddAccordionItem(batteryItem);
 
-            DropdownItem transmissionItem = new DropdownItem(new TransmissionSummaryContent(transmission), new TransmissionSummaryHeader(transmission));
-            summaryDropdown.AddDropdownItem(transmissionItem);
+            AccordionItem transmissionItem = new AccordionItem(new TransmissionSummaryContent(transmission), new TransmissionSummaryHeader(transmission));
+            summaryAccordion .AddAccordionItem(transmissionItem);
 
-            DropdownItem paintingItem = new DropdownItem(new PaintingSummaryContent(painting), new PaintingSummaryHeader(painting));
-            summaryDropdown.AddDropdownItem(paintingItem);
+            AccordionItem paintingItem = new AccordionItem(new PaintingSummaryContent(painting), new PaintingSummaryHeader(painting));
+            summaryAccordion .AddAccordionItem(paintingItem);
 
-            DropdownItem wheelItem = new DropdownItem(new WheelSummaryContent(wheel), new WheelSummaryHeader(wheel));
-            summaryDropdown.AddDropdownItem(wheelItem);
+            AccordionItem wheelItem = new AccordionItem(new WheelSummaryContent(wheel), new WheelSummaryHeader(wheel));
+            summaryAccordion .AddAccordionItem(wheelItem);
 
-            DropdownItem exteriorItem = new DropdownItem(new ExteriorSummaryContent(exterior), new ExteriorSummaryHeader(exterior));
-            summaryDropdown.AddDropdownItem(exteriorItem);
+            AccordionItem exteriorItem = new AccordionItem(new ExteriorSummaryContent(exterior), new ExteriorSummaryHeader(exterior));
+            summaryAccordion .AddAccordionItem(exteriorItem);
 
-            DropdownItem interiorItem = new DropdownItem(new InteriorSummaryContent(interior), new InteriorSummaryHeader(interior));
-            summaryDropdown.AddDropdownItem(interiorItem);
+            AccordionItem interiorItem = new AccordionItem(new InteriorSummaryContent(interior), new InteriorSummaryHeader(interior));
+            summaryAccordion .AddAccordionItem(interiorItem);
 
-            DropdownItem softwareFeatureItem = new DropdownItem(new SoftwareFeatureSummaryContent(softwareFeatures), new SoftwareFeatureSummaryHeader(softwareFeatures));
-            summaryDropdown.AddDropdownItem(softwareFeatureItem);
+            AccordionItem softwareFeatureItem = new AccordionItem(new SoftwareFeatureSummaryContent(softwareFeatures), new SoftwareFeatureSummaryHeader(softwareFeatures));
+            summaryAccordion .AddAccordionItem(softwareFeatureItem);
         }
 
         private void btnSaveConfig_Click(object sender, RoutedEventArgs e)

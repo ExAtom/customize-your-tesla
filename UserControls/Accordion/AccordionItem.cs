@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace TeslaCarConfigurator.UserControls.Dropdown
-{
-    public class DropdownItem
+namespace TeslaCarConfigurator.UserControls.Accordion { 
+
+    public class AccordionItem
     {
         public UserControl Content { get; private set; }
 
-        public DropdownHeader Header { get; private set; }
+        public AccordionHeader Header { get; private set; }
 
-        public DropdownItem(UserControl content, DropdownHeader header)
+        public AccordionItem(UserControl content, AccordionHeader header)
         {
             Content = content;
             Header = header;

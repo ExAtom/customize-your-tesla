@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:dropdown="clr-namespace:TeslaCarConfigurator.UserControls.Dropdown"
+      xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:accordion="clr-namespace:TeslaCarConfigurator.UserControls.Accordion"
                    mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" >
@@ -36,7 +36,7 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <dropdown:Dropdown x:Name="summaryDropdown"></dropdown:Dropdown>
+                    <accordion:Accordion x:Name="summaryAccordion"></accordion:Accordion>
                     <TextBlock Name="tbTotalPrice"></TextBlock>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">

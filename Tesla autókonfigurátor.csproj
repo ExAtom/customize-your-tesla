@@ -162,11 +162,11 @@
     <Compile Include="ModelConfiguration.xaml.cs">
       <DependentUpon>ModelConfiguration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Dropdown\Dropdown.xaml.cs">
-      <DependentUpon>Dropdown.xaml</DependentUpon>
+    <Compile Include="UserControls\Accordion\Accordion.xaml.cs">
+      <DependentUpon>Accordion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Dropdown\DropdownHeader.cs" />
-    <Compile Include="UserControls\Dropdown\DropdownItem.cs" />
+    <Compile Include="UserControls\Accordion\AccordionHeader.cs" />
+    <Compile Include="UserControls\Accordion\AccordionItem.cs" />
     <Compile Include="UserControls\FlagDisplay.xaml.cs">
       <DependentUpon>FlagDisplay.xaml</DependentUpon>
     </Compile>
@@ -279,7 +279,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Dropdown\Dropdown.xaml">
+    <Page Include="UserControls\Accordion\Accordion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

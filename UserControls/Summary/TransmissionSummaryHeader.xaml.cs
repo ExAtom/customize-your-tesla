@@ -14,11 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
-using TeslaCarConfigurator.UserControls.Dropdown;
+using TeslaCarConfigurator.UserControls.Accordion;
 
 namespace TeslaCarConfigurator.UserControls.Summary
 {
-    public partial class TransmissionSummaryHeader : DropdownHeader
+    public partial class TransmissionSummaryHeader : AccordionHeader
     {
         private Transmission transmission;
 

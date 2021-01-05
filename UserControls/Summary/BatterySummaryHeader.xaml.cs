@@ -14,12 +14,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
-using TeslaCarConfigurator.UserControls.Dropdown;
+using TeslaCarConfigurator.UserControls.Accordion;
 
 namespace TeslaCarConfigurator.UserControls.Summary
 {
     
-    public partial class BatterySummaryHeader : DropdownHeader
+    public partial class BatterySummaryHeader : AccordionHeader
     {
         private Battery battery;
 
