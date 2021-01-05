@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TeslaCarConfigurator.Services;
 
 namespace TeslaCarConfigurator.Data
 {
@@ -14,7 +15,7 @@ namespace TeslaCarConfigurator.Data
         private string lastname;
         private string emailAddress;
         private PhoneNumber phoneNumber;
-        private string country;
+        private CountryInfo country;
         private string zipCode;
         private string province;
         private string city;
@@ -59,7 +60,7 @@ namespace TeslaCarConfigurator.Data
             }
         }
 
-        public string Country
+        public CountryInfo Country
         {
             get => country; set
             {
