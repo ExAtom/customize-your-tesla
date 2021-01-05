@@ -1,0 +1,218 @@
+﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:dropdown="clr-namespace:TeslaCarConfigurator.UserControls.Dropdown" xmlns:inputs="clr-namespace:TeslaCarConfigurator.UserControls.Inputs"
+                   xmlns:Data="clr-namespace:TeslaCarConfigurator.Data" xmlns:pages="clr-namespace:TeslaCarConfigurator.Pages" x:Class="TeslaCarConfigurator.Pages.CustomerDetailsPage"
+                   mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" >
+    <helpers:PageBase.DataContext>
+        <pages:CustomerDetailsViewModel/>
+    </helpers:PageBase.DataContext>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel x:Name="Menu"  Margin="0,10" DockPanel.Dock="Left">
+                <TextBlock TextWrapping="Wrap" Text="Vásárló adatai" TextAlignment="Center" Padding="90,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0" HorizontalAlignment="Left">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-21.161"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-11.613"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FF435467" Offset="0"/>
+                            <GradientStop Color="#FF1B3755" Offset="1"/>
+                            <GradientStop Color="#FF2F455E" Offset="0.284"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <Grid Margin="20,20,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid  Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                    <Label Content="Vezetéknév"/>
+                                    <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname, Mode=OneWay}"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <StackPanel >
+                                        <Label Content="Keresztnév"/>
+                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Firstname, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                    <Label Content="Telefonszám"/>
+                                    <inputs:PhoneNumberInput Filter="{Binding PhoneFilter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber, Mode=OneWay}"></inputs:PhoneNumberInput>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <StackPanel >
+                                        <Label Content="Email-cím"/>
+                                        <TextBox Height="20" MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="0"  Margin="0,20,0,0">
+                            <TextBlock FontSize="16">Szállítási cím</TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,5,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*" />
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                    <Label Content="Ország"/>
+                                    <inputs:CountryInput CustomerDetails="{Binding CustomerDetails, Mode=OneWay}" Filter="{Binding CountryFilter, Mode=OneWay}" CountryInfos="{Binding CountryInfos, Mode=OneWay}" ></inputs:CountryInput>
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <StackPanel >
+                                        <Label Content="Irányítószám / ZIP"/>
+                                        <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,15,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                    <Label Content="Megye / Régió / Tartomány"/>
+                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Province, Mode=OneWay}"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <StackPanel >
+                                        <Label Content="Város"/>
+                                        <TextBox  Height="20" Text="{Binding CustomerDetails.City, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="5" Grid.Column="0" Margin="0,15,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <Label Content="Utca, házszám, szobaszám"/>
+                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Address, Mode=OneWay}"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Grid.Column="1"  Margin="15,0,0,0">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0"  >
+                                <TextBlock FontSize="16">Bankkártyaadatok</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Margin="0,15,0,0"  >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                        <Label Content="Bankkártyaszám"/>
+                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.CreditCard.CardNumber, Mode=OneWay}"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                        <StackPanel >
+                                            <Label Content="Lejárat"/>
+                                            <TextBox  Height="20" Text="{Binding CustomerDetails.CreditCard.ExpirationDate, Mode=OneWay}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Margin="0,15,0,0"  >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200*"/>
+                                        <ColumnDefinition Width="200*"/>
+                                        <ColumnDefinition Width="180*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                        <Label Content="Vezetéknév"/>
+                                        <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Lastname, Mode=OneWay}"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1">
+                                        <StackPanel >
+                                            <Label Content="Keresztnév"/>
+                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Firstname, Mode=OneWay}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2" Margin="5,0,0,0">
+                                        <StackPanel >
+                                            <Label Content="Biztonsági kód"/>
+                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.SecurityCode, Mode=OneWay}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Margin="50,40,50,0"  >
+                                <WrapPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="24" VerticalAlignment="Center">Fizetendő:</TextBlock>
+                                    <TextBlock FontSize="24" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+                                </WrapPanel>
+                                <Button Margin="0,20,0,0" MaxWidth="100" MinHeight="30" Click="BuyCar">Vásárlás</Button>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</helpers:PageBase>

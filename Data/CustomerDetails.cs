@@ -1,31 +1,130 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TeslaCarConfigurator.Services;
 
 namespace TeslaCarConfigurator.Data
 {
-    public class CustomerDetails
+    public class CustomerDetails : INotifyPropertyChanged
     {
-        public string Firstname { get; set; }
+        private string firstname;
+        private string lastname;
+        private string emailAddress;
+        private PhoneNumber phoneNumber;
+        private CountryInfo country;
+        private string zipCode;
+        private string province;
+        private string city;
+        private string address;
+        private CreditCardInfo creditCard;
 
-        public string Lastname { get; set; }
+        // keresztnév
+        public string Firstname
+        {
+            get => firstname; set
+            {
+                firstname = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string EmailAddress { get; set; }
+        // vezetéknév
+        public string Lastname
+        {
+            get => lastname; set
+            {
+                lastname = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string PhoneNumber { get; set; }
+        public string EmailAddress
+        {
+            get => emailAddress; set
+            {
+                emailAddress = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string Country { get; set; }
+        public PhoneNumber PhoneNumber
+        {
+            get => phoneNumber; set
+            {
+                phoneNumber = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string ZIPCode { get; set; }
+        public CountryInfo Country
+        {
+            get => country; set
+            {
+                country = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string Province { get; set; }
+        public string ZipCode
+        {
+            get => zipCode; set
+            {
+                zipCode = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string City { get; set; }
+        public string Province
+        {
+            get => province; set
+            {
+                province = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string Address { get; set; }
+        public string City
+        {
+            get => city; set
+            {
+                city = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public CreditCardInfo CreditCard { get; set; }
+        public string Address
+        {
+            get => address; set
+            {
+                address = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public CreditCardInfo CreditCard
+        {
+            get => creditCard; set
+            {
+                creditCard = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public CustomerDetails()
+        {
+            CreditCard = new CreditCardInfo();
+            PhoneNumber = new PhoneNumber();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }
