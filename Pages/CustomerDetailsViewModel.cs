@@ -8,6 +8,7 @@ using TeslaCarConfigurator.Data;
 using System.Runtime.CompilerServices;
 using TeslaCarConfigurator.Services;
 using TeslaCarConfigurator.UserControls.Inputs;
+using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
 {
@@ -23,6 +24,19 @@ namespace TeslaCarConfigurator.Pages
                 OnPropertyChanged();
             }
         }
+
+        private CarConfiguration carConfiguration;
+
+        public CarConfiguration CarConfiguration
+        {
+            get { return carConfiguration; }
+            set
+            {
+                carConfiguration = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private List<CountryInfo> countryInfos;
 
@@ -42,7 +56,11 @@ namespace TeslaCarConfigurator.Pages
         public bool IsLoading
         {
             get { return isLoading; }
-            set { isLoading = value; }
+            set
+            {
+                isLoading = value;
+                OnPropertyChanged();
+            }
         }
 
         public List<CallingCode> CallingCodes => CallingCode.FromCountryInfos(CountryInfos);
@@ -51,11 +69,14 @@ namespace TeslaCarConfigurator.Pages
 
         public DropdownList.FilterDelegate CountryFilter => CountryFilterImpl;
 
+        public string FormattedTotal => (carConfiguration?.TotalPrice ?? 0).ToString("C",Formatting.CurrencyFormat);
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public CustomerDetailsViewModel(CustomerDetails customerDetails)
+        public CustomerDetailsViewModel(CarConfiguration carConfiguration)
         {
-            CustomerDetails = customerDetails;
+            CustomerDetails = carConfiguration.CustomerDetails;
+            CarConfiguration = carConfiguration;
         }
 
         public CustomerDetailsViewModel()
@@ -130,7 +151,7 @@ namespace TeslaCarConfigurator.Pages
 
         private List<IDropdownItem> CountryFilterImpl(string filterText, List<IDropdownItem> items)
         {
-            if (string.IsNullOrEmpty(filterText) || items == null || items.Count == 0 )
+            if (string.IsNullOrEmpty(filterText) || items == null || items.Count == 0)
             {
                 return null;
             }

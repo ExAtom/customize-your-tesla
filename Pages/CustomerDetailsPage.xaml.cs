@@ -34,11 +34,14 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
 
-            CustomerDetailsViewModel vm = new CustomerDetailsViewModel(Config.CustomerDetails);
+            CustomerDetailsViewModel vm = new CustomerDetailsViewModel(Config);
             DataContext = vm;
             vm.Init();
         }
 
-        
+        private void BuyCar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
