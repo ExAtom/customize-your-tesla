@@ -33,6 +33,7 @@ namespace TeslaCarConfigurator.Pages
             {
                 countryInfos = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(CallingCodes));
             }
         }
 
@@ -44,18 +45,11 @@ namespace TeslaCarConfigurator.Pages
             set { isLoading = value; }
         }
 
-        private List<CallingCode> callingCodes;
+        public List<CallingCode> CallingCodes => CallingCode.FromCountryInfos(CountryInfos);
 
-        public List<CallingCode> CallingCodes
-        {
-            get => callingCodes; set
-            {
-                callingCodes = value;
-                OnPropertyChanged();
-            }
-        }
+        public DropdownList.FilterDelegate PhoneFilter => PhoneNumberFilterImpl;
 
-        public DropdownList.FilterDelegate Filter => PhoneNumberFilter;
+        public DropdownList.FilterDelegate CountryFilter => CountryFilterImpl;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -87,7 +81,7 @@ namespace TeslaCarConfigurator.Pages
             {
                 IsLoading = true;
                 CountryInfos = await CountryService.FetchCountryInfos();
-                IsLoading = true;
+                IsLoading = false;
             }
             catch (Exception)
             {
@@ -98,10 +92,6 @@ namespace TeslaCarConfigurator.Pages
         private void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            if (name == nameof(CountryInfos))
-            {
-                CallingCodes = CallingCode.FromCountryInfos(CountryInfos);
-            }
         }
 
         private void OnLoadingFailed()
@@ -109,7 +99,7 @@ namespace TeslaCarConfigurator.Pages
 
         }
 
-        private List<IDropdownItem> PhoneNumberFilter(string filterText, List<IDropdownItem> items)
+        private List<IDropdownItem> PhoneNumberFilterImpl(string filterText, List<IDropdownItem> items)
         {
             if (string.IsNullOrEmpty(filterText) || items == null || items.Count == 0 || filterText == "+")
             {
@@ -117,14 +107,38 @@ namespace TeslaCarConfigurator.Pages
             }
             IEnumerable<CallingCode> callingCodes = items.Select(c => (CallingCode)c);
             IEnumerable<CallingCode> filteredByPrefix = callingCodes.Where(c => c != null && c.Prefix.StartsWith(filterText));
-            IEnumerable<CallingCode> filteredByNativeName = callingCodes.Where(c => c != null && c.NativeName.StartsWith(filterText));
-            IEnumerable<CallingCode> filteredByAlphaCode = callingCodes.Where(c => c != null && c.Alpha3Code.StartsWith(filterText));
+            IEnumerable<CallingCode> filteredByNativeName = callingCodes.Where(c => c != null && c.NativeName.ToLower().StartsWith(filterText.ToLower()));
+            IEnumerable<CallingCode> filteredByAlphaCode = callingCodes.Where(c => c != null && c.Alpha3Code.ToLower().StartsWith(filterText.ToLower()));
 
             HashSet<CallingCode> filtered = new HashSet<CallingCode>();
             foreach (var item in filteredByPrefix)
             {
                 filtered.Add(item);
             }
+            foreach (var item in filteredByNativeName)
+            {
+                filtered.Add(item);
+            }
+            foreach (var item in filteredByAlphaCode)
+            {
+                filtered.Add(item);
+            }
+
+            List<IDropdownItem> list = filtered.Select(f => (IDropdownItem)f).ToList();
+            return list;
+        }
+
+        private List<IDropdownItem> CountryFilterImpl(string filterText, List<IDropdownItem> items)
+        {
+            if (string.IsNullOrEmpty(filterText) || items == null || items.Count == 0 )
+            {
+                return null;
+            }
+            IEnumerable<CountryInfo> countries = items.Select(c => (CountryInfo)c);
+            IEnumerable<CountryInfo> filteredByNativeName = countries.Where(c => c != null && c.NativeName.ToLower().StartsWith(filterText.ToLower()));
+            IEnumerable<CountryInfo> filteredByAlphaCode = countries.Where(c => c != null && c.Alpha3Code.ToLower().StartsWith(filterText.ToLower()));
+
+            HashSet<CountryInfo> filtered = new HashSet<CountryInfo>();
             foreach (var item in filteredByNativeName)
             {
                 filtered.Add(item);

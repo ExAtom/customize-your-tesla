@@ -174,6 +174,9 @@
       <DependentUpon>DropdownList.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Inputs\IDropdownItem.cs" />
+    <Compile Include="UserControls\Inputs\CountryInput.xaml.cs">
+      <DependentUpon>CountryInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Inputs\PhoneNumberInput.xaml.cs">
       <DependentUpon>PhoneNumberInput.xaml</DependentUpon>
     </Compile>
@@ -287,6 +290,10 @@
     <Page Include="UserControls\Inputs\DropdownList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Inputs\CountryInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Inputs\PhoneNumberInput.xaml">
       <SubType>Designer</SubType>

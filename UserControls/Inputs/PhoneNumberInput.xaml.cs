@@ -103,11 +103,11 @@ namespace TeslaCarConfigurator.UserControls.Inputs
         {
             if (dl != null && e.PropertyName == nameof(PhoneNumber.CallingCode))
             {
-                dl.SelectedItem = PhoneNumber.CallingCode;
+                dl.SelectedItem = PhoneNumber?.CallingCode;
             }
             if (tb != null && e.PropertyName == nameof(PhoneNumber.IsCountrySelected))
             {
-                tb.IsEnabled = PhoneNumber.IsCountrySelected;
+                tb.IsEnabled = PhoneNumber?.IsCountrySelected == true;
             }
         }
 

@@ -16,9 +16,9 @@
             <local:DropdownList x:Name="dl" Height="20" SelectedItemChanged="dl_SelectedItemChanged">
                 <local:DropdownList.ListItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <usercontrols:FlagDisplay Width="20" Height="20" Flag="{Binding Mode=OneWay}"/>
-                            <TextBlock Text="{Binding Prefix, Mode=OneWay}"></TextBlock>
+                            <TextBlock Text="{Binding DropdownText, Mode=OneWay}"></TextBlock>
 
                         </StackPanel>
                     </DataTemplate>

@@ -79,7 +79,7 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                 <Label Content="Telefonszám"/>
-                                <inputs:PhoneNumberInput Filter="{Binding Filter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber}"></inputs:PhoneNumberInput>
+                                <inputs:PhoneNumberInput Filter="{Binding PhoneFilter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber}"></inputs:PhoneNumberInput>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                 <StackPanel >
@@ -100,7 +100,8 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                 <Label Content="Ország"/>
-                                <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname}"/>
+                                <inputs:CountryInput CustomerDetails="{Binding CustomerDetails, Mode=OneWay}" Filter="{Binding CountryFilter, Mode=OneWay}" CountryInfos="{Binding CountryInfos}" ></inputs:CountryInput>
+
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                 <StackPanel >
