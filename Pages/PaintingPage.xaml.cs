@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Helpers;
 
-namespace TeslaCarConfigurator
+namespace TeslaCarConfigurator.Pages
 {
     /// <summary>
     /// Interaction logic for PaintingPage.xaml

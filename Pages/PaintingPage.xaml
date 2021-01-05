@@ -1,4 +1,4 @@
-﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.PaintingPage"
+﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.PaintingPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -40,7 +40,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
                         <RadioButton x:Name="rbColor1" GroupName="wheels" Checked="rbColorSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <StackPanel>
                                     <TextBlock Text="Kristályfehér" Width="70"/>
                                 </StackPanel>
@@ -50,7 +50,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
                         <RadioButton x:Name="rbColor2" GroupName="wheels" Checked="rbColorSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Mágjafekete" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
@@ -58,7 +58,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
                         <RadioButton x:Name="rbColor3" GroupName="wheels" Checked="rbColorSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Szürke Metál" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
@@ -66,7 +66,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
                         <RadioButton x:Name="rbColor4" GroupName="wheels" Checked="rbColorSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Kék Metál" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
@@ -74,14 +74,14 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
                         <RadioButton x:Name="rbColor5" GroupName="wheels" Checked="rbColorSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Color5.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Color5.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Vörös Metál" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="Assets/InfosBackground.png" Stretch="Fill"/>
+                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="../Assets/InfosBackground.png" Stretch="Fill"/>
                     <Canvas>
                         <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
                         <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>

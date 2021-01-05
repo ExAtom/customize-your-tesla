@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:TeslaCarConfigurator"
              StartupUri="MainWindow.xaml" >
     <Application.Resources>
-        <Style x:Key="DropdownHeaderStyle" TargetType="Button">
+        <Style x:Key="AccordionHeaderStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

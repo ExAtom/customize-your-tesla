@@ -1,4 +1,4 @@
-﻿<helpers:PageBase xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.WheelConfiguration"
+﻿<helpers:PageBase xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.WheelConfiguration"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -39,7 +39,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
                         <RadioButton x:Name="rbWheel1" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Wheel1.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Wheel1.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <StackPanel>
                                     <TextBlock Text="Aero FX503" Width="70"/>
                                 </StackPanel>
@@ -49,7 +49,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
                         <RadioButton x:Name="rbWheel2" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Wheel2.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Wheel2.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Sport SP002" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
@@ -57,7 +57,7 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
                         <RadioButton x:Name="rbWheel3" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Wheel3.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Wheel3.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Turbine T54" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
@@ -65,14 +65,14 @@
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
                         <RadioButton x:Name="rbWheel4" GroupName="wheels" Checked="rbWheelSet_Checked">
                             <WrapPanel>
-                                <Image Source="Assets/Wheel4.png" Width="16" Height="16" Margin="0,0,5,0" />
+                                <Image Source="../Assets/Wheel4.png" Width="16" Height="16" Margin="0,0,5,0" />
                                 <TextBlock Text="Silver SU478" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="Assets/InfosBackground.png" Stretch="Fill"/>
+                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="../Assets/InfosBackground.png" Stretch="Fill"/>
                     <Canvas>
                         <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
                         <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
