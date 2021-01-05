@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
-using TeslaCarConfigurator.UserControls.Dropdown;
 using TeslaCarConfigurator.UserControls.Summary;
 using System.Globalization;
 
