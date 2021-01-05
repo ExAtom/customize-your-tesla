@@ -16,21 +16,20 @@
                 </Rectangle.Fill>
             </Rectangle>
             <TextBlock TextWrapping="Wrap" Margin="0,5" TextAlignment="Justify" HorizontalAlignment="Center" FontSize="15"><Run Text="Ennek a programnak a segítségével mindenki saját igénye szerint tudja személyre szabni kedvenc Tesla autóját."/><LineBreak/><Run Text="A rendszer használata egyszerű, (8) ablakon keresztül végigvezet bennünket minden apró részleten, hogy"/><LineBreak/><Run Text="a jármű még inkább passzoljon mindenki "/><Run Text="elképzeléséhez"/><Run Text="."/></TextBlock>
-            <Grid Margin="0,30,0,15">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
+            <Grid Height="30" Margin="0,15">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Kilépés" Margin="30,0" Width="125" Height="30" FontSize="15" HorizontalAlignment="Left" Click="btnClose_Click" >
-                    
-                </Button>
-                <Button  Grid.Column="1" Content="Mentett konfigurációk betöltése" Width="250" Height="30" FontSize="15" HorizontalAlignment="Center" Click="btnOpenSaved_Click"/>
-                <Button Grid.Column="2" Content="Vágjunk bele!" Margin="30,0" Width="125" Height="30" FontSize="15" HorizontalAlignment="Right" Click="btnStart_Click"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Kilépés" Grid.Column="0" Grid.Row="0" Margin="20,0" Click="btnClose_Click"/>
+                <Button Content="Mentett konfigurációk betöltése" Grid.Column="1" Grid.Row="0" Margin="40,0" Click="btnOpenSaved_Click"/>
+                <Button Content="Vágjunk bele!" Grid.Column="2" Grid.Row="0" Margin="20,0" Click="btnStart_Click"/>
+
             </Grid>
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"><Run Text="A konfigurátort készítette: Csepi Szilveszter, Kékesi Ádám és Menyhárt Attila a JÁGISZ 11./A osztályos tanulói 2020.12-ban"/><LineBreak/><Run Text="Minden jog fenntartva!"/></TextBlock>
         </StackPanel>
