@@ -51,7 +51,7 @@ namespace TeslaCarConfigurator.Pages
             }
         }
 
-        private bool isLoading;
+        private bool isLoading = true;
 
         public bool IsLoading
         {
@@ -93,6 +93,7 @@ namespace TeslaCarConfigurator.Pages
             else
             {
                 CountryInfos = CountryService.CachedCountryInfos;
+                IsLoading = false;
             }
         }
 
@@ -102,12 +103,12 @@ namespace TeslaCarConfigurator.Pages
             {
                 IsLoading = true;
                 CountryInfos = await CountryService.FetchCountryInfos();
-                IsLoading = false;
             }
             catch (Exception)
             {
                 OnLoadingFailed();
             }
+            IsLoading = false;
         }
 
         private void OnPropertyChanged([CallerMemberName] string name = null)
