@@ -83,7 +83,7 @@ namespace TeslaCarConfigurator.Pages
             if (currentButton.Name == "iMaterial2")
             {
                 tbInfos.Text = "Az öntött fa nem igazi fa, külseje üveges, de ez adja át a legtermészetesebb hatást. Mintha csak visszautaztunk volna az időben, de az autó megtartja prémium érzetét.";
-                tbPrice.Text = "Ára: 5600.000 Ft";
+                tbPrice.Text = "Ára: 560.000 Ft";
             }
             if (currentButton.Name == "iMaterial3")
             {
