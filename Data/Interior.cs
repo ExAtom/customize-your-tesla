@@ -10,7 +10,8 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 3;
 
-        public static List<string> AvailableMaterials { get; private set; } = new List<string>() { "Bőr" };
+        public static List<string> AvailableMaterials { get; private set; } = new List<string>() { "Bio Műanyag", "Öntött Fa", "Jegelt Üveg", "Krokodilbőr" };
+        public static List<int> MaterialPrices { get; private set; } = new List<int>() { 0, 560000, 665000, 1029000 };
 
         public static List<string> AvailableColors { get; private set; } = new List<string>() { "Fekete" };
 
@@ -101,7 +102,7 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            return 0;
+            return MaterialPrices[MaterialIndex];
         }
     }
 }
