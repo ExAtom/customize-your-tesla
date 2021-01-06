@@ -77,23 +77,23 @@ namespace TeslaCarConfigurator.Pages
             RadioButton currentButton = (RadioButton)sender;
             if (currentButton.Name == "iMaterial1")
             {
-                tbInfos.Text = "Az Aero FX530-as típusú kereket legfőképpen városi közlekedésre ajánljuk. Kiváló tapadást bitosít az aszfalhot, így a hirtelen fékezések sem okozhatnak problémát.";
-                tbPrice.Text = "Ára: 25.000 Ft";
+                tbInfos.Text = "A bio műanyag egy erősebb és környezetkímélőbb alternatíva. A textúrájának kidolgozása az aszfaltra hasonlít, ezzel egyé válhat az úttal, amin éppen halad.";
+                tbPrice.Text = "Alap anyag";
             }
             if (currentButton.Name == "iMaterial2")
             {
-                tbInfos.Text = "A Sport SP002-őt nevéhez híven olyanoknak ajánjuk, akik szeretik a sebességhatárt túllépni, akár versenyzés közben. A 20\"-as kerékátmérő biztosítja a 450 km/h-ás sebesség elérését.";
-                tbPrice.Text = "Ára: 82.000 Ft";
+                tbInfos.Text = "Az öntött fa nem igazi fa, külseje üveges, de ez adja át a legtermészetesebb hatást. Mintha csak visszautaztunk volna az időben, de az autó megtartja prémium érzetét.";
+                tbPrice.Text = "Ára: 5600.000 Ft";
             }
             if (currentButton.Name == "iMaterial3")
             {
-                tbInfos.Text = "A Turbine T54-es tipikusan az a kerék, melyet terepviszonyokra terveztek. Az 50 cm-es kerékvastagság és a speciális rovátkázsának köszönhetően homokban, hóban, mocsárban sincs akadály.";
-                tbPrice.Text = "Ára: 56.000 Ft";
+                tbInfos.Text = "A jegelt üveg egy speciális felületcsiszolással készül, ezzel erősítve magát az anyagot, valamint az ujjlenyomatoktól is védi. A végeredmény egy hó textúrájára hasonlít. A legjobb választás téli kocsikázásra.";
+                tbPrice.Text = "Ára: 665.000 Ft";
             }
             if (currentButton.Name == "iMaterial4")
             {
-                tbInfos.Text = "A Silver SU478-as típus különlegessége speciális kialakítása révén, hogy téli és nyári abroncsként egyaránt funkciónál, így nem kell azt cserélgetni. Leginkább városi és országúti terepre ajánljuk.";
-                tbPrice.Text = "Ára: 69.000 Ft";
+                tbInfos.Text = "A krokodilbőr a legritkább fajtájú, Gangeszi aprókrokodil bőre. Elképesztően jóminőségű, tapintása eszméletlen és a szaga új autójéra hasonlít.";
+                tbPrice.Text = "Ára: 1.029.000 Ft";
             }
 
             if (Config == null)
