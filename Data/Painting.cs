@@ -13,7 +13,7 @@ namespace TeslaCarConfigurator.Data
 
         public static List<string> AvailableColors { get; private set; } = new List<string>() { "Kristályfehér", "Máglyafekete", "Szürke metál", "Kék metál", "Vörös metál" };
 
-        public static List<int> Prices { get; private set; } = new List<int>() { 20000, 29000, 38000, 40500};
+        public static List<int> Prices { get; private set; } = new List<int>() {0, 20000, 29000, 38000, 40500};
 
         public string Color => AvailableColors[ColorIndex];
 
