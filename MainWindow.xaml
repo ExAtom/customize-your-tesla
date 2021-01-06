@@ -6,37 +6,44 @@
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
         Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="545" MaxWidth="1000" MaxHeight="600" MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" >
-    <DockPanel LastChildFill="True">
-        <Grid Name="navBar" DockPanel.Dock="Bottom" Margin="20,20,20,10" Visibility="Hidden">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="6*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <DockPanel LastChildFill="True">
 
-            <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
-                <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
-                    <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click">Kezdőlap</Button>
-                    <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
-                    <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
-                    <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>
-                    <Button Width="75" Margin="10,0" Name="btnPaintingPage" Click="btnSwitchPage_Click">Festés</Button>
-                    <Button Width="75" Margin="10,0" Name="btnWheelConfiguration" Click="btnSwitchPage_Click">Kerekek</Button>
-                    <Button Width="75" Margin="10,0" Name="btnExteriorPage" Click="btnSwitchPage_Click">Külső</Button>
-                    <Button Width="75" Margin="10,0" Name="btnInteriorPage" Click="btnSwitchPage_Click">Belső</Button>
-                    <Button Width="75" Margin="10,0" Name="btnSoftwarePage" Click="btnSwitchPage_Click">Szoftver</Button>
-                    <Button Width="120" Margin="10,0" Name="btnSummaryPage" Click="btnSwitchPage_Click">Összegzés</Button>
-                    <Button Width="120" Margin="20,0" Name="btnCustomerDetailsPage" Click="btnSwitchPage_Click">Megrendelő adatai</Button>
+            <Grid Name="navBar" DockPanel.Dock="Bottom" Margin="20,20,20,10" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-                </StackPanel>
+                <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
-            </ScrollViewer>
-            <Button Grid.Row="0" Grid.Column="1" Name="btnNextPage" Click="btnNextPage_Click" Margin="10,10,0,10">Következő</Button>
-        </Grid>
+                    <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
+                        <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click">Kezdőlap</Button>
+                        <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
+                        <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
+                        <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>
+                        <Button Width="75" Margin="10,0" Name="btnPaintingPage" Click="btnSwitchPage_Click">Festés</Button>
+                        <Button Width="75" Margin="10,0" Name="btnWheelConfiguration" Click="btnSwitchPage_Click">Kerekek</Button>
+                        <Button Width="75" Margin="10,0" Name="btnExteriorPage" Click="btnSwitchPage_Click">Külső</Button>
+                        <Button Width="75" Margin="10,0" Name="btnInteriorPage" Click="btnSwitchPage_Click">Belső</Button>
+                        <Button Width="75" Margin="10,0" Name="btnSoftwarePage" Click="btnSwitchPage_Click">Szoftver</Button>
+                        <Button Width="120" Margin="10,0" Name="btnSummaryPage" Click="btnSwitchPage_Click">Összegzés</Button>
+                        <Button Width="120" Margin="20,0" Name="btnCustomerDetailsPage" Click="btnSwitchPage_Click">Megrendelő adatai</Button>
 
-        <Frame x:Name="Container" NavigationUIVisibility="Hidden" DockPanel.Dock="Top"  MaxWidth="1000" MaxHeight="500"></Frame>
-    </DockPanel>
+                    </StackPanel>
+
+                </ScrollViewer>
+                <Button Grid.Row="0" Grid.Column="1" Name="btnNextPage" Click="btnNextPage_Click" Margin="10,10,0,10">Következő</Button>
+            </Grid>
+
+            <Frame x:Name="Container" NavigationUIVisibility="Hidden" DockPanel.Dock="Top"  MaxWidth="1000" MaxHeight="500"></Frame>
+        </DockPanel>
+        <StackPanel Name="messageBar"   ></StackPanel>
+        
+    </Grid>
+    
 </Window>

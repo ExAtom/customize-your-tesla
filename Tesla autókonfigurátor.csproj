@@ -112,6 +112,8 @@
     </ApplicationDefinition>
     <Compile Include="Data\PhoneNumber.cs" />
     <Compile Include="Helpers\Formatting.cs" />
+    <Compile Include="Helpers\Message.cs" />
+    <Compile Include="Helpers\MessageBarController.cs" />
     <Compile Include="Pages\CustomerDetailsPage.xaml.cs">
       <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
     </Compile>

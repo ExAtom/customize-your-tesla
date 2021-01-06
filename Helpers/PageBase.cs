@@ -8,11 +8,13 @@ using TeslaCarConfigurator.Data;
 
 namespace TeslaCarConfigurator.Helpers
 {
-    public class PageBase: Page
+    public class PageBase : Page
     {
-        public  RoutingHelper Router { get;  set; }
+        public RoutingHelper Router { get; set; }
 
-        public CarConfiguration Config { get;  set; }
+        public CarConfiguration Config { get; set; }
+
+        public MessageBarController MessageBarController { get; set; }
 
         public virtual void OnAttachedToFrame()
         {
