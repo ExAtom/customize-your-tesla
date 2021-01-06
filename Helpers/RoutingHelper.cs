@@ -20,12 +20,14 @@ namespace TeslaCarConfigurator.Helpers
 
         private Frame container;
         private CarConfiguration carConfiguration;
+        private MessageBarController messageBarController;
 
-        public RoutingHelper(Frame frame)
+
+        public RoutingHelper(Frame frame, MessageBarController messageBarController)
         {
             container = frame;
             container.Navigated += OnFrameNavigation;
-
+            this.messageBarController = messageBarController;
         }
 
         private void OnFrameNavigation(object sender, NavigationEventArgs e)
@@ -37,6 +39,7 @@ namespace TeslaCarConfigurator.Helpers
         {
             page.Router = this;
             page.Config = carConfiguration;
+            page.MessageBarController = messageBarController;
             CurrentPage = page;
             container.Content = page;
             page.OnAttachedToFrame();

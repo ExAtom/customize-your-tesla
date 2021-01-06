@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
         Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="545" MaxWidth="1000" MaxHeight="600" MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" >
-    <DockPanel LastChildFill="True">
-        <Grid Name="navBar" DockPanel.Dock="Bottom" Margin="20,20,20,10">
+
+    <Grid>
+        <DockPanel LastChildFill="True">
+    <Grid Name="navBar" DockPanel.Dock="Bottom" Margin="20,20,20,10">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
@@ -38,5 +40,17 @@
         </Grid>
 
         <Frame x:Name="Container" NavigationUIVisibility="Hidden" DockPanel.Dock="Top"  MaxWidth="1000" MaxHeight="500"></Frame>
-    </DockPanel>
+        
+
+
+
+         
+        </DockPanel>
+        <StackPanel Name="messageBar"   ></StackPanel>
+    </Grid>
+    
+          
+          
+          
+        
 </Window>
