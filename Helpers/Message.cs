@@ -7,6 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Threading;
+using SharpVectors.Converters;
+using System.Windows.Media.Imaging;
 
 namespace TeslaCarConfigurator.Helpers
 {
@@ -16,7 +18,7 @@ namespace TeslaCarConfigurator.Helpers
 
         private int time;
 
-        private Color backgroundColor;
+        private MessageType Type;
 
         public event Action Clicked;
 
@@ -26,40 +28,49 @@ namespace TeslaCarConfigurator.Helpers
 
         private CancellationTokenSource cancellation = new CancellationTokenSource();
 
-        public Message(string message, int time, Color backgroundColor)
+        public Message(string message, int time, MessageType type)
         {
             this.message = message;
             this.time = time;
-            this.backgroundColor = backgroundColor;
+            Type = type;
         }
 
         public UIElement Show()
         {
-            var container = new Button();
-            container.Margin = new Thickness(5, 10, 5, 10);
-            container.Style = (Style)Application.Current.FindResource("EmptyButtonStyle");
+            var container = new Button
+            {
+                Style = (Style)Application.Current.FindResource($"Popup{Type}MessageContainerStyle")
+            };
             container.Click += OnClicked;
 
-            var text = new TextBlock();
-            text.Text = message;
-            text.Foreground = Brushes.White;
-            text.FontSize = 30;
-
+            var text = new TextBlock
+            {
+                Text = message,
+                Foreground = Brushes.White,
+                FontSize = 20,
+                TextWrapping = TextWrapping.Wrap,
+                TextAlignment = TextAlignment.Center,
+                Padding = new Thickness(0, 10, 0, 10)
+            };
 
             var closeButton = new Button();
-            closeButton.Style = (Style)Application.Current.FindResource("EmptyButtonStyle");
-            closeButton.Content = new TextBlock() {Text="Bezárás", Foreground=Brushes.White };
-            DockPanel.SetDock(closeButton, Dock.Top);
-            closeButton.HorizontalAlignment = HorizontalAlignment.Right;
+            closeButton.Style = (Style)Application.Current.FindResource("PopupCloseButtonStyle");
             closeButton.Click += OnDismissed;
 
-            DockPanel dockPanel = new DockPanel();
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(34, GridUnitType.Pixel)
+            });
 
-            dockPanel.Children.Add(closeButton);
-            dockPanel.Children.Add(text);
-            dockPanel.Background = new SolidColorBrush(backgroundColor);
+            Grid.SetColumn(text, 0);
+            Grid.SetColumn(closeButton, 1);
 
-            container.Content = dockPanel;
+            grid.Children.Add(closeButton);
+            grid.Children.Add(text);
+
+            container.Content = grid;
 
             if (time != -1)
             {
@@ -98,6 +109,11 @@ namespace TeslaCarConfigurator.Helpers
             }
         }
 
-        
+
+    }
+
+    public enum MessageType
+    {
+        Error, Success
     }
 }

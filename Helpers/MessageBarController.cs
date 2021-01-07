@@ -21,7 +21,7 @@ namespace TeslaCarConfigurator.Helpers
 
         public void ShowSuccess(string text, int time,Action onClick = null, Action onClose = null, Action onDismiss = null) 
         {
-            Message message = new Message(text,time,Color.FromArgb(220,0,255,0));
+            Message message = new Message(text,time,MessageType.Success);
             message.Clicked += onClick;
             message.Closed += onClose;
             message.Dismissed += onDismiss;
@@ -34,7 +34,7 @@ namespace TeslaCarConfigurator.Helpers
 
         public void ShowError(string text, int time, Action onClick = null, Action onClose = null, Action onDismiss = null)
         {
-            Message message = new Message(text, time, Color.FromArgb(220, 255, 0, 0));
+            Message message = new Message(text, time,MessageType.Error);
             message.Clicked += onClick;
             message.Closed += onClose;
             message.Dismissed += onDismiss;

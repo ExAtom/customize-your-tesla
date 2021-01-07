@@ -7,7 +7,7 @@
                    xmlns:Data="clr-namespace:TeslaCarConfigurator.Data" xmlns:pages="clr-namespace:TeslaCarConfigurator.Pages" xmlns:svgc="http://sharpvectors.codeplex.com/svgc/" xmlns:usercontrols="clr-namespace:TeslaCarConfigurator.UserControls" x:Class="TeslaCarConfigurator.Pages.CustomerDetailsPage"
                    mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" >
+      Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" Unloaded="Windows_Unloaded" >
     <helpers:PageBase.DataContext>
         <pages:CustomerDetailsViewModel/>
     </helpers:PageBase.DataContext>
