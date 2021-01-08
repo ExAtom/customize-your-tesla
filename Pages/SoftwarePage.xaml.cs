@@ -42,34 +42,34 @@ namespace TeslaCarConfigurator.Pages
 
         public override void OnAttachedToFrame()
         {
-            //byte chosenTypeIndex = Config?.Interior?.MaterialIndex ?? 0;
-            //RadioButton selected = null;
+            byte chosenTypeIndex = Config?.Interior?.MaterialIndex ?? 0;
+            CheckBox selected = null;
 
-            //if (chosenTypeIndex == 0)
-            //{
-            //    selected = iMaterial1;
-            //}
+            if (Config.SoftwareFeatures.HasSelfdriving)
+            {
+                selected = selfdriving;
+            }
 
-            //if (chosenTypeIndex == 1)
-            //{
-            //    selected = iMaterial2;
-            //}
+            if (Config.SoftwareFeatures.HasGps)
+            {
+                selected = gps;
+            }
 
-            //if (chosenTypeIndex == 2)
-            //{
-            //    selected = iMaterial3; 
-            //}
+            if (Config.SoftwareFeatures.HasHeadlightAssistant)
+            {
+                selected = headlightAssistant;
+            }
 
-            //if (chosenTypeIndex == 3)
-            //{
-            //    selected = iMaterial4;
-            //}
+            if (Config.SoftwareFeatures.HasAdaptiveLights)
+            {
+                selected = adaptiveLights;
+            }
 
-            //if (selected == null)
-            //{
-            //    return;
-            //}
-            //selected.IsChecked = true;
+            if (selected == null)
+            {
+                return;
+            }
+            selected.IsChecked = true;
         }
 
         private void softwareSet_Checked(object sender, RoutedEventArgs e)
