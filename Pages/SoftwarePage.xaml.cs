@@ -77,23 +77,23 @@ namespace TeslaCarConfigurator.Pages
             CheckBox currentButton = (CheckBox)sender;
             if (currentButton.Name == "selfdriving")
             {
-                tbInfos.Text = "A bio műanyag egy erősebb és környezetkímélőbb alternatíva. A textúrájának kidolgozása az aszfaltra hasonlít, ezzel egyé válhat az úttal, amin éppen halad.";
-                tbPrice.Text = "Alap anyag";
+                tbInfos.Text = "A Tesla autók egyik legkiemelkedőbb szolgáltatása az önvezetés, ami olyan precizitással segít a mindennapi forgalmakban, mint eddig semmilyen más cég autói.";
+                tbPrice.Text = "Ára: 990.000 Ft";
             }
             if (currentButton.Name == "gps")
             {
-                tbInfos.Text = "Az öntött fa nem igazi fa, külseje üveges, de ez adja át a legtermészetesebb hatást. Mintha csak visszautaztunk volna az időben, de az autó megtartja prémium érzetét.";
-                tbPrice.Text = "Ára: 560.000 Ft";
+                tbInfos.Text = "GPS-szel könnyedén megállapíthatja a helyzetét és segítséget kaphat, hogy milyen irányban folytassa az útján a célpontjának eléréséhez.";
+                tbPrice.Text = "Ára: 95.000 Ft";
             }
             if (currentButton.Name == "headlightAssistant")
             {
-                tbInfos.Text = "A jegelt üveg egy speciális felületcsiszolással készül, ezzel erősítve magát az anyagot, valamint az ujjlenyomatoktól is védi. A végeredmény egy hó textúrájára hasonlít. A legjobb választás téli kocsikázásra.";
-                tbPrice.Text = "Ára: 665.000 Ft";
+                tbInfos.Text = "Néha nehéz észrevenni időben, ha egy szemben lévő autó látótávolságba kerül. Ilyenkor a távolsági fényszórókat le kell kapcsolni. Ebben segítene a fényszóró asszisztens.";
+                tbPrice.Text = "Ára: 269.000 Ft";
             }
             if (currentButton.Name == "adaptiveLights")
             {
-                tbInfos.Text = "A krokodilbőr a legritkább fajtájú, Gangeszi aprókrokodil bőre. Elképesztően jóminőségű, tapintása eszméletlen és a szaga új autójéra hasonlít.";
-                tbPrice.Text = "Ára: 1.029.000 Ft";
+                tbInfos.Text = "Fényviszonyokhoz alkalmazkodik az autó fényberendezései, ezzel kevesebb dologgal foglalkozhat a sofőr, így könnyebben odafigyelhet a balesetmentes vezetésre.";
+                tbPrice.Text = "Ára: 246.000 Ft";
             }
 
             if (Config == null)
