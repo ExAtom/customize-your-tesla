@@ -14,6 +14,8 @@ namespace TeslaCarConfigurator.Data
 
         public bool IsSaved { get; set; } = false;
 
+        public Guid Id { get; set; }
+
         public string ConfigName
         {
             get => configName; set
@@ -58,19 +60,32 @@ namespace TeslaCarConfigurator.Data
             Painting = new Painting(0);
             Wheels = new WheelConfiguration(0);
             Transmission = new Transmission(0);
-            Interior = new Interior(false,false,false,false,false,0,0);
+            Interior = new Interior(false, false, false, false, false, 0, 0);
             Exterior = new Exterior(false, false);
             SoftwareFeatures = new SoftwareFeatures(false, false, false, false);
             CustomerDetails = new CustomerDetails();
+            Id = Guid.NewGuid();
         }
 
         public CarConfiguration(string token)
+        {
+            DeserializeFromToken(token);
+            Id = Guid.NewGuid();
+        }
+
+        public CarConfiguration(string id, string token)
+        {
+            Id = Guid.Parse(id);
+            DeserializeFromToken(token);
+        }
+
+        private void DeserializeFromToken(string token)
         {
             byte[] data = Convert.FromBase64String(token);
             int index = 1;
             byte nameLength = data[0];
 
-            ConfigName = Encoding.UTF8.GetString(data,index,nameLength);
+            ConfigName = Encoding.UTF8.GetString(data, index, nameLength);
 
             index += nameLength;
 
@@ -96,7 +111,6 @@ namespace TeslaCarConfigurator.Data
             index += Exterior.ByteLength;
 
             SoftwareFeatures = new SoftwareFeatures(data.Skip(index).Take(SoftwareFeatures.ByteLength).ToArray());
-
 
         }
 

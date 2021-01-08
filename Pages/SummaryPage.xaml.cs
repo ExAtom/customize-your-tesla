@@ -36,7 +36,7 @@ namespace TeslaCarConfigurator.Pages
             tbConfigName.Text = Config?.ConfigName ?? "";
             
             tbTotalPrice.Text = $"Végösszeg: {Config.TotalPrice.ToString("C", Formatting.CurrencyFormat)}";
-            if (Config?.IsSaved == true)
+            if (SaveManager.IsSaved(Config))
             {
                 SwitchToUpdateView();
             }
@@ -97,15 +97,15 @@ namespace TeslaCarConfigurator.Pages
             summaryAccordion .AddAccordionItem(softwareFeatureItem);
         }
 
-        private void btnSaveConfig_Click(object sender, RoutedEventArgs e)
+        private async void btnSaveConfig_Click(object sender, RoutedEventArgs e)
         {
-            bool isUniqueName = SaveManager.SavedConfigs.All(c => c == null || c.ConfigName != Config.ConfigName);
-            if (!isUniqueName && !ConfirmSaveOverrride())
+            bool isUniqueName = SaveManager.IsNameUnique(Config.ConfigName);
+            if (!isUniqueName && ! await ConfirmSaveOverrride())
             {
                 return;
             }
-            SaveManager.SaveNewConfig(Config);
-            if (Config?.IsSaved == true)
+            SaveManager.AddOrOverride(Config);
+            if (SaveManager.IsSaved(Config))
             {
                 SwitchToUpdateView();
             }
@@ -113,13 +113,13 @@ namespace TeslaCarConfigurator.Pages
 
         private void btnUpdateConfig_Click(object sender, RoutedEventArgs e)
         {
-            SaveManager.UpdateSavedConfig(Config);
+            SaveManager.AddOrOverride(Config);
         }
 
-        private bool ConfirmSaveOverrride()
+        private async Task<bool> ConfirmSaveOverrride()
         {
-            var result = MessageBox.Show("Már van ilyen néven elmentett konfigurációja. Szeretné felülírni?", "Mentés felülírása", MessageBoxButton.YesNo);
-            return result == MessageBoxResult.Yes;
+            bool result = await MessageBarController.ShowWarning("Már van ilyen néven elmentett konfigurációja. Szeretné felülírni? Ha igen, kattintson ide.", 15000);
+            return result;
         }
 
         private void btnCopyToClipboard_Click(object sender, RoutedEventArgs e)
@@ -129,6 +129,7 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
             Clipboard.SetText(Config.ToToken());
+            MessageBarController.ShowSuccess("Vágólapra másolva", 1500);
         }
     }
 }

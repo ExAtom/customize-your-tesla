@@ -41,7 +41,7 @@ namespace TeslaCarConfigurator.Pages
 
         private void BuyCar(object sender, RoutedEventArgs e)
         {
-            MessageBarController.ShowSuccess("Sikeres vásárlás!", 3000);
+            MessageBarController.ShowSuccess("Sikeres vásárlás!", 9000);
         }
 
         private void OnLoadingFailed()

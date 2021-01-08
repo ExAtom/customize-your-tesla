@@ -10,17 +10,11 @@ namespace TeslaCarConfigurator.Helpers
 {
     public static class SaveManager
     {
-        public static List<CarConfiguration> SavedConfigs { get; private set; } = new List<CarConfiguration>();
+        public static Dictionary<Guid, CarConfiguration> SavedConfigs { get; private set; } = new Dictionary<Guid, CarConfiguration>();
 
         public static bool FileLoadingFailed { get; private set; } = false;
 
         private static string saveLocation = "save.txt";
-
-        public static void SaveToFile(CarConfiguration carConfiguration)
-        {
-            string token = carConfiguration.ToToken();
-            File.AppendAllLines(saveLocation, new List<string>() { token });
-        }
 
         public static void LoadSavedConfigs()
         {
@@ -42,44 +36,57 @@ namespace TeslaCarConfigurator.Helpers
                 string line = lines[i];
                 try
                 {
-                    CarConfiguration cfg = new CarConfiguration(line) {IsSaved=true };
-                    SavedConfigs.Add(cfg);
+                    string[] split = line.Split(':');
+                    CarConfiguration cfg = new CarConfiguration(split[0], split[1]) { IsSaved = true };
+                    SavedConfigs.Add(cfg.Id, cfg);
                 }
                 catch (Exception)
                 {
-                    SavedConfigs.Add(null);
+                    SavedConfigs.Add(Guid.NewGuid(), null);
                 }
             }
         }
 
         public static bool IsSaved(CarConfiguration cfg)
         {
-            return SavedConfigs.Any(c => c != null && c.ConfigName == cfg.ConfigName);
+            if (cfg == null)
+            {
+                return false;
+            }
+            return SavedConfigs.ContainsKey(cfg.Id);
+        }
+
+        public static bool IsNameUnique(string name)
+        {
+            return SavedConfigs.All(cfg =>cfg.Value!=null && cfg.Value.ConfigName != name);
         }
 
         public static void SaveState()
         {
-            File.WriteAllLines(saveLocation, SavedConfigs.Select(c => c == null ? "" : c.ToToken()));
+            File.WriteAllLines(saveLocation, SavedConfigs.Select(c => c.Value == null ? "" : $"{c.Key}:{c.Value.ToToken()}"));
         }
 
-        public  static void UpdateSavedConfig(CarConfiguration cfg) { 
-            int alreadySavedIndex = SavedConfigs.FindIndex(c => c != null && c.ConfigName == cfg.ConfigName);
-            if (alreadySavedIndex >= 0)
+        public static void AddOrOverride(CarConfiguration cfg)
+        {
+            var conflictingNames = SavedConfigs.Where(c => c.Value != null&& c.Value.ConfigName == cfg.ConfigName);
+            foreach (var conflict in conflictingNames)
             {
-                SavedConfigs[alreadySavedIndex] = cfg;
+                SavedConfigs.Remove(conflict.Key);
             }
-            SaveState();
-        }
-
-        public static void SaveNewConfig(CarConfiguration cfg) {
-            SavedConfigs.Add(cfg);
-            cfg.IsSaved = true;
+            if (SavedConfigs.ContainsKey(cfg.Id))
+            {
+                SavedConfigs[cfg.Id] = cfg;
+            }
+            else
+            {
+                SavedConfigs.Add(cfg.Id, cfg);
+            }
             SaveState();
         }
 
         public static void DeleteConfig(CarConfiguration cfg)
         {
-            SavedConfigs.RemoveAll(c => c?.ConfigName == cfg.ConfigName);
+            SavedConfigs.Remove(cfg.Id);
             SaveState();
         }
     }

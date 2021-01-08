@@ -18,9 +18,11 @@ namespace TeslaCarConfigurator.Helpers
 
         private int time;
 
-        private MessageType Type;
+        private MessageType type;
 
-        public event Action Clicked;
+        private bool showYesNo;
+
+        public event Action<bool> Clicked;
 
         public event Action Closed;
 
@@ -28,20 +30,25 @@ namespace TeslaCarConfigurator.Helpers
 
         private CancellationTokenSource cancellation = new CancellationTokenSource();
 
-        public Message(string message, int time, MessageType type)
+        public Message(string message, int time, MessageType type, bool showYesNo = false)
         {
             this.message = message;
             this.time = time;
-            Type = type;
+            this.type = type;
+            this.showYesNo = showYesNo;
         }
 
         public UIElement Show()
         {
             var container = new Button
             {
-                Style = (Style)Application.Current.FindResource($"Popup{Type}MessageContainerStyle")
+                Style = (Style)Application.Current.FindResource($"Popup{type}MessageContainerStyle"),
+                Name="popupContainer"
             };
-            container.Click += OnClicked;
+            if (!showYesNo)
+            {
+                container.Click += OnClicked;
+            }
 
             var text = new TextBlock
             {
@@ -90,6 +97,8 @@ namespace TeslaCarConfigurator.Helpers
 
         private void OnClicked(object sender, RoutedEventArgs e)
         {
+            Button button = (Button)sender;
+            bool answer 
             Clicked?.Invoke();
             Clicked = null;
             Closed?.Invoke();
@@ -114,6 +123,6 @@ namespace TeslaCarConfigurator.Helpers
 
     public enum MessageType
     {
-        Error, Success
+        Error, Success, Warning
     }
 }

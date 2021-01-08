@@ -42,7 +42,7 @@ namespace TeslaCarConfigurator.Pages
             savedConfigsContainer.Items.Clear();
             for (int i = 0; i < SaveManager.SavedConfigs.Count; i++)
             {
-                CarConfiguration savedConfig = SaveManager.SavedConfigs[i];
+                CarConfiguration savedConfig = SaveManager.SavedConfigs.Values.ToList()[i];
                 UIElement generatedListItem = GenerateSavedItemDisplay(savedConfig, i);
                 savedConfigsContainer.Items.Add(generatedListItem);
             }
@@ -108,7 +108,7 @@ namespace TeslaCarConfigurator.Pages
         {
             Button chooseButton = (Button)sender;
             int index = int.Parse(chooseButton.Name.Replace("chooseButton", ""));
-            Router.SetConfig(SaveManager.SavedConfigs[index]);
+            Router.SetConfig(SaveManager.SavedConfigs.Values.ToList()[index]);
             Router.ChangeCurrentPage(new ModelConfiguration());
         }
 
