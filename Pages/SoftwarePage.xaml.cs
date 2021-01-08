@@ -42,34 +42,38 @@ namespace TeslaCarConfigurator.Pages
 
         public override void OnAttachedToFrame()
         {
-            byte chosenTypeIndex = Config?.Interior?.MaterialIndex ?? 0;
+            //byte chosenTypeIndex = Config?.Interior?.MaterialIndex ?? 0;
             CheckBox selected = null;
 
             if (Config.SoftwareFeatures.HasSelfdriving)
             {
                 selected = selfdriving;
+                selected.IsChecked = true;
             }
 
             if (Config.SoftwareFeatures.HasGps)
             {
                 selected = gps;
+                selected.IsChecked = true;
             }
 
             if (Config.SoftwareFeatures.HasHeadlightAssistant)
             {
                 selected = headlightAssistant;
+                selected.IsChecked = true;
             }
 
             if (Config.SoftwareFeatures.HasAdaptiveLights)
             {
                 selected = adaptiveLights;
+                selected.IsChecked = true;
             }
 
             if (selected == null)
             {
                 return;
             }
-            selected.IsChecked = true;
+            //selected.IsChecked = true;
         }
 
         private void softwareSet_Checked(object sender, RoutedEventArgs e)
@@ -108,7 +112,14 @@ namespace TeslaCarConfigurator.Pages
                 case "selfdriving":
                     Config.SoftwareFeatures.HasSelfdriving = Config.SoftwareFeatures.HasSelfdriving ? false : true;
                     break;
-                default:
+                case "gps":
+                    Config.SoftwareFeatures.HasGps = Config.SoftwareFeatures.HasGps ? false : true;
+                    break;
+                case "headlightAssistant":
+                    Config.SoftwareFeatures.HasHeadlightAssistant = Config.SoftwareFeatures.HasHeadlightAssistant ? false : true;
+                    break;
+                case "adaptiveLights":
+                    Config.SoftwareFeatures.HasAdaptiveLights = Config.SoftwareFeatures.HasAdaptiveLights ? false : true;
                     break;
             }
         }
