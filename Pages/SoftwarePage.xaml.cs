@@ -101,8 +101,16 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
 
-            //byte index = (byte)(byte.Parse(currentButton.Name.Replace("iMaterial", "")) - 1);
+            string setting = currentButton.Name;
             //Config.Interior.MaterialIndex = index;
+            switch (setting)
+            {
+                case "selfdriving":
+                    Config.SoftwareFeatures.HasSelfdriving = Config.SoftwareFeatures.HasSelfdriving ? false : true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
