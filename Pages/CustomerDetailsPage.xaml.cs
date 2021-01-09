@@ -48,7 +48,7 @@ namespace TeslaCarConfigurator.Pages
         {
             MessageBarController.ShowError("Országinformációk betöltése sikertelen. Kattintson ide az újrapróbálkozáshoz.",
                                            -1,
-                                           onClick: () =>
+                                           onClick: (result) =>
                                            {
                                                var vm = (CustomerDetailsViewModel)DataContext;
                                                vm.LoadCountryInfos();

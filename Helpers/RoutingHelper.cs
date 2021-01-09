@@ -46,6 +46,16 @@ namespace TeslaCarConfigurator.Helpers
             CurrentPageChanged?.Invoke();
         }
 
+        public void ReloadPage()
+        {
+            if (CurrentPage ==null)
+            {
+                return;
+            }
+            CurrentPage.Config = carConfiguration;
+            CurrentPage.OnAttachedToFrame();
+        }
+
         public void SetConfig(CarConfiguration carConfiguration)
         {
             this.carConfiguration = carConfiguration;

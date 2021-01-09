@@ -19,25 +19,25 @@ namespace TeslaCarConfigurator.Helpers
             this.container = container;
         }
 
-        public Task<bool> ShowSuccess(string text, int time, bool showYesNo = false, Action onClick = null, Action onClose = null, Action onDismiss = null)
+        public Task<bool> ShowSuccess(string text, int time, bool showYesNo = false, Action<bool> onClick = null, Action onClose = null, Action onDismiss = null)
         {
             return ShowMessage(text, time, MessageType.Success, showYesNo, onClick, onClose, onDismiss);
 
         }
 
-        public Task<bool> ShowError(string text, int time, bool showYesNo = false, Action onClick = null, Action onClose = null, Action onDismiss = null)
+        public Task<bool> ShowError(string text, int time, bool showYesNo = false, Action<bool> onClick = null, Action onClose = null, Action onDismiss = null)
         {
             return ShowMessage(text, time, MessageType.Error, showYesNo, onClick, onClose, onDismiss);
         }
 
-        public Task<bool> ShowWarning(string text, int time, bool showYesNo = false, Action onClick = null, Action onClose = null, Action onDismiss = null)
+        public Task<bool> ShowWarning(string text, int time, bool showYesNo = false, Action<bool> onClick = null, Action onClose = null, Action onDismiss = null)
         {
             return ShowMessage(text, time, MessageType.Warning, showYesNo, onClick, onClose, onDismiss);
         }
 
-        private Task<bool> ShowMessage(string text, int time, MessageType type, bool showYesNo = false, Action onClick = null, Action onClose = null, Action onDismiss = null)
+        private Task<bool> ShowMessage(string text, int time, MessageType type, bool showYesNo = false, Action<bool> onClick = null, Action onClose = null, Action onDismiss = null)
         {
-            Message message = new Message(text, time, type);
+            Message message = new Message(text, time, type,showYesNo);
             message.Clicked += onClick;
             message.Closed += onClose;
             message.Dismissed += onDismiss;
@@ -67,9 +67,9 @@ namespace TeslaCarConfigurator.Helpers
         private Task<bool> GetTaskFromMessage(Message m)
         {
             var tcs = new TaskCompletionSource<bool>();
-            m.Clicked += () =>
+            m.Clicked += (result) =>
             {
-                tcs.SetResult(true);
+                tcs.SetResult(result);
             };
             m.Dismissed += () =>
             {

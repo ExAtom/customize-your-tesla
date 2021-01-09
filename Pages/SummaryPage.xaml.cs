@@ -25,7 +25,7 @@ namespace TeslaCarConfigurator.Pages
 
         public SummaryPage()
         {
-            
+
             InitializeComponent();
 
 
@@ -34,12 +34,9 @@ namespace TeslaCarConfigurator.Pages
         public override void OnAttachedToFrame()
         {
             tbConfigName.Text = Config?.ConfigName ?? "";
-            
+
             tbTotalPrice.Text = $"Végösszeg: {Config.TotalPrice.ToString("C", Formatting.CurrencyFormat)}";
-            if (SaveManager.IsSaved(Config))
-            {
-                SwitchToUpdateView();
-            }
+            
             InitDropdown();
         }
 
@@ -51,14 +48,7 @@ namespace TeslaCarConfigurator.Pages
             }
             Config.ConfigName = tbConfigName.Text;
             btnSaveConfig.IsEnabled = Config.ConfigName.Length > 0;
-            
-        }
 
-        private void SwitchToUpdateView()
-        {
-            btnUpdateConfig.Visibility = Visibility.Visible;
-            btnSaveConfig.Content = "Másolat mentése";
-            nameInputLabel.Content = "Másolat neve";
         }
 
         private void InitDropdown()
@@ -73,41 +63,41 @@ namespace TeslaCarConfigurator.Pages
             SoftwareFeatures softwareFeatures = Config.SoftwareFeatures;
 
             AccordionItem modelItem = new AccordionItem(new ModelSummaryContent(model), new ModelSummaryHeader(model));
-            summaryAccordion .AddAccordionItem(modelItem);
+            summaryAccordion.AddAccordionItem(modelItem);
 
             AccordionItem batteryItem = new AccordionItem(new BatterySummaryContent(battery), new BatterySummaryHeader(battery));
-            summaryAccordion .AddAccordionItem(batteryItem);
+            summaryAccordion.AddAccordionItem(batteryItem);
 
             AccordionItem transmissionItem = new AccordionItem(new TransmissionSummaryContent(transmission), new TransmissionSummaryHeader(transmission));
-            summaryAccordion .AddAccordionItem(transmissionItem);
+            summaryAccordion.AddAccordionItem(transmissionItem);
 
             AccordionItem paintingItem = new AccordionItem(new PaintingSummaryContent(painting), new PaintingSummaryHeader(painting));
-            summaryAccordion .AddAccordionItem(paintingItem);
+            summaryAccordion.AddAccordionItem(paintingItem);
 
             AccordionItem wheelItem = new AccordionItem(new WheelSummaryContent(wheel), new WheelSummaryHeader(wheel));
-            summaryAccordion .AddAccordionItem(wheelItem);
+            summaryAccordion.AddAccordionItem(wheelItem);
 
             AccordionItem exteriorItem = new AccordionItem(new ExteriorSummaryContent(exterior), new ExteriorSummaryHeader(exterior));
-            summaryAccordion .AddAccordionItem(exteriorItem);
+            summaryAccordion.AddAccordionItem(exteriorItem);
 
             AccordionItem interiorItem = new AccordionItem(new InteriorSummaryContent(interior), new InteriorSummaryHeader(interior));
-            summaryAccordion .AddAccordionItem(interiorItem);
+            summaryAccordion.AddAccordionItem(interiorItem);
 
             AccordionItem softwareFeatureItem = new AccordionItem(new SoftwareFeatureSummaryContent(softwareFeatures), new SoftwareFeatureSummaryHeader(softwareFeatures));
-            summaryAccordion .AddAccordionItem(softwareFeatureItem);
+            summaryAccordion.AddAccordionItem(softwareFeatureItem);
         }
 
         private async void btnSaveConfig_Click(object sender, RoutedEventArgs e)
         {
-            bool isUniqueName = SaveManager.IsNameUnique(Config.ConfigName);
-            if (!isUniqueName && ! await ConfirmSaveOverrride())
+            bool isUniqueName = SaveManager.IsUniqueName(Config);
+            if (!isUniqueName && !await ConfirmSaveOverrride())
             {
                 return;
             }
             SaveManager.AddOrOverride(Config);
-            if (SaveManager.IsSaved(Config))
+            if (!IsVisible)
             {
-                SwitchToUpdateView();
+                return;
             }
         }
 
@@ -118,7 +108,15 @@ namespace TeslaCarConfigurator.Pages
 
         private async Task<bool> ConfirmSaveOverrride()
         {
-            bool result = await MessageBarController.ShowWarning("Már van ilyen néven elmentett konfigurációja. Szeretné felülírni? Ha igen, kattintson ide.", 15000);
+            btnSaveConfig.IsEnabled = false;
+            tbConfigName.IsEnabled = false;
+            bool result = await MessageBarController.ShowWarning("Már van ilyen néven elmentett konfigurációja. Szeretné felülírni?", -1, showYesNo: true);
+            if (IsVisible)
+            {
+                btnSaveConfig.IsEnabled = true;
+                tbConfigName.IsEnabled = true;
+            }
+
             return result;
         }
 

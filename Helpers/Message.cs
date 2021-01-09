@@ -71,11 +71,32 @@ namespace TeslaCarConfigurator.Helpers
                 Width = new GridLength(34, GridUnitType.Pixel)
             });
 
-            Grid.SetColumn(text, 0);
+            StackPanel contentContainer = new StackPanel();
+            contentContainer.Children.Add(text);
+            if (showYesNo)
+            {
+                WrapPanel buttonContainer = new WrapPanel() { Orientation = Orientation.Horizontal, HorizontalAlignment=HorizontalAlignment.Center };
+                Button yesButton = new Button() { Name = "popupYesButton" };
+                yesButton.Click += OnClicked;
+                yesButton.Style = (Style)Application.Current.FindResource("PopupYesButtonStyle");
+
+                Button noButton = new Button();
+                noButton.Click += OnClicked;
+                noButton.Style = (Style)Application.Current.FindResource("PopupNoButtonStyle");
+
+                buttonContainer.Children.Add(yesButton);
+                buttonContainer.Children.Add(noButton);
+                buttonContainer.Margin = new Thickness(0, 10, 0, 20);
+
+                contentContainer.Children.Add(buttonContainer);
+            }
+
+            Grid.SetColumn(contentContainer, 0);
             Grid.SetColumn(closeButton, 1);
 
+
             grid.Children.Add(closeButton);
-            grid.Children.Add(text);
+            grid.Children.Add(contentContainer);
 
             container.Content = grid;
 
@@ -98,8 +119,8 @@ namespace TeslaCarConfigurator.Helpers
         private void OnClicked(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            bool answer 
-            Clicked?.Invoke();
+            bool answer = button.Name == "popupContainer" || button.Name== "popupYesButton";
+            Clicked?.Invoke(answer);
             Clicked = null;
             Closed?.Invoke();
             Closed = null;

@@ -56,9 +56,9 @@ namespace TeslaCarConfigurator.Helpers
             return SavedConfigs.ContainsKey(cfg.Id);
         }
 
-        public static bool IsNameUnique(string name)
+        public static bool IsUniqueName(CarConfiguration config)
         {
-            return SavedConfigs.All(cfg =>cfg.Value!=null && cfg.Value.ConfigName != name);
+            return SavedConfigs.All(c => c.Value == null || c.Value.Id == config.Id || c.Value.ConfigName != config.ConfigName);
         }
 
         public static void SaveState()
@@ -68,7 +68,7 @@ namespace TeslaCarConfigurator.Helpers
 
         public static void AddOrOverride(CarConfiguration cfg)
         {
-            var conflictingNames = SavedConfigs.Where(c => c.Value != null&& c.Value.ConfigName == cfg.ConfigName);
+            var conflictingNames = SavedConfigs.Where(c => c.Value != null && c.Value.ConfigName == cfg.ConfigName).ToList();
             foreach (var conflict in conflictingNames)
             {
                 SavedConfigs.Remove(conflict.Key);

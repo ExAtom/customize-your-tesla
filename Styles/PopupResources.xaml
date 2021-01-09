@@ -133,4 +133,108 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="PopupYesButtonStyle" TargetType="Button">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="#FF018F01"></SolidColorBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                    <Border Margin="0,0,10,0" BorderThickness="0" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="15,0,0,0"  Width="20" Height="20" Source="../Assets/yes.png"></Image>
+                            <TextBlock Foreground="White"    HorizontalAlignment="Center" VerticalAlignment="Center"  Padding="10,8,22,8">Igen</TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+
+                            <Border Margin="0,0,10,0" BorderThickness="0" CornerRadius="10" Background="{TemplateBinding Background}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="15,0,0,0"  Width="20" Height="20" Source="../Assets/yes.png"></Image>
+                                    <TextBlock Foreground="White"     HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,8,22,8">Igen</TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FF037A03"></SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FF045D04"></SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PopupNoButtonStyle" TargetType="Button">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="#FFE60000"></SolidColorBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+
+                    <Border Margin="10,0,0,0" BorderThickness="0" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="17,0,0,0" Width="16" Height="16" Source="../Assets/no.png"></Image>
+                            <TextBlock Foreground="White"     HorizontalAlignment="Center" VerticalAlignment="Center" Padding="12,8,22,8">Nem</TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+
+                            <Border Margin="10,0,0,0" BorderThickness="0" CornerRadius="10" Background="{TemplateBinding Background}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="17,0,0,0"  Width="16" Height="16" Source="../Assets/no.png"></Image>
+                                    <TextBlock Foreground="White"     HorizontalAlignment="Center" VerticalAlignment="Center" Padding="12,8,22,8">Nem</TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FFBE0000"></SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FF9B0000"></SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

@@ -459,5 +459,11 @@
   <ItemGroup>
     <Resource Include="Assets\close-pressed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\no.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

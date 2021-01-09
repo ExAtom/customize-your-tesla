@@ -30,13 +30,29 @@ namespace TeslaCarConfigurator.Pages
             closeWindow.Show();
         }
 
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        private async void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            if (!Router.HasConfig || ConfirmConfigOverride())
+            if (!Router.HasConfig)
             {
                 Router.SetConfig(new CarConfiguration());
+                Router.ChangeCurrentPage(new ModelConfiguration());
             }
-            Router.ChangeCurrentPage(new ModelConfiguration());
+            else
+            {
+                bool isOverrideConfirmed = await ConfirmConfigOverride();
+                if (isOverrideConfirmed)
+                {
+                    Router.SetConfig(new CarConfiguration());
+                }
+                if (IsVisible)
+                {
+                    Router.ChangeCurrentPage(new ModelConfiguration());
+                }
+                else
+                {
+                    Router.ReloadPage();
+                }
+            }
         }
 
         private void btnOpenSaved_Click(object sender, RoutedEventArgs e)
@@ -44,10 +60,17 @@ namespace TeslaCarConfigurator.Pages
             Router.ChangeCurrentPage(new SavedConfigsPage());
         }
 
-        private bool ConfirmConfigOverride()
+        private async Task<bool> ConfirmConfigOverride()
         {
-            var result = MessageBox.Show("Már elkezdett konfigurálni egy Tesla autót. Szeretné azt a konfigot felülírni?", "Új konfig", MessageBoxButton.YesNo);
-            return result == MessageBoxResult.Yes;
+            btnOpenSaved.IsEnabled = false;
+            btnStart.IsEnabled = false;
+            bool result = await MessageBarController.ShowWarning("Már elkezdett konfigurálni egy Tesla autót. Szeretné azt a konfigot felülírni?", -1, showYesNo: true);
+            if (IsVisible)
+            {
+                btnOpenSaved.IsEnabled = false;
+                btnStart.IsEnabled = false;
+            }
+            return result;
         }
     }
 }
