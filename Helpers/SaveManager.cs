@@ -84,9 +84,9 @@ namespace TeslaCarConfigurator.Helpers
             SaveState();
         }
 
-        public static void DeleteConfig(CarConfiguration cfg)
+        public static void DeleteConfig(Guid id)
         {
-            SavedConfigs.Remove(cfg.Id);
+            SavedConfigs.Remove(id);
             SaveState();
         }
     }

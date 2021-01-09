@@ -39,7 +39,7 @@
                     <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" MaxWidth="200" MinWidth="100" MinHeight="40" Margin="10,10,0,0" Click="btnBackToHome_Click">Vissza a kezdőlapra</Button>
                     <StackPanel Margin="10,30,0,0">
                         <TextBlock Name="loadingSaveFailedWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Hiba történt a mentések betöltése közben</TextBlock>
-                        <ListView Name="savedConfigsContainer" HorizontalAlignment="Left" Width="300" MinHeight="200" Focusable="False"/>
+                        <StackPanel Name="savedConfigsContainer" HorizontalAlignment="Left" Width="300" MinHeight="200" />
                         <TextBlock Name="overrideWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Vigyázat! Ha betölt egy mentést, a most konfigurált autó elveszik!</TextBlock>
 
                     </StackPanel>

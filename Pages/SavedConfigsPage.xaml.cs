@@ -32,19 +32,19 @@ namespace TeslaCarConfigurator.Pages
         {
             overrideWarning.Visibility = Router.HasConfig ? Visibility.Visible : Visibility.Collapsed;
             UpdateSavedConfigList();
-            
+
         }
 
         private void UpdateSavedConfigList()
         {
             SaveManager.LoadSavedConfigs();
             loadingSaveFailedWarning.Visibility = SaveManager.FileLoadingFailed ? Visibility.Visible : Visibility.Collapsed;
-            savedConfigsContainer.Items.Clear();
-            for (int i = 0; i < SaveManager.SavedConfigs.Count; i++)
+            savedConfigsContainer.Children.Clear();
+
+            foreach (var item in SaveManager.SavedConfigs)
             {
-                CarConfiguration savedConfig = SaveManager.SavedConfigs.Values.ToList()[i];
-                UIElement generatedListItem = GenerateSavedItemDisplay(savedConfig, i);
-                savedConfigsContainer.Items.Add(generatedListItem);
+                UIElement generatedListItem = GenerateSavedItemDisplay(item.Key, item.Value);
+                savedConfigsContainer.Children.Add(generatedListItem);
             }
         }
 
@@ -53,62 +53,82 @@ namespace TeslaCarConfigurator.Pages
             Router.ChangeCurrentPage(new LandingPage());
         }
 
-        private UIElement GenerateSavedItemDisplay(CarConfiguration savedConfig, int index)
+        private UIElement GenerateSavedItemDisplay(Guid id, CarConfiguration savedConfig)
         {
-            WrapPanel panel = new WrapPanel();
+            DockPanel container = new DockPanel();
 
-            if (savedConfig == null)
+
+            TextBlock nameBox = new TextBlock()
             {
-                TextBlock errorBox = new TextBlock() { Text = "Hibás mentés.", Foreground = Brushes.Red };
-                panel.Children.Add(errorBox);
-            }
-            else
+                Text = savedConfig?.ConfigName ?? "Hibás mentés.",
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 0, 10, 0),
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = savedConfig == null ? Brushes.Red : Brushes.Black
+            };
+
+            StackPanel buttonContainer = new StackPanel() { Orientation = Orientation.Horizontal };
+
+            Button deleteButton = new Button()
             {
-                Grid grid = new Grid();
-                grid.RowDefinitions.Add(new RowDefinition());
-                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
-                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50) });
+                Width = 50,
+                Height = 50,
+                Content = new Image()
+                {
+                    Source = new BitmapImage(new Uri("../Assets/close.png", UriKind.Relative))
+                },
+                Style = (Style)Application.Current.FindResource("EmptyButtonStyle")
+            };
+            deleteButton.Click += (sender, e) =>
+            {
+                DeleteConfig(id);
+            };
 
-                TextBlock nameBox = new TextBlock() 
-                { 
-                    Text = savedConfig.ConfigName, 
-                    Width=225, 
-                    TextWrapping=TextWrapping.Wrap ,
-                    Margin=new Thickness(0,0,10,0), 
-                    VerticalAlignment=VerticalAlignment.Center 
-                };
+            buttonContainer.Children.Add(deleteButton);
 
+            if (savedConfig != null)
+            {
                 Button chooseButton = new Button()
                 {
                     Width = 50,
                     Height = 50,
-                    Name=$"chooseButton{index}",
-                    Content = new Image() 
+                    Content = new Image()
                     {
-                        Source = new BitmapImage(new Uri("Assets/arrow-circle-right-solid.png", UriKind.Relative))
-                    } 
+                        Source = new BitmapImage(new Uri("../Assets/arrow-circle-right-solid.png", UriKind.Relative))
+                    },
+                    Style = (Style)Application.Current.FindResource("EmptyButtonStyle")
                 };
-                chooseButton.Click += chooseButton_Click;
-
-                grid.Children.Add(nameBox);
-                grid.Children.Add(chooseButton);
-
-                Grid.SetColumn(nameBox, 0);
-                Grid.SetRow(nameBox, 0);
-                Grid.SetColumn(chooseButton, 1);
-                Grid.SetRow(chooseButton, 1);
-
-                panel.Children.Add(grid);
+                chooseButton.Click += (sender, e) =>
+                {
+                    ChooseConfig(savedConfig);
+                };
+                buttonContainer.Children.Add(chooseButton);
             }
 
-            return panel;
+            DockPanel.SetDock(buttonContainer, Dock.Right);
+            container.Children.Add(buttonContainer);
+            container.Children.Add(nameBox);
+            return container;
         }
 
-        private void chooseButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteConfig(Guid id)
         {
-            Button chooseButton = (Button)sender;
-            int index = int.Parse(chooseButton.Name.Replace("chooseButton", ""));
-            Router.SetConfig(SaveManager.SavedConfigs.Values.ToList()[index]);
+            try
+            {
+                SaveManager.DeleteConfig(id);
+                MessageBarController.ShowSuccess("Konfig törölve.", 2000);
+            }
+            catch (Exception)
+            {
+                MessageBarController.ShowError("Konfig törlése sikertelen.", 2000);
+            }
+            UpdateSavedConfigList();
+        }
+
+        private void ChooseConfig(CarConfiguration cfg)
+        {
+
+            Router.SetConfig(cfg);
             Router.ChangeCurrentPage(new ModelConfiguration());
         }
 

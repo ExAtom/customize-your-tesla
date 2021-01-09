@@ -36,7 +36,7 @@ namespace TeslaCarConfigurator.Pages
             tbConfigName.Text = Config?.ConfigName ?? "";
 
             tbTotalPrice.Text = $"Végösszeg: {Config.TotalPrice.ToString("C", Formatting.CurrencyFormat)}";
-            
+
             InitDropdown();
         }
 
@@ -94,10 +94,14 @@ namespace TeslaCarConfigurator.Pages
             {
                 return;
             }
-            SaveManager.AddOrOverride(Config);
-            if (!IsVisible)
+            try
             {
-                return;
+                SaveManager.AddOrOverride(Config);
+                await MessageBarController.ShowSuccess("Konfig sikeresen elmentve.", 2000);
+            }
+            catch (Exception)
+            {
+                await MessageBarController.ShowError("Konfig elmentése sikertelen.", 2000);
             }
         }
 
@@ -126,8 +130,16 @@ namespace TeslaCarConfigurator.Pages
             {
                 return;
             }
-            Clipboard.SetText(Config.ToToken());
-            MessageBarController.ShowSuccess("Vágólapra másolva", 1500);
+            try
+            {
+                Clipboard.SetText(Config.ToToken());
+                MessageBarController.ShowSuccess("Vágólapra másolva", 2000);
+            }
+            catch (Exception)
+            {
+                MessageBarController.ShowError("Vágólapra másolás sikertelen!", 2000);
+
+            }
         }
     }
 }
