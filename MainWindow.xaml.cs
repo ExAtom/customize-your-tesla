@@ -30,6 +30,7 @@ namespace TeslaCarConfigurator
 
         private void OnWindowInitialized(object sender, EventArgs e)
         {
+            SaveManager.LoadSavedConfigs();
             router = new RoutingHelper(Container, new MessageBarController(messageBar));
             router.CurrentPageChanged += OnCurrentPageChanged;
             router.ChangeCurrentPage(new LandingPage());

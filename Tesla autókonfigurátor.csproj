@@ -287,6 +287,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\PopupResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Accordion\Accordion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -448,6 +452,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close-pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\no.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

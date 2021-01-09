@@ -35,12 +35,32 @@ namespace TeslaCarConfigurator.Pages
 
             CustomerDetailsViewModel vm = new CustomerDetailsViewModel(Config);
             DataContext = vm;
+            vm.LoadingFailed += OnLoadingFailed;
             vm.Init();
         }
 
         private void BuyCar(object sender, RoutedEventArgs e)
         {
+            MessageBarController.ShowSuccess("Sikeres vásárlás!", 9000);
+        }
 
+        private void OnLoadingFailed()
+        {
+            MessageBarController.ShowError("Országinformációk betöltése sikertelen. Kattintson ide az újrapróbálkozáshoz.",
+                                           -1,
+                                           onClick: (result) =>
+                                           {
+                                               var vm = (CustomerDetailsViewModel)DataContext;
+                                               vm.LoadCountryInfos();
+                                           });
+        }
+
+        private void Windows_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext != null && DataContext is CustomerDetailsViewModel vm)
+            {
+                vm.UnbindEventHandlers();
+            }
         }
     }
 }

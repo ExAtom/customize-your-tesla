@@ -73,6 +73,8 @@ namespace TeslaCarConfigurator.Pages
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public event Action LoadingFailed;
+
         public CustomerDetailsViewModel(CarConfiguration carConfiguration)
         {
             CustomerDetails = carConfiguration.CustomerDetails;
@@ -97,7 +99,7 @@ namespace TeslaCarConfigurator.Pages
             }
         }
 
-        private async void LoadCountryInfos()
+        public async void LoadCountryInfos()
         {
             try
             {
@@ -111,6 +113,11 @@ namespace TeslaCarConfigurator.Pages
             IsLoading = false;
         }
 
+        public void UnbindEventHandlers()
+        {
+            LoadingFailed = null;
+        }
+
         private void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -118,7 +125,7 @@ namespace TeslaCarConfigurator.Pages
 
         private void OnLoadingFailed()
         {
-
+            LoadingFailed?.Invoke();
         }
 
         private List<IDropdownItem> PhoneNumberFilterImpl(string filterText, List<IDropdownItem> items)

@@ -7,6 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Threading;
+using SharpVectors.Converters;
+using System.Windows.Media.Imaging;
 
 namespace TeslaCarConfigurator.Helpers
 {
@@ -16,9 +18,11 @@ namespace TeslaCarConfigurator.Helpers
 
         private int time;
 
-        private Color backgroundColor;
+        private MessageType type;
 
-        public event Action Clicked;
+        private bool showYesNo;
+
+        public event Action<bool> Clicked;
 
         public event Action Closed;
 
@@ -26,40 +30,75 @@ namespace TeslaCarConfigurator.Helpers
 
         private CancellationTokenSource cancellation = new CancellationTokenSource();
 
-        public Message(string message, int time, Color backgroundColor)
+        public Message(string message, int time, MessageType type, bool showYesNo = false)
         {
             this.message = message;
             this.time = time;
-            this.backgroundColor = backgroundColor;
+            this.type = type;
+            this.showYesNo = showYesNo;
         }
 
         public UIElement Show()
         {
-            var container = new Button();
-            container.Margin = new Thickness(5, 10, 5, 10);
-            container.Style = (Style)Application.Current.FindResource("EmptyButtonStyle");
-            container.Click += OnClicked;
+            var container = new Button
+            {
+                Style = (Style)Application.Current.FindResource($"Popup{type}MessageContainerStyle"),
+                Name="popupContainer"
+            };
+            if (!showYesNo)
+            {
+                container.Click += OnClicked;
+            }
 
-            var text = new TextBlock();
-            text.Text = message;
-            text.Foreground = Brushes.White;
-            text.FontSize = 30;
-
+            var text = new TextBlock
+            {
+                Text = message,
+                Foreground = Brushes.White,
+                FontSize = 20,
+                TextWrapping = TextWrapping.Wrap,
+                TextAlignment = TextAlignment.Center,
+                Padding = new Thickness(0, 10, 0, 10)
+            };
 
             var closeButton = new Button();
-            closeButton.Style = (Style)Application.Current.FindResource("EmptyButtonStyle");
-            closeButton.Content = new TextBlock() {Text="Bezárás", Foreground=Brushes.White };
-            DockPanel.SetDock(closeButton, Dock.Top);
-            closeButton.HorizontalAlignment = HorizontalAlignment.Right;
+            closeButton.Style = (Style)Application.Current.FindResource("PopupCloseButtonStyle");
             closeButton.Click += OnDismissed;
 
-            DockPanel dockPanel = new DockPanel();
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(34, GridUnitType.Pixel)
+            });
 
-            dockPanel.Children.Add(closeButton);
-            dockPanel.Children.Add(text);
-            dockPanel.Background = new SolidColorBrush(backgroundColor);
+            StackPanel contentContainer = new StackPanel();
+            contentContainer.Children.Add(text);
+            if (showYesNo)
+            {
+                WrapPanel buttonContainer = new WrapPanel() { Orientation = Orientation.Horizontal, HorizontalAlignment=HorizontalAlignment.Center };
+                Button yesButton = new Button() { Name = "popupYesButton" };
+                yesButton.Click += OnClicked;
+                yesButton.Style = (Style)Application.Current.FindResource("PopupYesButtonStyle");
 
-            container.Content = dockPanel;
+                Button noButton = new Button();
+                noButton.Click += OnClicked;
+                noButton.Style = (Style)Application.Current.FindResource("PopupNoButtonStyle");
+
+                buttonContainer.Children.Add(yesButton);
+                buttonContainer.Children.Add(noButton);
+                buttonContainer.Margin = new Thickness(0, 10, 0, 20);
+
+                contentContainer.Children.Add(buttonContainer);
+            }
+
+            Grid.SetColumn(contentContainer, 0);
+            Grid.SetColumn(closeButton, 1);
+
+
+            grid.Children.Add(closeButton);
+            grid.Children.Add(contentContainer);
+
+            container.Content = grid;
 
             if (time != -1)
             {
@@ -79,7 +118,9 @@ namespace TeslaCarConfigurator.Helpers
 
         private void OnClicked(object sender, RoutedEventArgs e)
         {
-            Clicked?.Invoke();
+            Button button = (Button)sender;
+            bool answer = button.Name == "popupContainer" || button.Name== "popupYesButton";
+            Clicked?.Invoke(answer);
             Clicked = null;
             Closed?.Invoke();
             Closed = null;
@@ -98,6 +139,11 @@ namespace TeslaCarConfigurator.Helpers
             }
         }
 
-        
+
+    }
+
+    public enum MessageType
+    {
+        Error, Success, Warning
     }
 }

@@ -27,8 +27,8 @@
                 </Grid.RowDefinitions>
 
                 <Button Content="Kilépés" Grid.Column="0" Grid.Row="0" Margin="20,0" Click="btnClose_Click"/>
-                <Button Content="Mentett konfigurációk betöltése" Grid.Column="1" Grid.Row="0" Margin="40,0" Click="btnOpenSaved_Click"/>
-                <Button Content="Vágjunk bele!" Grid.Column="2" Grid.Row="0" Margin="20,0" Click="btnStart_Click"/>
+                <Button Name="btnOpenSaved" Content="Mentett konfigurációk betöltése" Grid.Column="1" Grid.Row="0" Margin="40,0" Click="btnOpenSaved_Click"/>
+                <Button Name="btnStart" Content="Vágjunk bele!" Grid.Column="2" Grid.Row="0" Margin="20,0" Click="btnStart_Click"/>
 
             </Grid>
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"><Run Text="A konfigurátort készítette: Csepi Szilveszter, Kékesi Ádám és Menyhárt Attila a JÁGISZ 11./A osztályos tanulói 2020.12-ban"/><LineBreak/><Run Text="Minden jog fenntartva!"/></TextBlock>
