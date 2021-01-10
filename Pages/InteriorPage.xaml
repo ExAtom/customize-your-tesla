@@ -36,7 +36,7 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
                         <RadioButton x:Name="iMaterial1" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
@@ -45,14 +45,14 @@
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
                         <RadioButton x:Name="iMaterial2" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Öntött Fa" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
                         <RadioButton x:Name="iMaterial3" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Jegelt Üveg" Width="70"/>
@@ -63,6 +63,34 @@
                         <RadioButton x:Name="iMaterial4" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Krokodilbőr" Width="70"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 30, 0, 0">
+                        <RadioButton x:Name="iColor1" GroupName="colors" Checked="iMaterialSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Fekete" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <RadioButton x:Name="iColor2" GroupName="colors" Checked="iMaterialSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Fehér" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <RadioButton x:Name="iColor3" GroupName="colors" Checked="iMaterialSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Barna" Width="70"/>
+                                </StackPanel>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
