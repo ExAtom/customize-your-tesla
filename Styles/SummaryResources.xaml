@@ -7,7 +7,7 @@
                 <SolidColorBrush Color="White"></SolidColorBrush>
             </Setter.Value>
         </Setter>
-        <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro SemiBold"></Setter>
+        <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Bold"></Setter>
         <Setter Property="FontStyle" Value="Italic"></Setter>
         <Setter Property="FontSize" Value="18"> </Setter>
     </Style>
@@ -30,15 +30,18 @@
                 <SolidColorBrush Color="White" ></SolidColorBrush>
             </Setter.Value>
         </Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+
     </Style>
 
     <Style x:Key="SummaryChosenOptionText" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro"></Setter>
+        <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Semibold"></Setter>
         <Setter Property="FontSize" Value="17"></Setter>
         <Setter Property="Foreground">
             <Setter.Value>
                 <SolidColorBrush Color="White" ></SolidColorBrush>
             </Setter.Value>
         </Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
     </Style>
 </ResourceDictionary>
