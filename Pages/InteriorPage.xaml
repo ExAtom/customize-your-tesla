@@ -108,7 +108,7 @@
                         <CheckBox x:Name="stearingWheelHeating" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
-                                    <TextBlock Text="Kormányfűtés" Width="70"/>
+                                    <TextBlock Text="Kormányfűtés" Width="75"/>
                                 </StackPanel>
                             </WrapPanel>
                         </CheckBox>
@@ -117,7 +117,7 @@
                         <CheckBox x:Name="spineSupport" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
-                                    <TextBlock Text="Gerinctámasz" Width="70"/>
+                                    <TextBlock Text="Gerinctámasz" Width="75"/>
                                 </StackPanel>
                             </WrapPanel>
                         </CheckBox>
