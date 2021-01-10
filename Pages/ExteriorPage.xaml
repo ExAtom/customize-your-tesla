@@ -37,7 +37,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <CheckBox x:Name="linenRoof" Checked="softwareSet_Checked"  Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="linenRoof" Checked="exteriorSet_Checked"  Unchecked="exteriorSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
                                     <TextBlock Text="Vászontető" Width="70"/>
@@ -46,14 +46,14 @@
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="spoilers" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="spoilers" Checked="exteriorSet_Checked" Unchecked="exteriorSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Spoilerek" Width="70"/>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="bottomLights" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="bottomLights" Checked="exteriorSet_Checked" Unchecked="exteriorSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Alulvilágítás" Width="70"/>
                             </WrapPanel>

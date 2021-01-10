@@ -42,9 +42,9 @@ namespace TeslaCarConfigurator.Pages
 
         public override void OnAttachedToFrame()
         {
-            linenRoof.IsChecked = Config.SoftwareFeatures.HasSelfdriving;
-            spoilers.IsChecked = Config.SoftwareFeatures.HasGps;
-            bottomLights.IsChecked = Config.SoftwareFeatures.HasHeadlightAssistant;
+            linenRoof.IsChecked = Config.Exterior.HasLinenRoof;
+            spoilers.IsChecked = Config.Exterior.HasSpoilers;
+            bottomLights.IsChecked = Config.Exterior.HasBottomLights;
         }
 
         private void exteriorSet_Checked(object sender, RoutedEventArgs e)
