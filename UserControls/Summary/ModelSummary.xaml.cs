@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.UserControls.Accordion;
+using TeslaCarConfigurator.Data;
+using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.UserControls.Summary
 {
@@ -21,16 +23,18 @@ namespace TeslaCarConfigurator.UserControls.Summary
     /// </summary>
     public partial class ModelSummary : UserControl
     {
-        private TextBlock tbPrice;
+        private Model model;
 
-        public ModelSummary()
+        public ModelSummary(Model model)
         {
             InitializeComponent();
+            this.model = model;
         }
 
         private void tbPrice_Loaded(object sender, RoutedEventArgs e)
         {
-            tbPrice = (TextBlock)sender;
+            TextBlock tbPrice = (TextBlock)sender;
+            tbPrice.Text = model.CalculateAdditionalPrices().ToString("C", Formatting.CurrencyFormat);
         }
     }
 }

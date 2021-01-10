@@ -10,13 +10,15 @@
         <accordion:AccordionItem>
             <accordion:AccordionItem.AccordionHeader>
                 <DockPanel>
-                    <TextBlock DockPanel.Dock="Left" HorizontalAlignment="Left">Választott autómodell</TextBlock>
-                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Loaded="tbPrice_Loaded"></TextBlock>
+                    <Image Margin="0,0,10,0" DockPanel.Dock="Left" Width="32" Height="32" Source="../../Assets/SummaryIcons/model-summary-icon.png"></Image>
+                    <TextBlock DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource SummaryHeaderTitleText}" >Választott autómodell</TextBlock>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center"  Loaded="tbPrice_Loaded" Style="{DynamicResource SummaryCostText}"></TextBlock>
                 </DockPanel>
             </accordion:AccordionItem.AccordionHeader>
             <accordion:AccordionItem.AccordionContent>
                 <StackPanel>
-                    <TextBlock>asd</TextBlock></StackPanel>
+                    <TextBlock>asd</TextBlock>
+                </StackPanel>
             </accordion:AccordionItem.AccordionContent>
         </accordion:AccordionItem>
     </Grid>

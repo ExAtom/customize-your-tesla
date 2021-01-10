@@ -392,6 +392,8 @@
   <ItemGroup>
     <Resource Include="Assets\no.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\model-summary-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
