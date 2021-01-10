@@ -270,10 +270,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\AccordionResources.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\PopupResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
