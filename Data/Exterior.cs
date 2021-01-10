@@ -16,10 +16,14 @@ namespace TeslaCarConfigurator.Data
         // spoilerek
         public bool HasSpoilers { get; set; }
 
-        public Exterior(bool hasLinenRoof, bool hasSpoilers)
+        // alulvilágítás
+        public bool HasBottomLights { get; set; }
+
+        public Exterior(bool hasLinenRoof, bool hasSpoilers, bool hasBottomLights)
         {
             HasLinenRoof = hasLinenRoof;
             HasSpoilers = hasSpoilers;
+            HasBottomLights = hasBottomLights;
         }
 
         public Exterior(byte[] bytes)
@@ -32,12 +36,16 @@ namespace TeslaCarConfigurator.Data
             byte spoilersMask = 0b_0000_0010;
             byte spoilers = (byte)(data & spoilersMask);
             HasSpoilers = spoilers > 0;
+
+            byte bottomLightsMask = 0b_0000_0100;
+            byte bottomLights = (byte)(data & bottomLightsMask);
+            HasBottomLights = bottomLights > 0;
         }
 
         public override byte[] ToBytes()
         {
             
-            byte value = (byte)((HasLinenRoof ? 1 : 0)  + (HasSpoilers ? 1 : 0) * 2);
+            byte value = (byte)((HasLinenRoof ? 1 : 0) + (HasSpoilers ? 1 : 0) * 2 + (HasBottomLights ? 1 : 0) * 4);
 
             return new byte[] {value };
         }
