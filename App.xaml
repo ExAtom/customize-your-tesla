@@ -8,6 +8,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
                 <ResourceDictionary Source="Styles/AccordionResources.xaml"/>
+                <ResourceDictionary Source="Styles/SummaryResources.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="EmptyButtonStyle" TargetType="Button">
