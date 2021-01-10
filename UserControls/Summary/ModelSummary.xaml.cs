@@ -36,5 +36,19 @@ namespace TeslaCarConfigurator.UserControls.Summary
             TextBlock tbPrice = (TextBlock)sender;
             tbPrice.Text = model.CalculateAdditionalPrices().ToString("C", Formatting.CurrencyFormat);
         }
+
+        private void tbDescription_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock tbDescription = (TextBlock)sender;
+            tbDescription.Text = Model.ModelDescriptions[model.ModelNameIndex];
+        }
+
+        private void tbChosenText_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock tbChosenText = (TextBlock)sender;
+            tbChosenText.Text = "Tesla " + Model.AvailableModelNames[model.ModelNameIndex];
+        }
+
+        
     }
 }
