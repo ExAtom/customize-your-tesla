@@ -82,6 +82,12 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
             selected.IsChecked = true;
+
+            seatHeating.IsChecked = Config.Interior.HasSeatHeating;
+            stearingWheelHeating.IsChecked = Config.Interior.HasSteeringWheelHeating;
+            spineSupport.IsChecked = Config.Interior.HasSpineSupport;
+            sunlightProtection.IsChecked = Config.Interior.HasSunlightProtection;
+            darkenedWindows.IsChecked = Config.Interior.HasDarkenedWindows;
         }
 
         private void iRadioSet_Checked(object sender, RoutedEventArgs e)
@@ -173,6 +179,26 @@ namespace TeslaCarConfigurator.Pages
             if (Config == null)
             {
                 return;
+            }
+
+            string setting = currentButton.Name;
+            switch (setting)
+            {
+                case "seatHeating":
+                    Config.Interior.HasSeatHeating = seatHeating.IsChecked == true;
+                    break;
+                case "stearingWheelHeating":
+                    Config.Interior.HasSteeringWheelHeating = stearingWheelHeating.IsChecked == true;
+                    break;
+                case "spineSupport":
+                    Config.Interior.HasSpineSupport = spineSupport.IsChecked == true;
+                    break;
+                case "sunlightProtection":
+                    Config.Interior.HasSunlightProtection = sunlightProtection.IsChecked == true;
+                    break;
+                case "darkenedWindows":
+                    Config.Interior.HasDarkenedWindows = darkenedWindows.IsChecked == true;
+                    break;
             }
         }
     }
