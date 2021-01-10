@@ -67,6 +67,7 @@ namespace TeslaCarConfigurator.Pages
             summaryAccordion.Children.Add(new ModelSummary(model));
             summaryAccordion.Children.Add(new BatterySummary(battery));
             summaryAccordion.Children.Add(new TransmissionSummary(transmission));
+            summaryAccordion.Children.Add(new PaintingSummary(painting));
         }
 
         private async void btnSaveConfig_Click(object sender, RoutedEventArgs e)
