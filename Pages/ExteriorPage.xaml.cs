@@ -17,11 +17,11 @@ using TeslaCarConfigurator.Helpers;
 namespace TeslaCarConfigurator.Pages
 {
     /// <summary>
-    /// Interaction logic for InteriorPage.xaml
+    /// Interaction logic for ExteriorPage.xaml
     /// </summary>
-    public partial class SoftwarePage : PageBase
+    public partial class ExteriorPage : PageBase
     {
-        public SoftwarePage()
+        public ExteriorPage()
         {
             InitializeComponent();
         }
@@ -42,34 +42,28 @@ namespace TeslaCarConfigurator.Pages
 
         public override void OnAttachedToFrame()
         {
-            selfdriving.IsChecked = Config.SoftwareFeatures.HasSelfdriving;
-            gps.IsChecked = Config.SoftwareFeatures.HasGps;
-            headlightAssistant.IsChecked = Config.SoftwareFeatures.HasHeadlightAssistant;
-            adaptiveLights.IsChecked = Config.SoftwareFeatures.HasAdaptiveLights;
+            linenRoof.IsChecked = Config.SoftwareFeatures.HasSelfdriving;
+            spoilers.IsChecked = Config.SoftwareFeatures.HasGps;
+            bottomLights.IsChecked = Config.SoftwareFeatures.HasHeadlightAssistant;
         }
 
-        private void softwareSet_Checked(object sender, RoutedEventArgs e)
+        private void exteriorSet_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox currentButton = (CheckBox)sender;
-            if (currentButton.Name == "selfdriving")
+            if (currentButton.Name == "linenRoof")
             {
-                tbInfos.Text = "A Tesla autók egyik legkiemelkedőbb szolgáltatása az önvezetés, ami olyan precizitással segít a mindennapi forgalmakban, mint eddig semmilyen más cég autói.";
-                tbPrice.Text = "Ára: 990.000 Ft";
+                tbInfos.Text = "A vászontető napjaink legdivatosabb autókialakítása. Nagy sebességnél kellemes hangot kelt. A mi vászontetőnk viszont nem csak divatos, de speciális funkciója is van. Gombonymásra visszahúzódik a csomagtartóba és nyitott lesz az utastér.";
+                tbPrice.Text = "Ára: 13.900.000 Ft";
             }
-            if (currentButton.Name == "gps")
+            if (currentButton.Name == "spoilers")
             {
-                tbInfos.Text = "GPS-szel könnyedén megállapíthatja a helyzetét és segítséget kaphat, hogy milyen irányban folytassa az útján a célpontjának eléréséhez.";
-                tbPrice.Text = "Ára: 95.000 Ft";
+                tbInfos.Text = "Spoilerek a hiányzó tapadást hozzák létre, így sokkal gyorsabban száguldozhat autójával, mint egyébként. Automatikusan állítja az autó szoftvere az állásukat, így lassításnál még nagyobb segítséget nyújt.";
+                tbPrice.Text = "Ára: 5.600.000 Ft";
             }
-            if (currentButton.Name == "headlightAssistant")
+            if (currentButton.Name == "bottomLights")
             {
-                tbInfos.Text = "Néha nehéz észrevenni időben, ha egy szemben lévő autó látótávolságba kerül. Ilyenkor a távolsági fényszórókat le kell kapcsolni. Ebben segítene a fényszóró asszisztens.";
-                tbPrice.Text = "Ára: 269.000 Ft";
-            }
-            if (currentButton.Name == "adaptiveLights")
-            {
-                tbInfos.Text = "Fényviszonyokhoz alkalmazkodik az autó fényberendezései, ezzel kevesebb dologgal foglalkozhat a sofőr, így könnyebben odafigyelhet a balesetmentes vezetésre.";
-                tbPrice.Text = "Ára: 246.000 Ft";
+                tbInfos.Text = "Azoknak ajánljuk, akik szeretnek kitűnni a tömegből. Egy LED sor világítja ki az autó alját, így önt jobban láthatják a sötétben és sokkal ütősebb lesz a megjelenése.";
+                tbPrice.Text = "Ára: 1.200.000 Ft";
             }
 
             if (Config == null)
@@ -80,17 +74,14 @@ namespace TeslaCarConfigurator.Pages
             string setting = currentButton.Name;
             switch (setting)
             {
-                case "selfdriving":
-                    Config.SoftwareFeatures.HasSelfdriving = selfdriving.IsChecked == true;
+                case "linenRoof":
+                    Config.Exterior.HasLinenRoof = linenRoof.IsChecked == true;
                     break;
-                case "gps":
-                    Config.SoftwareFeatures.HasGps = gps.IsChecked == true;
+                case "spoilers":
+                    Config.Exterior.HasSpoilers = spoilers.IsChecked == true;
                     break;
-                case "headlightAssistant":
-                    Config.SoftwareFeatures.HasHeadlightAssistant = headlightAssistant.IsChecked == true;
-                    break;
-                case "adaptiveLights":
-                    Config.SoftwareFeatures.HasAdaptiveLights = adaptiveLights.IsChecked == true;
+                case "bottomLights":
+                    Config.Exterior.HasBottomLights = bottomLights.IsChecked == true;
                     break;
             }
         }
