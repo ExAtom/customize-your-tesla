@@ -37,7 +37,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <RadioButton x:Name="iMaterial1" GroupName="wheels" Checked="iMaterialSet_Checked">
+                        <RadioButton x:Name="iMaterial1" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
                                     <TextBlock Text="Bio Műanyag" Width="70"/>
@@ -46,21 +46,21 @@
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="iMaterial2" GroupName="wheels" Checked="iMaterialSet_Checked">
+                        <RadioButton x:Name="iMaterial2" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Öntött Fa" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="iMaterial3" GroupName="wheels" Checked="iMaterialSet_Checked">
+                        <RadioButton x:Name="iMaterial3" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Jegelt Üveg" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
-                        <RadioButton x:Name="iMaterial4" GroupName="wheels" Checked="iMaterialSet_Checked">
+                        <RadioButton x:Name="iMaterial4" GroupName="materials" Checked="iMaterialSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Krokodilbőr" Width="70"/>
                             </WrapPanel>
