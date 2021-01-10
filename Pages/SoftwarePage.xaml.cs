@@ -106,20 +106,19 @@ namespace TeslaCarConfigurator.Pages
             }
 
             string setting = currentButton.Name;
-            //Config.Interior.MaterialIndex = index;
             switch (setting)
             {
                 case "selfdriving":
-                    Config.SoftwareFeatures.HasSelfdriving = Config.SoftwareFeatures.HasSelfdriving ? false : true;
+                    Config.SoftwareFeatures.HasSelfdriving = selfdriving.IsChecked == true;
                     break;
                 case "gps":
-                    Config.SoftwareFeatures.HasGps = Config.SoftwareFeatures.HasGps ? false : true;
+                    Config.SoftwareFeatures.HasGps = gps.IsChecked == true;
                     break;
                 case "headlightAssistant":
-                    Config.SoftwareFeatures.HasHeadlightAssistant = Config.SoftwareFeatures.HasHeadlightAssistant ? false : true;
+                    Config.SoftwareFeatures.HasHeadlightAssistant = headlightAssistant.IsChecked == true;
                     break;
                 case "adaptiveLights":
-                    Config.SoftwareFeatures.HasAdaptiveLights = Config.SoftwareFeatures.HasAdaptiveLights ? false : true;
+                    Config.SoftwareFeatures.HasAdaptiveLights = adaptiveLights.IsChecked == true;
                     break;
             }
         }
