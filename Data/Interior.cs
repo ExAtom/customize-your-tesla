@@ -103,7 +103,8 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            return MaterialPrices[MaterialIndex];
+            return MaterialPrices[MaterialIndex] +
+                ColorPrices[ColorIndex];
         }
     }
 }
