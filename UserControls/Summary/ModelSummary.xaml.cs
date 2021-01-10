@@ -12,30 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TeslaCarConfigurator.Data;
-using TeslaCarConfigurator.Helpers;
 using TeslaCarConfigurator.UserControls.Accordion;
 
 namespace TeslaCarConfigurator.UserControls.Summary
 {
-    public partial class PaintingSummaryHeader : AccordionHeader
+    /// <summary>
+    /// Interaction logic for ModelSummary.xaml
+    /// </summary>
+    public partial class ModelSummary : UserControl
     {
-        private Painting painting;
+        private TextBlock tbPrice;
 
-        public PaintingSummaryHeader(Painting painting)
+        public ModelSummary()
         {
-            this.painting = painting;
-            Initialized += OnInitialized;
             InitializeComponent();
         }
 
-        private void OnInitialized(object sender, EventArgs e)
+        private void tbPrice_Loaded(object sender, RoutedEventArgs e)
         {
-            if (painting == null)
-            {
-                return;
-            }
-            tbPrice.Text = $"+{painting.CalculateAdditionalPrices().ToString("C",Formatting.CurrencyFormat)}";
+            tbPrice = (TextBlock)sender;
         }
     }
 }
