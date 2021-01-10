@@ -153,7 +153,7 @@ namespace TeslaCarConfigurator.Pages
             if (currentButton.Name == "seatHeating")
             {
                 tbInfos.Text = "Ülés fűtés és hűtés. Bármilyen idő legyen kint, a legkényelmesebb vezetést nyújtja.";
-                tbPrice.Text = "Ára: 150.000";
+                tbPrice.Text = "Ára: 150.000 Ft";
             }
             if (currentButton.Name == "stearingWheelHeating")
             {

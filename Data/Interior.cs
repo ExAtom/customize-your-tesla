@@ -104,7 +104,12 @@ namespace TeslaCarConfigurator.Data
         public override int CalculateAdditionalPrices()
         {
             return MaterialPrices[MaterialIndex] +
-                ColorPrices[ColorIndex];
+                ColorPrices[ColorIndex] +
+                (HasSeatHeating ? 150000 : 0) +
+                (HasSteeringWheelHeating ? 110000 : 0) +
+                (HasSpineSupport ? 69420 : 0) +
+                (HasSunlightProtection ? 650000 : 0) +
+                (HasDarkenedWindows ? 190000 : 0);
         }
     }
 }
