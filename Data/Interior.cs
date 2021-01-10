@@ -13,7 +13,8 @@ namespace TeslaCarConfigurator.Data
         public static List<string> AvailableMaterials { get; private set; } = new List<string>() { "Bio Műanyag", "Öntött Fa", "Jegelt Üveg", "Krokodilbőr" };
         public static List<int> MaterialPrices { get; private set; } = new List<int>() { 0, 560000, 665000, 1029000 };
 
-        public static List<string> AvailableColors { get; private set; } = new List<string>() { "Fekete" };
+        public static List<string> AvailableColors { get; private set; } = new List<string>() { "Fekete", "Fehér", "Barna" };
+        public static List<int> ColorPrices { get; private set; } = new List<int>() { 0, 500000, 600000 };
 
         // ülésfűtés
         public bool HasSeatHeating { get; set; }
@@ -102,7 +103,13 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            return MaterialPrices[MaterialIndex];
+            return MaterialPrices[MaterialIndex] +
+                ColorPrices[ColorIndex] +
+                (HasSeatHeating ? 150000 : 0) +
+                (HasSteeringWheelHeating ? 110000 : 0) +
+                (HasSpineSupport ? 69420 : 0) +
+                (HasSunlightProtection ? 650000 : 0) +
+                (HasDarkenedWindows ? 190000 : 0);
         }
     }
 }

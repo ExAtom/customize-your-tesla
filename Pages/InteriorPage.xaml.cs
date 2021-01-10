@@ -42,27 +42,39 @@ namespace TeslaCarConfigurator.Pages
 
         public override void OnAttachedToFrame()
         {
-            byte chosenTypeIndex = Config?.Interior?.MaterialIndex ?? 0;
+            byte chosenMaterialIndex = Config?.Interior?.MaterialIndex ?? 0;
+            byte chosenColorIndex = Config?.Interior?.ColorIndex ?? 0;
             RadioButton selected = null;
 
-            if (chosenTypeIndex == 0)
+            if (chosenMaterialIndex == 0)
             {
                 selected = iMaterial1;
             }
-
-            if (chosenTypeIndex == 1)
+            if (chosenMaterialIndex == 1)
             {
                 selected = iMaterial2;
             }
-
-            if (chosenTypeIndex == 2)
+            if (chosenMaterialIndex == 2)
             {
                 selected = iMaterial3; 
             }
-
-            if (chosenTypeIndex == 3)
+            if (chosenMaterialIndex == 3)
             {
                 selected = iMaterial4;
+            }
+            selected.IsChecked = true;
+
+            if (chosenColorIndex == 0)
+            {
+                selected = iColor1;
+            }
+            if (chosenColorIndex == 1)
+            {
+                selected = iColor2;
+            }
+            if (chosenColorIndex == 2)
+            {
+                selected = iColor3;
             }
 
             if (selected == null)
@@ -70,11 +82,18 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
             selected.IsChecked = true;
+
+            seatHeating.IsChecked = Config.Interior.HasSeatHeating;
+            stearingWheelHeating.IsChecked = Config.Interior.HasSteeringWheelHeating;
+            spineSupport.IsChecked = Config.Interior.HasSpineSupport;
+            sunlightProtection.IsChecked = Config.Interior.HasSunlightProtection;
+            darkenedWindows.IsChecked = Config.Interior.HasDarkenedWindows;
         }
 
-        private void iMaterialSet_Checked(object sender, RoutedEventArgs e)
+        private void iRadioSet_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton currentButton = (RadioButton)sender;
+
             if (currentButton.Name == "iMaterial1")
             {
                 tbInfos.Text = "A bio műanyag egy erősebb és környezetkímélőbb alternatíva. A textúrájának kidolgozása az aszfaltra hasonlít, ezzel egyé válhat az úttal, amin éppen halad.";
@@ -96,15 +115,91 @@ namespace TeslaCarConfigurator.Pages
                 tbPrice.Text = "Ára: 1.029.000 Ft";
             }
 
+            if (currentButton.Name == "iColor1")
+            {
+                tbInfos.Text = "Fekete. Milyen egyszerű. Milyen elegáns. Egyszerűen tökéletes. Az űrre és annak végtelenül csodálatosságára emlékeztet. Csodás választás.";
+                tbPrice.Text = "Alap szín";
+            }
+            if (currentButton.Name == "iColor2")
+            {
+                tbInfos.Text = "A fehér kitisztultság, felsőbbrendűségre sugall. Vezetés közben páratlanul kiemelkedő érzése lehet a vezetőnek.";
+                tbPrice.Text = "Ára: 500.000 Ft";
+            }
+            if (currentButton.Name == "iColor3")
+            {
+                tbInfos.Text = "A barna a legtermészetesebb színünk. Az öntött fával vagy krokodilbőrrel együtt teljes az összhatás. Klasszikus és csodás.";
+                tbPrice.Text = "Ára: 600.000 Ft";
+            }
+
             if (Config == null)
             {
                 return;
             }
 
-            byte index = (byte)(byte.Parse(currentButton.Name.Replace("iMaterial", "")) - 1);
-            Config.Interior.MaterialIndex = index;
+            if (currentButton.GroupName == "materials")
+            {
+                byte index = (byte)(byte.Parse(currentButton.Name.Replace("iMaterial", "")) - 1);
+                Config.Interior.MaterialIndex = index;
+            }
+            if (currentButton.GroupName == "colors")
+            {
+                byte index = (byte)(byte.Parse(currentButton.Name.Replace("iColor", "")) - 1);
+                Config.Interior.ColorIndex = index;
+            }
+        }
+        private void iCheckboxSet_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckBox currentButton = (CheckBox)sender;
+            if (currentButton.Name == "seatHeating")
+            {
+                tbInfos.Text = "Ülés fűtés és hűtés. Bármilyen idő legyen kint, a legkényelmesebb vezetést nyújtja.";
+                tbPrice.Text = "Ára: 150.000 Ft";
+            }
+            if (currentButton.Name == "stearingWheelHeating")
+            {
+                tbInfos.Text = "Kormánykerék fűtése és hűtése. Reggeli induláskor gyakran kényelmetlenül forró vagy hideg lehet a kormány, így az nehezíti a kormányzást. Ennek megoldása ez a beállítás.";
+                tbPrice.Text = "Ára: 110.000 Ft";
+            }
+            if (currentButton.Name == "spineSupport")
+            {
+                tbInfos.Text = "Hosszú utakon nagyban segíthet a gerinctámasz beszerelése. Britt tudósok szerint még a látása is javul tőle.";
+                tbPrice.Text = "Ára: 69.420 Ft";
+            }
+            if (currentButton.Name == "sunlightProtection")
+            {
+                tbInfos.Text = "Elég lesz a borzalmas műanyag fényvisszaverő lapokból, amiket senki se bír normálisan az ablkba. Ez az új technológia az autó kikapcsolásakor elsőtétíti az ablakokat, amin kereszül a napfény nem jut be az autóba.";
+                tbPrice.Text = "Ára: 650.000 Ft";
+            }
+            if (currentButton.Name == "darkenedWindows")
+            {
+                tbInfos.Text = "Kívülről senki se lát be, de belülről ki lát mindenki. Az eleganciapontja is kiemelkedően növekszik a járműnek ennek használatakor.";
+                tbPrice.Text = "Ára: 190.000 Ft";
+            }
+
+            if (Config == null)
+            {
+                return;
+            }
+
+            string setting = currentButton.Name;
+            switch (setting)
+            {
+                case "seatHeating":
+                    Config.Interior.HasSeatHeating = seatHeating.IsChecked == true;
+                    break;
+                case "stearingWheelHeating":
+                    Config.Interior.HasSteeringWheelHeating = stearingWheelHeating.IsChecked == true;
+                    break;
+                case "spineSupport":
+                    Config.Interior.HasSpineSupport = spineSupport.IsChecked == true;
+                    break;
+                case "sunlightProtection":
+                    Config.Interior.HasSunlightProtection = sunlightProtection.IsChecked == true;
+                    break;
+                case "darkenedWindows":
+                    Config.Interior.HasDarkenedWindows = darkenedWindows.IsChecked == true;
+                    break;
+            }
         }
     }
-
-
 }

@@ -6,12 +6,12 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Belső kiválasztása" Background="#FFC6CBD0" SizeChanged="Windows_SizeChanged" x:Name="Windows" >
+      Title="Belső beállítások" Background="#FFC6CBD0" SizeChanged="Windows_SizeChanged" x:Name="Windows" >
     <Grid>
         <ScrollViewer  VerticalScrollBarVisibility="Auto">
             <DockPanel>
                 <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
-                    <TextBlock TextWrapping="Wrap" Text="Belső kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
+                    <TextBlock TextWrapping="Wrap" Text="Belső beállítások" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
                         <TextBlock.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -36,8 +36,8 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <RadioButton x:Name="iMaterial1" GroupName="wheels" Checked="iMaterialSet_Checked">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <RadioButton x:Name="iMaterial1" GroupName="materials" Checked="iRadioSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
                                     <TextBlock Text="Bio Műanyag" Width="70"/>
@@ -45,26 +45,100 @@
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="iMaterial2" GroupName="wheels" Checked="iMaterialSet_Checked">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
+                        <RadioButton x:Name="iMaterial2" GroupName="materials" Checked="iRadioSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Öntött Fa" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="iMaterial3" GroupName="wheels" Checked="iMaterialSet_Checked">
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
+                        <RadioButton x:Name="iMaterial3" GroupName="materials" Checked="iRadioSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Jegelt Üveg" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
-                        <RadioButton x:Name="iMaterial4" GroupName="wheels" Checked="iMaterialSet_Checked">
+                        <RadioButton x:Name="iMaterial4" GroupName="materials" Checked="iRadioSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Krokodilbőr" Width="70"/>
                             </WrapPanel>
                         </RadioButton>
+                    </Viewbox>
+
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 30, 0, 0">
+                        <RadioButton x:Name="iColor1" GroupName="colors" Checked="iRadioSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Fekete" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <RadioButton x:Name="iColor2" GroupName="colors" Checked="iRadioSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Fehér" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <RadioButton x:Name="iColor3" GroupName="colors" Checked="iRadioSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Barna" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 30, 0, 0">
+                        <CheckBox x:Name="seatHeating" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Ülésfűtés" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </CheckBox>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <CheckBox x:Name="stearingWheelHeating" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Kormányfűtés" Width="75"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </CheckBox>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <CheckBox x:Name="spineSupport" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Gerinctámasz" Width="75"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </CheckBox>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <CheckBox x:Name="sunlightProtection" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Napvédő" Width="70"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </CheckBox>
+                    </Viewbox>
+                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 20, 0, 0">
+                        <CheckBox x:Name="darkenedWindows" Checked="iCheckboxSet_Checked"  Unchecked="iCheckboxSet_Checked">
+                            <WrapPanel>
+                                <StackPanel>
+                                    <TextBlock Text="Sötétített ablakok" Width="130"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </CheckBox>
                     </Viewbox>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
