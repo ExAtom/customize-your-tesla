@@ -53,6 +53,8 @@ namespace TeslaCarConfigurator.Pages
 
         private void InitDropdown()
         {
+            summaryAccordion.Children.Clear();
+
             Model model = Config.CarModel;
             Battery battery = Config.Battery;
             Transmission transmission = Config.Transmission;
@@ -63,6 +65,8 @@ namespace TeslaCarConfigurator.Pages
             SoftwareFeatures softwareFeatures = Config.SoftwareFeatures;
 
             summaryAccordion.Children.Add(new ModelSummary(model));
+            summaryAccordion.Children.Add(new BatterySummary(battery));
+            summaryAccordion.Children.Add(new TransmissionSummary(transmission));
         }
 
         private async void btnSaveConfig_Click(object sender, RoutedEventArgs e)

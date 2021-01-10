@@ -195,6 +195,12 @@
     <Compile Include="Pages\WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
+      <DependentUpon>BatterySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummary.xaml.cs">
+      <DependentUpon>TransmissionSummary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Summary\ModelSummary.xaml.cs">
       <DependentUpon>ModelSummary.xaml</DependentUpon>
     </Compile>
@@ -293,6 +299,14 @@
     <Page Include="Pages\WheelConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Summary\ModelSummary.xaml">
       <SubType>Designer</SubType>
@@ -394,6 +408,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\SummaryIcons\model-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\battery-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\transmission-summary-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
