@@ -65,7 +65,10 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            return 0;
+            return (HasSelfdriving ? 990000 : 0) +
+                (HasGps ? 95000 : 0) +
+                (HasHeadlightAssistant ? 269000 : 0) +
+                (HasAdaptiveLights ? 246000 : 0);
         }
     }
 }

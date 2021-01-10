@@ -118,6 +118,9 @@
       <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerDetailsViewModel.cs" />
+    <Compile Include="Pages\SoftwarePage.xaml.cs">
+      <DependentUpon>SoftwarePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
@@ -240,6 +243,10 @@
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\CustomerDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SoftwarePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
