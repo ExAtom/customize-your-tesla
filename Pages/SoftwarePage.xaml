@@ -37,7 +37,7 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <CheckBox x:Name="selfdriving" Checked="softwareSet_Checked">
+                        <CheckBox x:Name="selfdriving" Checked="softwareSet_Checked"  Unchecked="softwareSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
                                     <TextBlock Text="Önvezetés" Width="70"/>
@@ -46,21 +46,21 @@
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="gps" Checked="softwareSet_Checked">
+                        <CheckBox x:Name="gps" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="GPS" Width="70"/>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="headlightAssistant" Checked="softwareSet_Checked">
+                        <CheckBox x:Name="headlightAssistant" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Távolsági fényszóró asszisztens" Width="165"/>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
-                        <CheckBox x:Name="adaptiveLights" Checked="softwareSet_Checked">
+                        <CheckBox x:Name="adaptiveLights" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
                             <WrapPanel>
                                 <TextBlock Text="Adaptív fényszóró" Width="100"/>
                             </WrapPanel>
