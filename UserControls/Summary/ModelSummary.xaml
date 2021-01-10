@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <accordion:AccordionItem>
+        <accordion:AccordionItem >
             <accordion:AccordionItem.AccordionHeader>
                 <DockPanel>
                     <Image Margin="0,0,10,0" DockPanel.Dock="Left" Width="32" Height="32" Source="../../Assets/SummaryIcons/model-summary-icon.png"></Image>
@@ -17,7 +17,8 @@
             </accordion:AccordionItem.AccordionHeader>
             <accordion:AccordionItem.AccordionContent>
                 <StackPanel>
-                    <TextBlock>asd</TextBlock>
+                    <TextBlock Loaded="tbChosenText_Loaded" Style="{DynamicResource SummaryChosenOptionText}"  ></TextBlock>
+                    <TextBlock Loaded="tbDescription_Loaded" Style="{DynamicResource SummaryDescriptionText}"  ></TextBlock>
                 </StackPanel>
             </accordion:AccordionItem.AccordionContent>
         </accordion:AccordionItem>
