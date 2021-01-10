@@ -21,32 +21,38 @@ namespace TeslaCarConfigurator.UserControls.Summary
     /// <summary>
     /// Interaction logic for ModelSummary.xaml
     /// </summary>
-    public partial class ModelSummary : UserControl
+    public partial class TransmissionSummary : UserControl
     {
-        private Model model;
+        private Transmission transmission;
 
-        public ModelSummary(Model model)
+        public TransmissionSummary(Transmission transmission)
         {
             InitializeComponent();
-            this.model = model;
+            this.transmission = transmission;
         }
 
         private void tbPrice_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbPrice = (TextBlock)sender;
-            tbPrice.Text = model.CalculateAdditionalPrices().ToString("C", Formatting.CurrencyFormat);
+            int prices = transmission.CalculateAdditionalPrices();
+            if (prices == 0)
+            {
+                return;
+            }
+
+            tbPrice.Text = "+" + prices.ToString("C", Formatting.CurrencyFormat);
         }
 
         private void tbDescription_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbDescription = (TextBlock)sender;
-            tbDescription.Text = Model.ModelDescriptions[model.ModelNameIndex];
+            tbDescription.Text = Transmission.TransmissionDescriptions[transmission.TypeIndex];
         }
 
         private void tbChosenText_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbChosenText = (TextBlock)sender;
-            tbChosenText.Text = "Tesla " + model.ModelName;
+            tbChosenText.Text = transmission.Type;
         }
 
         
