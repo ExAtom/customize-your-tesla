@@ -37,25 +37,25 @@
                         </TextBlock.Background>
                     </TextBlock>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <CheckBox x:Name="selfdriving" Checked="softwareSet_Checked"  Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="linenRoof" Checked="softwareSet_Checked"  Unchecked="softwareSet_Checked">
                             <WrapPanel>
                                 <StackPanel>
-                                    <TextBlock Text="Önvezetés" Width="70"/>
+                                    <TextBlock Text="Vászontető" Width="70"/>
                                 </StackPanel>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="gps" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="spoilers" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
                             <WrapPanel>
-                                <TextBlock Text="GPS" Width="70"/>
+                                <TextBlock Text="Spoilerek" Width="70"/>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
                     <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <CheckBox x:Name="headlightAssistant" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
+                        <CheckBox x:Name="bottomLights" Checked="softwareSet_Checked" Unchecked="softwareSet_Checked">
                             <WrapPanel>
-                                <TextBlock Text="Távolsági fényszóró asszisztens" Width="165"/>
+                                <TextBlock Text="Alulvilágítás" Width="70"/>
                             </WrapPanel>
                         </CheckBox>
                     </Viewbox>
