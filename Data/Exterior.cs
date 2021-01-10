@@ -52,7 +52,9 @@ namespace TeslaCarConfigurator.Data
 
         public override int CalculateAdditionalPrices()
         {
-            return 0;
+            return (HasLinenRoof ? 13900000 : 0) +
+                (HasSpoilers ? 5600000 : 0) +
+                (HasBottomLights ? 1200000 : 0);
         }
     }
 }
