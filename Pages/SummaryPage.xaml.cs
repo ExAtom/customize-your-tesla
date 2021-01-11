@@ -53,6 +53,8 @@ namespace TeslaCarConfigurator.Pages
 
         private void InitDropdown()
         {
+            summaryAccordion.Children.Clear();
+
             Model model = Config.CarModel;
             Battery battery = Config.Battery;
             Transmission transmission = Config.Transmission;
@@ -62,29 +64,12 @@ namespace TeslaCarConfigurator.Pages
             Interior interior = Config.Interior;
             SoftwareFeatures softwareFeatures = Config.SoftwareFeatures;
 
-            AccordionItem modelItem = new AccordionItem(new ModelSummaryContent(model), new ModelSummaryHeader(model));
-            summaryAccordion.AddAccordionItem(modelItem);
-
-            AccordionItem batteryItem = new AccordionItem(new BatterySummaryContent(battery), new BatterySummaryHeader(battery));
-            summaryAccordion.AddAccordionItem(batteryItem);
-
-            AccordionItem transmissionItem = new AccordionItem(new TransmissionSummaryContent(transmission), new TransmissionSummaryHeader(transmission));
-            summaryAccordion.AddAccordionItem(transmissionItem);
-
-            AccordionItem paintingItem = new AccordionItem(new PaintingSummaryContent(painting), new PaintingSummaryHeader(painting));
-            summaryAccordion.AddAccordionItem(paintingItem);
-
-            AccordionItem wheelItem = new AccordionItem(new WheelSummaryContent(wheel), new WheelSummaryHeader(wheel));
-            summaryAccordion.AddAccordionItem(wheelItem);
-
-            AccordionItem exteriorItem = new AccordionItem(new ExteriorSummaryContent(exterior), new ExteriorSummaryHeader(exterior));
-            summaryAccordion.AddAccordionItem(exteriorItem);
-
-            AccordionItem interiorItem = new AccordionItem(new InteriorSummaryContent(interior), new InteriorSummaryHeader(interior));
-            summaryAccordion.AddAccordionItem(interiorItem);
-
-            AccordionItem softwareFeatureItem = new AccordionItem(new SoftwareFeatureSummaryContent(softwareFeatures), new SoftwareFeatureSummaryHeader(softwareFeatures));
-            summaryAccordion.AddAccordionItem(softwareFeatureItem);
+            summaryAccordion.Children.Add(new ModelSummary(model));
+            summaryAccordion.Children.Add(new BatterySummary(battery));
+            summaryAccordion.Children.Add(new TransmissionSummary(transmission));
+            summaryAccordion.Children.Add(new PaintingSummary(painting));
+            summaryAccordion.Children.Add(new WheelsSummary(wheel));
+            summaryAccordion.Children.Add(new ExteriorSummary(exterior));
         }
 
         private async void btnSaveConfig_Click(object sender, RoutedEventArgs e)

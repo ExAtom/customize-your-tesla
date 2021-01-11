@@ -7,25 +7,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
+                <ResourceDictionary Source="Styles/AccordionResources.xaml"/>
+                <ResourceDictionary Source="Styles/SummaryResources.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="AccordionHeaderStyle" TargetType="Button">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <StackPanel Background="Red">
-
-                                <DockPanel >
-                                    <ContentPresenter  Content="{TemplateBinding Content}" />
-                                </DockPanel>
-                            </StackPanel>
-
-
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-
 
             <Style x:Key="EmptyButtonStyle" TargetType="Button">
                 <Setter Property="Template">

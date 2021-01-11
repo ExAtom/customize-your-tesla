@@ -36,7 +36,7 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <accordion:Accordion x:Name="summaryAccordion"></accordion:Accordion>
+                    <StackPanel x:Name="summaryAccordion" Margin="10,18,0,0"></StackPanel>
                     <TextBlock Name="tbTotalPrice"></TextBlock>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">

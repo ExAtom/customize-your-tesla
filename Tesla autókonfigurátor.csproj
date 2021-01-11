@@ -173,11 +173,9 @@
     <Compile Include="Pages\ModelConfiguration.xaml.cs">
       <DependentUpon>ModelConfiguration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Accordion\Accordion.xaml.cs">
-      <DependentUpon>Accordion.xaml</DependentUpon>
+    <Compile Include="UserControls\Accordion\AccordionItem.xaml.cs">
+      <DependentUpon>AccordionItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Accordion\AccordionHeader.cs" />
-    <Compile Include="UserControls\Accordion\AccordionItem.cs" />
     <Compile Include="UserControls\FlagDisplay.xaml.cs">
       <DependentUpon>FlagDisplay.xaml</DependentUpon>
     </Compile>
@@ -197,59 +195,30 @@
     <Compile Include="UserControls\LoadingContainer.xaml.cs">
       <DependentUpon>LoadingContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PageTitle.xaml.cs">
-      <DependentUpon>PageTitle.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\BatterySummaryHeader.xaml.cs">
-      <DependentUpon>BatterySummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\BatterySummaryContent.xaml.cs">
-      <DependentUpon>BatterySummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml.cs">
-      <DependentUpon>SoftwareFeatureSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml.cs">
-      <DependentUpon>SoftwareFeatureSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\InteriorSummaryHeader.xaml.cs">
-      <DependentUpon>InteriorSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\InteriorSummaryContent.xaml.cs">
-      <DependentUpon>InteriorSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\ExteriorSummaryContent.xaml.cs">
-      <DependentUpon>ExteriorSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\ExteriorSummaryHeader.xaml.cs">
-      <DependentUpon>ExteriorSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\WheelSummaryHeader.xaml.cs">
-      <DependentUpon>WheelSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\WheelSummaryContent.xaml.cs">
-      <DependentUpon>WheelSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\PaintingSummaryHeader.xaml.cs">
-      <DependentUpon>PaintingSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\PaintingSummaryContent.xaml.cs">
-      <DependentUpon>PaintingSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\TransmissionSummaryHeader.xaml.cs">
-      <DependentUpon>TransmissionSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\TransmissionSummaryContent.xaml.cs">
-      <DependentUpon>TransmissionSummaryContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\ModelSummaryHeader.xaml.cs">
-      <DependentUpon>ModelSummaryHeader.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Summary\ModelSummaryContent.xaml.cs">
-      <DependentUpon>ModelSummaryContent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
+
+    </Compile>
+    <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
+      <DependentUpon>BatterySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummary.xaml.cs">
+      <DependentUpon>ExteriorSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummary.xaml.cs">
+      <DependentUpon>InteriorSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\WheelsSummary.xaml.cs">
+      <DependentUpon>WheelsSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\PaintingSummary.xaml.cs">
+      <DependentUpon>PaintingSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummary.xaml.cs">
+      <DependentUpon>TransmissionSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ModelSummary.xaml.cs">
+      <DependentUpon>ModelSummary.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\CustomerDetailsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -307,6 +276,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+
+    <Page Include="Styles\AccordionResources.xaml">
+
     <Page Include="Styles\NavigationBarResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,7 +287,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Accordion\Accordion.xaml">
+    <Page Include="Styles\PopupResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\SummaryResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
+
+    <Page Include="UserControls\InfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Inputs\DropdownList.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,15 +310,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\InfoPanel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\Inputs\DropdownList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+      <Page Include="UserControls\Inputs\CountryInput.xaml">
+        <Page Include="UserControls\PageTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\Inputs\CountryInput.xaml">
+
+    <Page Include="UserControls\PageTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -343,75 +336,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\PageTitle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\BatterySummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\BatterySummaryContent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\InteriorSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\InteriorSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\ExteriorSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\ExteriorSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\WheelSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\WheelSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\PaintingSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\PaintingSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\TransmissionSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\TransmissionSummaryContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\ModelSummaryHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Summary\ModelSummaryContent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\WheelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\WheelsSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\PaintingSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -434,6 +387,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\SourceSansPro-Black.ttf" />
+    <Resource Include="Fonts\SourceSansPro-BlackItalic.ttf" />
+    <Resource Include="Fonts\SourceSansPro-Bold.ttf" />
+    <Resource Include="Fonts\SourceSansPro-BoldItalic.ttf" />
+    <Resource Include="Fonts\SourceSansPro-ExtraLight.ttf" />
+    <Resource Include="Fonts\SourceSansPro-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\SourceSansPro-Italic.ttf" />
+    <Resource Include="Fonts\SourceSansPro-Light.ttf" />
+    <Resource Include="Fonts\SourceSansPro-LightItalic.ttf" />
+    <Resource Include="Fonts\SourceSansPro-Regular.ttf" />
+    <Resource Include="Fonts\SourceSansPro-SemiBold.ttf" />
+    <Resource Include="Fonts\SourceSansPro-SemiBoldItalic.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -498,10 +463,34 @@
     <Resource Include="Assets\no.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\model-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\battery-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\transmission-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\painting-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\wheel-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\exterior-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\plus.png" />
+
     <Resource Include="InfosBackgroundMobile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\InfosBackgroundMobile.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
