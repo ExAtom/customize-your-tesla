@@ -38,7 +38,29 @@ namespace TeslaCarConfigurator.Pages
             {
                 Menu.Width = 400;
             }
+
+            if (Windows.ActualWidth <= 545)
+            {
+                Panel parent = (Panel)ContentContainer.Parent;
+                if (parent != null && parent != MobileContainer)
+                {
+                    parent.Children.Remove(ContentContainer);
+                    MobileContainer.Children.Add(ContentContainer);
+                }
+            }
+            else
+            {
+                Panel parent = (Panel)ContentContainer.Parent;
+                if (parent != null && parent != DesktopContainer)
+                {
+                    parent.Children.Remove(ContentContainer);
+                    DesktopContainer.Children.Add(ContentContainer);
+                }
+            }
+
         }
+
+
 
         private void rbColorSet_Checked(object sender, RoutedEventArgs e)
         {
