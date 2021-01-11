@@ -197,7 +197,9 @@
     </Compile>
     <Compile Include="Pages\WheelConfiguration.xaml.cs">
       <DependentUpon>WheelConfiguration.xaml</DependentUpon>
-
+    </Compile>
+    <Compile Include="UserControls\PageTitle.xaml.cs">
+      <DependentUpon>PageTitle.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
       <DependentUpon>BatterySummary.xaml</DependentUpon>
@@ -276,14 +278,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-
     <Page Include="Styles\AccordionResources.xaml">
-
-    <Page Include="Styles\NavigationBarResources.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\PopupResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,14 +290,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
-
-    <Page Include="UserControls\InfoPanel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\Inputs\DropdownList.xaml">
-
+    <Page Include="UserControls\Accordion\AccordionItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -310,21 +298,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\InfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\Inputs\DropdownList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-      <Page Include="UserControls\Inputs\CountryInput.xaml">
-        <Page Include="UserControls\PageTitle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\Inputs\CountryInput.xaml">
-
-    <Page Include="UserControls\PageTitle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -339,6 +321,10 @@
     <Page Include="Pages\WheelConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PageTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Summary\BatterySummary.xaml">
       <SubType>Designer</SubType>
@@ -485,12 +471,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\plus.png" />
-
-    <Resource Include="InfosBackgroundMobile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\InfosBackgroundMobile.png" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
