@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
@@ -24,6 +25,7 @@ namespace TeslaCarConfigurator.Pages
         public PaintingPage()
         {
             InitializeComponent();
+            PageTitle.SetTitle("Fényezés kiválasztása");
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -54,6 +56,8 @@ namespace TeslaCarConfigurator.Pages
                     infosParent.Children.Remove(Infos);
                     MobileContainer.Children.Add(Infos);
                 }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
             }
             else
             {
@@ -70,6 +74,8 @@ namespace TeslaCarConfigurator.Pages
                     infosParent.Children.Remove(Infos);
                     DesktopContainer.Children.Add(Infos);
                 }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
             }
 
         }
@@ -79,7 +85,7 @@ namespace TeslaCarConfigurator.Pages
         private void rbColorSet_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton currentColor = (RadioButton)sender;
-            if (currentColor.Name == "rbColor1")
+            /*if (currentColor.Name == "rbColor1")
             {
                 tbInfos.Text = "A kristályfehér az ártatlanság és a tökéletesség színe. Kiváló választás azon személyeknek, akik rendszeresen tisztítják autójukat és szeretik az egyszerűséget.";
                 tbPrice.Text = "Alap Festés";
@@ -105,6 +111,11 @@ namespace TeslaCarConfigurator.Pages
                 tbPrice.Text = "Ára: 40.500 Ft";
             }
 
+            
+*/
+            /*$"Ára: {Painting.Prices[0].ToString("C", Formatting.CurrencyFormat)}";
+            Infos.SetInfo("a kristály............");
+            Infos.SetPrice("Ára: .....");*/
             if (Config == null)
             {
                 return;
