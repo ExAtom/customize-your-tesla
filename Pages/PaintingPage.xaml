@@ -22,85 +22,83 @@
         </ScrollViewer>
 
         <StackPanel Visibility="Collapsed">
-            <StackPanel x:Name="ContentContainer">
-                <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
-                    <TextBlock TextWrapping="Wrap" Text="Fényezés kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
-                        <TextBlock.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform AngleX="-21.161"/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-11.613"/>
-                            </TransformGroup>
-                        </TextBlock.RenderTransform>
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <LinearGradientBrush.RelativeTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                        <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </LinearGradientBrush.RelativeTransform>
-                                <GradientStop Color="#FF435467" Offset="0"/>
-                                <GradientStop Color="#FF1B3755" Offset="1"/>
-                                <GradientStop Color="#FF2F455E" Offset="0.284"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
-                        <RadioButton x:Name="rbColor1" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <StackPanel>
-                                    <TextBlock Text="Kristályfehér" Width="70"/>
-                                </StackPanel>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="rbColor2" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Mágjafekete" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="rbColor3" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Szürke Metál" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
-                        <RadioButton x:Name="rbColor4" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Kék Metál" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
-                        <RadioButton x:Name="rbColor5" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color5.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Vörös Metál" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="../Assets/InfosBackground.png" Stretch="Fill"/>
-                    <Canvas>
-                        <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
-                        <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"></TextBlock>
-                        <TextBlock x:Name="tbPrice" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-65" Height="27" Width="168" Foreground="White" FontSize="20"></TextBlock>
-                    </Canvas>
-                </StackPanel>
+            <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
+                <TextBlock TextWrapping="Wrap" Text="Fényezés kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-21.161"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-11.613"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <TextBlock.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FF435467" Offset="0"/>
+                            <GradientStop Color="#FF1B3755" Offset="1"/>
+                            <GradientStop Color="#FF2F455E" Offset="0.284"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <Viewbox Height="30" HorizontalAlignment="Left" Margin="50, 50, 0, 20">
+                    <RadioButton x:Name="rbColor1" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <StackPanel>
+                                <TextBlock Text="Kristályfehér" Width="70"/>
+                            </StackPanel>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                    <RadioButton x:Name="rbColor2" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Mágjafekete" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                    <RadioButton x:Name="rbColor3" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Szürke Metál" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,20">
+                    <RadioButton x:Name="rbColor4" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Kék Metál" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" HorizontalAlignment="Left" Margin="50,20,0,0">
+                    <RadioButton x:Name="rbColor5" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color5.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Vörös Metál" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+            </StackPanel>
+            <StackPanel x:Name="Infos" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="../Assets/InfosBackground.png" Stretch="Fill"/>
+                <Canvas>
+                    <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
+                    <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"></TextBlock>
+                    <TextBlock x:Name="tbPrice" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-65" Height="27" Width="168" Foreground="White" FontSize="20"></TextBlock>
+                </Canvas>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -21,10 +21,17 @@
                 <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
                     <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
-                        <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click">
-                            <Button.Background>
-                                <SolidColorBrush Color="#FF1486B0"/>
-                            </Button.Background> Kezdőlap</Button>
+                        <Border CornerRadius="10" Padding="2">
+                            <Border.Background>
+                                <SolidColorBrush Color="#E551A351"></SolidColorBrush>
+                            </Border.Background>
+                            <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click" Content="Kezdőlap">
+                                <Button.Background>
+                                    <SolidColorBrush Color="#E551A351"></SolidColorBrush>
+                                </Button.Background>
+                            </Button>
+                        </Border>
+                       
                         <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
                         <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
                         <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>

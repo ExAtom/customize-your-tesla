@@ -41,20 +41,34 @@ namespace TeslaCarConfigurator.Pages
 
             if (Windows.ActualWidth <= 545)
             {
-                Panel parent = (Panel)ContentContainer.Parent;
-                if (parent != null && parent != MobileContainer)
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
                 {
-                    parent.Children.Remove(ContentContainer);
-                    MobileContainer.Children.Add(ContentContainer);
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
                 }
             }
             else
             {
-                Panel parent = (Panel)ContentContainer.Parent;
-                if (parent != null && parent != DesktopContainer)
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
                 {
-                    parent.Children.Remove(ContentContainer);
-                    DesktopContainer.Children.Add(ContentContainer);
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
                 }
             }
 
