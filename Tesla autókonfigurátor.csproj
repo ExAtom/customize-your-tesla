@@ -198,6 +198,9 @@
     <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
       <DependentUpon>BatterySummary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummary.xaml.cs">
+      <DependentUpon>ExteriorSummary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Summary\WheelsSummary.xaml.cs">
       <DependentUpon>WheelsSummary.xaml</DependentUpon>
     </Compile>
@@ -309,6 +312,10 @@
     <Page Include="UserControls\Summary\BatterySummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Summary\WheelsSummary.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -434,6 +441,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\SummaryIcons\wheel-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\exterior-summary-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
