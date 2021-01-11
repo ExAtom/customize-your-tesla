@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
@@ -24,6 +25,7 @@ namespace TeslaCarConfigurator.Pages
         public PaintingPage()
         {
             InitializeComponent();
+            PageTitle.SetTitle("Fényezés kiválasztása");
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -38,12 +40,52 @@ namespace TeslaCarConfigurator.Pages
             {
                 Menu.Width = 400;
             }
+
+            if (Windows.ActualWidth <= 545)
+            {
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
+            }
+            else
+            {
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
+            }
+
         }
+
+
 
         private void rbColorSet_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton currentColor = (RadioButton)sender;
-            if (currentColor.Name == "rbColor1")
+            /*if (currentColor.Name == "rbColor1")
             {
                 tbInfos.Text = "A kristályfehér az ártatlanság és a tökéletesség színe. Kiváló választás azon személyeknek, akik rendszeresen tisztítják autójukat és szeretik az egyszerűséget.";
                 tbPrice.Text = "Alap Festés";
@@ -68,6 +110,12 @@ namespace TeslaCarConfigurator.Pages
                 tbInfos.Text = "Gyönyörű piros fényezésünk a szerelem és az energia színe. Tulajdonosa általában dinamikus és körültekintő, ugyanakkor hajlamos két végén égetni a gyertyát.";
                 tbPrice.Text = "Ára: 40.500 Ft";
             }
+
+            
+*/
+            /*$"Ára: {Painting.Prices[0].ToString("C", Formatting.CurrencyFormat)}";
+            Infos.SetInfo("a kristály............");
+            Infos.SetPrice("Ára: .....");*/
 
             if (Config == null)
             {
