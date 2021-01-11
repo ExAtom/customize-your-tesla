@@ -116,6 +116,7 @@ namespace TeslaCarConfigurator.Pages
             /*$"Ára: {Painting.Prices[0].ToString("C", Formatting.CurrencyFormat)}";
             Infos.SetInfo("a kristály............");
             Infos.SetPrice("Ára: .....");*/
+
             if (Config == null)
             {
                 return;
