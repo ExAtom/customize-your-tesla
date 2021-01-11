@@ -48,7 +48,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             Image imgLinenRoof = (Image)sender;
             if (exterior.HasLinenRoof)
             {
-                imgLinenRoof.Source = new BitmapImage(new Uri("../../Assets/plus.png",UriKind.Relative));
+                imgLinenRoof.Source = new BitmapImage(new Uri("../../Assets/plus.png", UriKind.Relative));
             }
             else
             {
@@ -60,7 +60,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
         {
             TextBlock tbLinenRoofTitle = (TextBlock)sender;
             tbLinenRoofTitle.Text = "Vászontető";
-            tbLinenRoofTitle.Foreground = exterior.HasLinenRoof ? Brushes.White : new SolidColorBrush(Color.FromArgb(255, 201,201,201));
+            tbLinenRoofTitle.Foreground = exterior.HasLinenRoof ? Brushes.White : new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
         }
 
         private void tbLinenRoofCost_Loaded(object sender, RoutedEventArgs e)
@@ -68,7 +68,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (exterior.HasLinenRoof)
             {
                 TextBlock tbLinenRoofCost = (TextBlock)sender;
-                tbLinenRoofCost.Text = Exterior.LinenRoofPrice.ToString("C", Formatting.CurrencyFormat);
+                tbLinenRoofCost.Text = "+" + Exterior.LinenRoofPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -106,7 +106,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (exterior.HasSpoilers)
             {
                 TextBlock tbSpoilersCost = (TextBlock)sender;
-                tbSpoilersCost.Text = Exterior.SpoilersPrice.ToString("C", Formatting.CurrencyFormat);
+                tbSpoilersCost.Text = "+" + Exterior.SpoilersPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -144,7 +144,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (exterior.HasBottomLights)
             {
                 TextBlock tbBottomLightsCost = (TextBlock)sender;
-                tbBottomLightsCost.Text = Exterior.BottomLightsPrice.ToString("C", Formatting.CurrencyFormat);
+                tbBottomLightsCost.Text = "+" + Exterior.BottomLightsPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 

@@ -201,6 +201,9 @@
     <Compile Include="UserControls\Summary\ExteriorSummary.xaml.cs">
       <DependentUpon>ExteriorSummary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummary.xaml.cs">
+      <DependentUpon>InteriorSummary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Summary\WheelsSummary.xaml.cs">
       <DependentUpon>WheelsSummary.xaml</DependentUpon>
     </Compile>
@@ -314,6 +317,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Summary\ExteriorSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
