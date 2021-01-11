@@ -10,6 +10,22 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
+        public static int SelfdrivingPrice { get; private set; } = 0;
+
+        public static string SelfdrivingDescription { get; private set; } = "";
+
+        public static int GpsPrice { get; private set; } = 0;
+
+        public static string GpsDescription { get; private set; } = "";
+
+        public static int HeadlightAssistantPrice { get; private set; } = 0;
+
+        public static string HeadlightAssistantDescription { get; private set; } = "";
+
+        public static int AdaptiveLightsPrice { get; private set; } = 0;
+
+        public static string AdaptiveLightsDescription { get; private set; } = "";
+
         // önvezetés
         public bool HasSelfdriving { get; set; }
 
