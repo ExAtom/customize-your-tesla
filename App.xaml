@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
+                <ResourceDictionary Source="Styles/NavigationBarResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="AccordionHeaderStyle" TargetType="Button">
                 <Setter Property="Template">
