@@ -49,11 +49,21 @@ namespace TeslaCarConfigurator.Pages
             receiptOut.Add("Tesla Autó Konfigurátor\nSzámla\n\nKöszönjük, hogy nálunk vásárolt!\n----------\n");
             receiptOut.Add($"Model: {Config.CarModel.ModelName}\n\t+ {String.Format("{0:n0}", Config.CarModel.CalculateAdditionalPrices())} Ft");
             receiptOut.Add($"Akkumulátor: {Config.Battery.Capacity} kWh\n\t+ {String.Format("{0:n0}", Config.Battery.CalculateAdditionalPrices())} Ft");
-            receiptOut.Add($"Festés: {Config.Painting.Color}\n\t+ {Config.Painting.CalculateAdditionalPrices()} Ft");
-            receiptOut.Add($"Kerekek: {Config.Wheels.Type}\n\t+ {Config.Wheels.CalculateAdditionalPrices()} Ft");
-            receiptOut.Add($"Váltó: {Config.Transmission.Type}\n\t+ {Config.Transmission.CalculateAdditionalPrices()}");
-            receiptOut.Add($"Belső anyag: {Config.Interior.Material}\n\t+ {Config.Interior.MaterialPrices}");
-            receiptOut.Add($"");
+            receiptOut.Add($"Festés: {Config.Painting.Color}\n\t+ {String.Format("{0:n0}", Config.Painting.CalculateAdditionalPrices())} Ft");
+            receiptOut.Add($"Kerekek: {Config.Wheels.Type}\n\t+ {String.Format("{0:n0}", Config.Wheels.CalculateAdditionalPrices())} Ft");
+            receiptOut.Add($"Váltó: {Config.Transmission.Type}\n\t+ {String.Format("{0:n0}", Config.Transmission.CalculateAdditionalPrices())} Ft");
+            receiptOut.Add($"Belső anyag: {Config.Interior.Material}\n\t+ {String.Format("{0:n0}", Interior.MaterialPrices[Config.Interior.MaterialIndex])} Ft");
+            receiptOut.Add($"Belső szín: {Config.Interior.InteriorColor}\n\t+ {String.Format("{0:n0}", Interior.ColorPrices[Config.Interior.ColorIndex])} Ft");
+            if (Config.Interior.HasSeatHeating)
+                receiptOut.Add($"Ülésfűtés\n\t+ {String.Format("{0:n0}", Interior.SeatHeatingPrice)} Ft");
+            if (Config.Interior.HasSteeringWheelHeating)
+                receiptOut.Add($"Kormányfűtés\n\t+ {String.Format("{0:n0}", Interior.SteeringWheelHeatingPrice)} Ft");
+            if (Config.Interior.HasSpineSupport)
+                receiptOut.Add($"Gerinctámasz\n\t+ {String.Format("{0:n0}", Interior.SpineSupportPrice)} Ft");
+            if (Config.Interior.HasSunlightProtection)
+                receiptOut.Add($"Napvédő\n\t+ {String.Format("{0:n0}", Interior.SunlightProtectionPrice)} Ft");
+            if (Config.Interior.HasDarkenedWindows)
+                receiptOut.Add($"Sötétített ablakok\n\t+ {String.Format("{0:n0}", Interior.DarkenedWindowsPrice)} Ft");
             receiptOut.Add($"");
             receiptOut.Add($"");
             receiptOut.Add($"");
