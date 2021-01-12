@@ -64,13 +64,41 @@ namespace TeslaCarConfigurator.Pages
                 receiptOut.Add($"Napvédő\n\t+ {String.Format("{0:n0}", Interior.SunlightProtectionPrice)} Ft");
             if (Config.Interior.HasDarkenedWindows)
                 receiptOut.Add($"Sötétített ablakok\n\t+ {String.Format("{0:n0}", Interior.DarkenedWindowsPrice)} Ft");
-            receiptOut.Add($"");
-            receiptOut.Add($"");
-            receiptOut.Add($"");
-            receiptOut.Add($"");
-            receiptOut.Add($"");
+            if (Config.Exterior.HasLinenRoof)
+                receiptOut.Add($"Vászontető\n\t+ {String.Format("{0:n0}", Exterior.LinenRoofPrice)} Ft");
+            if (Config.Exterior.HasSpoilers)
+                receiptOut.Add($"Spoilerek\n\t+ {String.Format("{0:n0}", Exterior.SpoilersPrice)} Ft");
+            if (Config.Exterior.HasBottomLights)
+                receiptOut.Add($"Alulvilágítás\n\t+ {String.Format("{0:n0}", Exterior.BottomLightsPrice)} Ft");
+            if (Config.SoftwareFeatures.HasSelfdriving)
+                receiptOut.Add($"Önvezetés\n\t+ {String.Format("{0:n0}", SoftwareFeatures.SelfdrivingPrice)} Ft");
+            if (Config.SoftwareFeatures.HasGps)
+                receiptOut.Add($"GPS\n\t+ {String.Format("{0:n0}", SoftwareFeatures.GpsPrice)} Ft");
+            if (Config.SoftwareFeatures.HasHeadlightAssistant)
+                receiptOut.Add($"Távolsági fényszóró asszisztens\n\t+ {String.Format("{0:n0}", SoftwareFeatures.HeadlightAssistantPrice)} Ft");
+            if (Config.SoftwareFeatures.HasAdaptiveLights)
+                receiptOut.Add($"Adaptív fényszórók\n\t+ {String.Format("{0:n0}", SoftwareFeatures.AdaptiveLightsPrice)} Ft");
+            receiptOut.Add($"---");
             receiptOut.Add($"Teljes ár: {String.Format("{0:n0}", Config.TotalPrice)} Ft");
-            receiptOut.Add($"");
+            receiptOut.Add($"----------\n");
+            receiptOut.Add($"Vásárló adatai\n");
+            receiptOut.Add($"Név: {Config.CustomerDetails.Lastname} {Config.CustomerDetails.Firstname}");
+            receiptOut.Add($"Telefonszám: {Config.CustomerDetails.PhoneNumber.CallingCode.NativeName}{Config.CustomerDetails.PhoneNumber.Number}");
+            receiptOut.Add($"E-mail cím: {Config.CustomerDetails.EmailAddress}");
+            receiptOut.Add($"---\n");
+            receiptOut.Add($"Szállítási cím\n");
+            receiptOut.Add($"Ország: {Config.CustomerDetails.Country.NativeName}");
+            receiptOut.Add($"Irányítószám: {Config.CustomerDetails.ZipCode}");
+            receiptOut.Add($"Megye/Régió/Tartomány: {Config.CustomerDetails.Province}");
+            receiptOut.Add($"Város: {Config.CustomerDetails.City}");
+            receiptOut.Add($"Cím: {Config.CustomerDetails.Address}");
+            receiptOut.Add($"---\n");
+            receiptOut.Add($"Bankkártya adatok\n");
+            receiptOut.Add($"Bankkártyaszám: {Config.CustomerDetails.CreditCard.CardNumber}");
+            receiptOut.Add($"Lejárat: {Config.CustomerDetails.CreditCard.ExpirationDate}");
+            receiptOut.Add($"Név: {Config.CustomerDetails.CreditCard.Lastname} {Config.CustomerDetails.CreditCard.Firstname}");
+            receiptOut.Add($"Biztonsági kód: {Config.CustomerDetails.CreditCard.SecurityCode}");
+            receiptOut.Add($"----------\nAz autó kiszállítása egy hónapon belül megtörténik.");
 
             File.WriteAllLines("számla.txt", receiptOut);
         }
