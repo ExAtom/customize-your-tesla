@@ -1,4 +1,4 @@
-﻿<Application x:Class="TeslaCarConfigurator.App"
+<Application x:Class="TeslaCarConfigurator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TeslaCarConfigurator"
@@ -9,7 +9,7 @@
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
                 <ResourceDictionary Source="Styles/AccordionResources.xaml"/>
                 <ResourceDictionary Source="Styles/SummaryResources.xaml"/>
-
+                <ResourceDictionary Source="Styles/NavigationBarResources.xaml"/>
                 <ResourceDictionary Source="Styles/FormResources.xaml"/>
                 <ResourceDictionary Source="Styles/ScrollViewerResources.xaml"/>
 

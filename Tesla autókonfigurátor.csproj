@@ -1,4 +1,521 @@
+
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C72FB7C-6749-49CC-A856-63DF25B99A1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TeslaCarConfigurator</RootNamespace>
+    <AssemblyName>TeslaCarConfigurator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Converters.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Converters.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Core, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Css, Version=1.7.1.0, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Dom, Version=1.7.1.0, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Model, Version=1.7.1.0, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Gdi, Version=1.7.1.0, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Rendering.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Runtime.Wpf, Version=1.7.1.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.7.1\lib\net47\SharpVectors.Runtime.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\PhoneNumber.cs" />
+    <Compile Include="Helpers\Formatting.cs" />
+    <Compile Include="Helpers\Message.cs" />
+    <Compile Include="Helpers\MessageBarController.cs" />
+    <Compile Include="Pages\CustomerDetailsPage.xaml.cs">
+      <DependentUpon>CustomerDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerDetailsViewModel.cs" />
+    <Compile Include="Pages\ExteriorPage.xaml.cs">
+      <DependentUpon>ExteriorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SoftwarePage.xaml.cs">
+      <DependentUpon>SoftwarePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PaintingPage.xaml.cs">
+      <DependentUpon>PaintingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SavedConfigsPage.xaml.cs">
+      <DependentUpon>SavedConfigsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InteriorPage.xaml.cs">
+      <DependentUpon>InteriorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CallingCode.cs" />
+    <Compile Include="Services\CountryInfo.cs" />
+    <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\IFlag.cs" />
+    <Compile Include="Pages\TransmissionConfiguration.xaml.cs">
+      <DependentUpon>TransmissionConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Battery.cs" />
+    <Compile Include="Data\CarConfiguration.cs" />
+    <Compile Include="CloseWindow.xaml.cs">
+      <DependentUpon>CloseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CreditCardInfo.cs" />
+    <Compile Include="Data\CustomerDetails.cs" />
+    <Compile Include="Data\Exterior.cs" />
+    <Compile Include="Helpers\PageBase.cs" />
+    <Compile Include="Helpers\RoutingHelper.cs" />
+    <Compile Include="Helpers\SaveManager.cs" />
+    <Compile Include="Data\Feature.cs" />
+    <Compile Include="Data\SoftwareFeatures.cs" />
+    <Compile Include="Data\Transmission.cs" />
+    <Compile Include="Pages\LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Interior.cs" />
+    <Compile Include="Data\Model.cs" />
+    <Compile Include="Data\Painting.cs" />
+    <Compile Include="Data\WheelConfiguration.cs" />
+    <Compile Include="Pages\BatteryConfiguration.xaml.cs">
+      <DependentUpon>BatteryConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ModelConfiguration.xaml.cs">
+      <DependentUpon>ModelConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Accordion\Accordion.xaml.cs">
+      <DependentUpon>Accordion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Accordion\AccordionHeader.cs" />
+    <Compile Include="UserControls\Accordion\AccordionItem.cs" />
+    <Compile Include="UserControls\FlagDisplay.xaml.cs">
+      <DependentUpon>FlagDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ImageButton.cs" />
+    <Compile Include="UserControls\Inputs\DropdownList.xaml.cs">
+      <DependentUpon>DropdownList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Inputs\IDropdownItem.cs" />
+    <Compile Include="UserControls\Inputs\CountryInput.xaml.cs">
+      <DependentUpon>CountryInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Inputs\PhoneNumberInput.xaml.cs">
+      <DependentUpon>PhoneNumberInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoadingContainer.xaml.cs">
+      <DependentUpon>LoadingContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\BatterySummaryHeader.xaml.cs">
+      <DependentUpon>BatterySummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\BatterySummaryContent.xaml.cs">
+      <DependentUpon>BatterySummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml.cs">
+      <DependentUpon>SoftwareFeatureSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml.cs">
+      <DependentUpon>SoftwareFeatureSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummaryHeader.xaml.cs">
+      <DependentUpon>InteriorSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\InteriorSummaryContent.xaml.cs">
+      <DependentUpon>InteriorSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummaryContent.xaml.cs">
+      <DependentUpon>ExteriorSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ExteriorSummaryHeader.xaml.cs">
+      <DependentUpon>ExteriorSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\WheelSummaryHeader.xaml.cs">
+      <DependentUpon>WheelSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\WheelSummaryContent.xaml.cs">
+      <DependentUpon>WheelSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\PaintingSummaryHeader.xaml.cs">
+      <DependentUpon>PaintingSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\PaintingSummaryContent.xaml.cs">
+      <DependentUpon>PaintingSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummaryHeader.xaml.cs">
+      <DependentUpon>TransmissionSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\TransmissionSummaryContent.xaml.cs">
+      <DependentUpon>TransmissionSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ModelSummaryHeader.xaml.cs">
+      <DependentUpon>ModelSummaryHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Summary\ModelSummaryContent.xaml.cs">
+      <DependentUpon>ModelSummaryContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WheelConfiguration.xaml.cs">
+      <DependentUpon>WheelConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\CustomerDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ExteriorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SoftwarePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SummaryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PaintingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SavedConfigsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TransmissionConfiguration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CloseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\LandingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BatteryConfiguration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ModelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InteriorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\NavigationBarResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PopupResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Accordion\Accordion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FlagDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Inputs\DropdownList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Inputs\CountryInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Inputs\PhoneNumberInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LoadingContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\BatterySummaryContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\SoftwareFeatureSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\SoftwareFeatureSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\InteriorSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ExteriorSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\WheelSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\WheelSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\PaintingSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\PaintingSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\TransmissionSummaryContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummaryHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Summary\ModelSummaryContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WheelConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Tesla2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\InfosBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Wheel1.png" />
+    <Resource Include="Assets\Wheel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Wheel3.png" />
+    <Resource Include="Assets\Wheel4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ModelsBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Model4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Color1.png" />
+    <Resource Include="Assets\Color2.png" />
+    <Resource Include="Assets\Color3.png" />
+    <Resource Include="Assets\Color4.png" />
+    <Resource Include="Assets\Color5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\arrow-circle-right-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close-pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="InfosBackgroundMobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\InfosBackgroundMobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\battery.png" />
+    <Resource Include="Assets\Feature Icons\exterior.png" />
+    <Resource Include="Assets\Feature Icons\interior.png" />
+    <Resource Include="Assets\Feature Icons\model.png" />
+    <Resource Include="Assets\Feature Icons\next.png" />
+    <Resource Include="Assets\Feature Icons\painting.png" />
+    <Resource Include="Assets\Feature Icons\software.png" />
+    <Resource Include="Assets\Feature Icons\transmission.png" />
+    <Resource Include="Assets\Feature Icons\wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\details.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -504,4 +1021,5 @@
     <Resource Include="Assets\SummaryIcons\software-summary-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

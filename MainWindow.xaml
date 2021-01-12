@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TeslaCarConfigurator"
+        xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:usercontrols="clr-namespace:TeslaCarConfigurator.UserControls"
         mc:Ignorable="d"
         Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="280" MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <!--MinWidth="545" MaxWidth="1000" MaxHeight="600" MinHeight="300" -->
@@ -20,32 +20,27 @@
 
                 <ScrollViewer   VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
-                    <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
-                        <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click" Content="Kezdőlap">
-                        </Button>
-                        <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
-                        <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
-                        <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>
-                        <Button Width="75" Margin="10,0" Name="btnPaintingPage" Click="btnSwitchPage_Click">Festés</Button>
-                        <Button Width="75" Margin="10,0" Name="btnWheelConfiguration" Click="btnSwitchPage_Click">Kerekek</Button>
-                        <Button Width="75" Margin="10,0" Name="btnExteriorPage" Click="btnSwitchPage_Click">Külső</Button>
-                        <Button Width="75" Margin="10,0" Name="btnInteriorPage" Click="btnSwitchPage_Click">Belső</Button>
-                        <Button Width="75" Margin="10,0" Name="btnSoftwarePage" Click="btnSwitchPage_Click">Szoftver</Button>
-                        <Button Width="120" Margin="10,0" Name="btnSummaryPage" Click="btnSwitchPage_Click">Összegzés</Button>
-                        <Button Width="120" Margin="20,0" Name="btnCustomerDetailsPage" Click="btnSwitchPage_Click">Megrendelő adatai</Button>
+                    <StackPanel x:Name="navigationButtonContainer" Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
 
+                        <usercontrols:ImageButton x:Name="btnLandingPage" ImageSource="Assets/Feature Icons/homepage.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Kezdőlap"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnModelConfiguration" ImageSource="Assets/Feature Icons/model.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Modell"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnBatteryConfiguration" ImageSource="Assets/Feature Icons/battery.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Akkumulátor"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnTransmissionConfiguration" ImageSource="Assets/Feature Icons/transmission.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Váltó"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnPaintingPage" ImageSource="Assets/Feature Icons/painting.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Festés"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnWheelConfiguration" ImageSource="Assets/Feature Icons/wheel.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Kerekek"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnExteriorPage" ImageSource="Assets/Feature Icons/exterior.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Külső"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnInteriorPage" ImageSource="Assets/Feature Icons/interior.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Belső"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnSoftwarePage" ImageSource="Assets/Feature Icons/software.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Szoftver"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnSummaryPage" ImageSource="Assets/Feature Icons/summary.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Összegzés"></usercontrols:ImageButton>
+                        <usercontrols:ImageButton x:Name="btnCustomerDetailsPage" ImageSource="Assets/Feature Icons/details.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Megrendelő adatai"></usercontrols:ImageButton>
                     </StackPanel>
 
                 </ScrollViewer>
-                <Button Grid.Row="0" Grid.Column="1" Name="btnNextPage" Click="btnNextPage_Click" Margin="10,10,0,10">Következő</Button>
+
+                <usercontrols:ImageButton MinWidth="40" Grid.Row="0" Grid.Column="1" x:Name="btnNextPage" Click="btnNextPage_Click" Margin="10,0,0,-5" ImageSource="Assets/Feature Icons/next.png" Style="{StaticResource NextButtonStyle}" Content="Következő"></usercontrols:ImageButton>
             </Grid>
 
             <Frame x:Name="Container" NavigationUIVisibility="Hidden" DockPanel.Dock="Top"></Frame>
-
-
-
-
-
         </DockPanel>
         <StackPanel Name="messageBar" Margin="0,10,0,0"   ></StackPanel>
     </Grid>
