@@ -10,21 +10,21 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
-        public static int SelfdrivingPrice { get; private set; } = 0;
+        public static int SelfdrivingPrice { get; private set; } = 990000;
 
-        public static string SelfdrivingDescription { get; private set; } = "";
+        public static string SelfdrivingDescription { get; private set; } = "A Tesla autók egyik legkiemelkedőbb szolgáltatása az önvezetés, ami olyan precizitással segít a mindennapi forgalmakban, mint eddig semmilyen más cég autói.";
 
-        public static int GpsPrice { get; private set; } = 0;
+        public static int GpsPrice { get; private set; } = 95000;
 
-        public static string GpsDescription { get; private set; } = "";
+        public static string GpsDescription { get; private set; } = "GPS-szel könnyedén megállapíthatja a helyzetét és segítséget kaphat, hogy milyen irányban folytassa az útján a célpontjának eléréséhez.";
 
-        public static int HeadlightAssistantPrice { get; private set; } = 0;
+        public static int HeadlightAssistantPrice { get; private set; } = 269000;
 
-        public static string HeadlightAssistantDescription { get; private set; } = "";
+        public static string HeadlightAssistantDescription { get; private set; } = "Néha nehéz észrevenni időben, ha egy szemben lévő autó látótávolságba kerül. Ilyenkor a távolsági fényszórókat le kell kapcsolni. Ebben segítene a fényszóró asszisztens.";
 
-        public static int AdaptiveLightsPrice { get; private set; } = 0;
+        public static int AdaptiveLightsPrice { get; private set; } = 246000;
 
-        public static string AdaptiveLightsDescription { get; private set; } = "";
+        public static string AdaptiveLightsDescription { get; private set; } = "Fényviszonyokhoz alkalmazkodik az autó fényberendezései, ezzel kevesebb dologgal foglalkozhat a sofőr, így könnyebben odafigyelhet a balesetmentes vezetésre.";
 
         // önvezetés
         public bool HasSelfdriving { get; set; }
