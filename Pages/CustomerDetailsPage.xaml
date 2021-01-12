@@ -82,7 +82,7 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                     <Label Content="Telefonszám"/>
-                                    <usercontrols:LoadingContainer Height="20" IsLoading="{Binding IsLoading,Mode=OneWay}">
+                                    <usercontrols:LoadingContainer Height="30" IsLoading="{Binding IsLoading,Mode=OneWay}">
                                         <usercontrols:LoadingContainer.RealContent>
                                             <inputs:PhoneNumberInput Filter="{Binding PhoneFilter, Mode=OneWay}" CallingCodes="{Binding CallingCodes, Mode=OneWay}" PhoneNumber="{Binding CustomerDetails.PhoneNumber, Mode=OneWay}"></inputs:PhoneNumberInput>
 
@@ -108,7 +108,7 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                     <Label Content="Ország"/>
-                                    <usercontrols:LoadingContainer Height="20" IsLoading="{Binding IsLoading}">
+                                    <usercontrols:LoadingContainer Height="30" IsLoading="{Binding IsLoading}">
                                         <usercontrols:LoadingContainer.RealContent>
                                             <inputs:CountryInput CustomerDetails="{Binding CustomerDetails, Mode=OneWay}" Filter="{Binding CountryFilter, Mode=OneWay}" CountryInfos="{Binding CountryInfos, Mode=OneWay}" ></inputs:CountryInput>
                                         </usercontrols:LoadingContainer.RealContent>
@@ -117,7 +117,7 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
-                                        <Label Content="Irányítószám / ZIP"/>
+                                        <Label Content="ZIP-kód"/>
                                         <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode, Mode=OneWay}"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -211,11 +211,9 @@
                                     </StackPanel>
                                 </Grid>
                             </StackPanel>
-                            <StackPanel Grid.Row="3" Margin="50,40,50,0"  >
-                                <WrapPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="24" VerticalAlignment="Center">Fizetendő:</TextBlock>
-                                    <TextBlock FontSize="24" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
-                                </WrapPanel>
+                            <StackPanel Grid.Row="3" Margin="40,40,40,0"  >
+                                <TextBlock FontSize="24" TextWrapping="Wrap" TextAlignment="Center" Style="{StaticResource SummaryCostText}" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" ></TextBlock>
+                             
                                 <Button Margin="0,20,0,0" MaxWidth="100" MinHeight="30" Click="BuyCar">Vásárlás</Button>
                             </StackPanel>
                         </Grid>

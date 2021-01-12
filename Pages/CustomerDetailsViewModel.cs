@@ -69,7 +69,7 @@ namespace TeslaCarConfigurator.Pages
 
         public DropdownList.FilterDelegate CountryFilter => CountryFilterImpl;
 
-        public string FormattedTotal => (carConfiguration?.TotalPrice ?? 0).ToString("C",Formatting.CurrencyFormat);
+        public string FormattedTotal => "Fizetendő: " + (carConfiguration?.TotalPrice ?? 0).ToString("C",Formatting.CurrencyFormat);
 
         public event PropertyChangedEventHandler PropertyChanged;
 

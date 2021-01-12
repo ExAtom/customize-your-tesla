@@ -10,7 +10,7 @@
     <DockPanel>
         <StackPanel   DockPanel.Dock="Left" Name="iconContainer" Visibility="Hidden" Panel.ZIndex="100"></StackPanel>
         <Grid  MaxHeight="100">
-            <ComboBox Name="cb" Focusable="False"  SelectionChanged="cb_SelectionChanged"/>
+            <ComboBox Opacity="0" Name="cb" Focusable="False"  SelectionChanged="cb_SelectionChanged"/>
             <TextBox Name="tb" TextChanged="TextBox_TextChanged"></TextBox>
         </Grid>
     </DockPanel>
