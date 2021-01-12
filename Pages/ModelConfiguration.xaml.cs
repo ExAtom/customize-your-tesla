@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
@@ -24,10 +25,15 @@ namespace TeslaCarConfigurator.Pages
         public ModelConfiguration()
         {
             InitializeComponent();
-            tbModel1.Text = "➤ 430 kilométer hatótávolság\n➤ 225 km/h végsebesség\n➤ 5.6 mp 0-100 km/h gyorsulás\n➤ Elektromos csomagtérajtó";
-            tbModel2.Text = "➤ 480 kilométer hatótávolság\n➤ 241 km/h végsebesség\n➤ 3.7 mp 0-100 km/h gyorsulás\n➤ Összkerék meghajtás";
-            tbModel3.Text = "➤ 561 kilométer hatótávolság\n➤ 250 km/h végsebesség\n➤ 4.6 mp 0-100 km/h gyorsulás\n➤ Összkerék meghajtás";
-            tbModel4.Text = "➤ 840+ kilométer hatótávolság\n➤ 320 km/h végsebesség\n➤ <2.1 mp 0-100 km/h gyorsulás\n➤ Három motoros összkerék meghajtás";
+            tbModel1.Text = Model.ModelDescriptions[0];
+            tbModel2.Text = Model.ModelDescriptions[1];
+            tbModel3.Text = Model.ModelDescriptions[2];
+            tbModel4.Text = Model.ModelDescriptions[3];
+            tbPrice1.Text = $"{Model.Prices[0].ToString("C", Formatting.CurrencyFormat)} -tól";
+            tbPrice2.Text = $"{Model.Prices[1].ToString("C", Formatting.CurrencyFormat)} -tól";
+            tbPrice3.Text = $"{Model.Prices[2].ToString("C", Formatting.CurrencyFormat)} -tól";
+            tbPrice4.Text = $"{Model.Prices[3].ToString("C", Formatting.CurrencyFormat)} -tól";
+            Application.Current.MainWindow.MinWidth = 320;
         }
 
         public override void OnAttachedToFrame()
@@ -70,6 +76,20 @@ namespace TeslaCarConfigurator.Pages
             if (Config == null)
             {
                 return;
+            }
+        }
+
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (Windows.ActualWidth <= 566)
+            {
+                tbTitle.Margin = new Thickness(-22, 10, 10, 0);
+                tbTitle.Padding = new Thickness(40, 5, 30, 5);
+            }
+            else
+            {
+                tbTitle.Margin = new Thickness(-22, 10, 97, 0);
+                tbTitle.Padding = new Thickness(40, 5, 0, 5);
             }
         }
     }

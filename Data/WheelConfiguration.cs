@@ -12,7 +12,7 @@ namespace TeslaCarConfigurator.Data
 
         public static List<string> AvailableWheelTypes { get; private set; } = new List<string>() { "Aero FX530", "Sport SP002", "Turbine T54", "Silver SU478" };
 
-        public static List<string> WheelDescriptions { get; private set; } = new List<string>() 
+        public static List<string> WheelDescriptions { get; private set; } = new List<string>()
         {
             "Az Aero FX530-as típusú kereket legfőképpen városi közlekedésre ajánljuk. Kiváló tapadást bitosít az aszfalhot, így a hirtelen fékezések sem okozhatnak problémát.",
             "A Sport SP002-őt nevéhez híven olyanoknak ajánjuk, akik szeretik a sebességhatárt túllépni, akár versenyzés közben. A 20\"-as kerékátmérő biztosítja a 450 km/h-ás sebesség elérését.",

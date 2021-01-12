@@ -42,5 +42,7 @@ namespace TeslaCarConfigurator.UserControls
             tbTitleD.Text = title;
             tbTitleM.Text = title;
         }
+
+
     }
 }

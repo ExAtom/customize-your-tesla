@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
-        Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="280"   MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
+        Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="280" MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <!--MinWidth="545" MaxWidth="1000" MaxHeight="600" MinHeight="300" -->
     <Grid>
         <DockPanel LastChildFill="True">
@@ -23,7 +23,6 @@
                     <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
                         <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click" Content="Kezdőlap">
                         </Button>
-
                         <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
                         <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
                         <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>

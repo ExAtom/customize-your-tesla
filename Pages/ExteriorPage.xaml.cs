@@ -12,18 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
 {
-    /// <summary>
-    /// Interaction logic for ExteriorPage.xaml
-    /// </summary>
     public partial class ExteriorPage : PageBase
     {
         public ExteriorPage()
         {
             InitializeComponent();
+            PageTitle.SetTitle("Külső kiválasztása");
+            Application.Current.MainWindow.MinWidth = 280;
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -31,11 +31,41 @@ namespace TeslaCarConfigurator.Pages
 
             if (Windows.ActualWidth <= 710)
             {
-                Menu.Width = 230;
+                Menu.Width = Double.NaN;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
             }
             else
             {
                 Menu.Width = 400;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
             }
 
         }
@@ -52,18 +82,18 @@ namespace TeslaCarConfigurator.Pages
             CheckBox currentButton = (CheckBox)sender;
             if (currentButton.Name == "linenRoof")
             {
-                tbInfos.Text = "A vászontető napjaink legdivatosabb autókialakítása. Nagy sebességnél kellemes hangot kelt. A mi vászontetőnk viszont nem csak divatos, de speciális funkciója is van. Gombonymásra visszahúzódik a csomagtartóba és nyitott lesz az utastér.";
-                tbPrice.Text = "Ára: 13.900.000 Ft";
+                Infos.SetInfo(Exterior.LinenRoofDescription);
+                Infos.SetPrice($"Ára: {Exterior.LinenRoofPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentButton.Name == "spoilers")
             {
-                tbInfos.Text = "Spoilerek a hiányzó tapadást hozzák létre, így sokkal gyorsabban száguldozhat autójával, mint egyébként. Automatikusan állítja az autó szoftvere az állásukat, így lassításnál még nagyobb segítséget nyújt.";
-                tbPrice.Text = "Ára: 5.600.000 Ft";
+                Infos.SetInfo(Exterior.SpoilersDescription);
+                Infos.SetPrice($"Ára: {Exterior.SpoilersPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentButton.Name == "bottomLights")
             {
-                tbInfos.Text = "Azoknak ajánljuk, akik szeretnek kitűnni a tömegből. Egy LED sor világítja ki az autó alját, így önt jobban láthatják a sötétben és sokkal ütősebb lesz a megjelenése.";
-                tbPrice.Text = "Ára: 1.200.000 Ft";
+                Infos.SetInfo(Exterior.BottomLightsDescription);
+                Infos.SetPrice($"Ára: {Exterior.BottomLightsPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
 
             if (Config == null)
