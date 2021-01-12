@@ -86,7 +86,7 @@ namespace TeslaCarConfigurator.Pages
 
             if (chosenTypeIndex == 2)
             {
-                selected = rbWheel3; 
+                selected = rbWheel3;
             }
 
             if (chosenTypeIndex == 3)
