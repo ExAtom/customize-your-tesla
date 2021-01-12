@@ -19,9 +19,6 @@ namespace TeslaCarConfigurator.Pages
 {
     public partial class BatteryConfiguration : PageBase
     {
-        private List<string[]> chosenBatteryTexts;
-
-
         public BatteryConfiguration()
         {
             InitializeComponent();
