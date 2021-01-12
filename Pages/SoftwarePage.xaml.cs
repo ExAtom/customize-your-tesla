@@ -12,18 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
 {
-    /// <summary>
-    /// Interaction logic for InteriorPage.xaml
-    /// </summary>
     public partial class SoftwarePage : PageBase
     {
         public SoftwarePage()
         {
             InitializeComponent();
+            PageTitle.SetTitle("Szoftverek kiválasztása");
+            Application.Current.MainWindow.MinWidth = 280;
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -31,11 +31,41 @@ namespace TeslaCarConfigurator.Pages
 
             if (Windows.ActualWidth <= 710)
             {
-                Menu.Width = 230;
+                Menu.Width = Double.NaN;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
             }
             else
             {
                 Menu.Width = 400;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
             }
 
         }
@@ -46,30 +76,32 @@ namespace TeslaCarConfigurator.Pages
             gps.IsChecked = Config.SoftwareFeatures.HasGps;
             headlightAssistant.IsChecked = Config.SoftwareFeatures.HasHeadlightAssistant;
             adaptiveLights.IsChecked = Config.SoftwareFeatures.HasAdaptiveLights;
+            selfdriving.IsEnabled = Config.Transmission.TypeIndex != 0;
         }
 
         private void softwareSet_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox currentButton = (CheckBox)sender;
+
             if (currentButton.Name == "selfdriving")
             {
-                tbInfos.Text = "A Tesla autók egyik legkiemelkedőbb szolgáltatása az önvezetés, ami olyan precizitással segít a mindennapi forgalmakban, mint eddig semmilyen más cég autói.";
-                tbPrice.Text = "Ára: 990.000 Ft";
+                Infos.SetInfo(SoftwareFeatures.SelfdrivingDescription);
+                Infos.SetPrice($"Ára: {SoftwareFeatures.SelfdrivingPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentButton.Name == "gps")
             {
-                tbInfos.Text = "GPS-szel könnyedén megállapíthatja a helyzetét és segítséget kaphat, hogy milyen irányban folytassa az útján a célpontjának eléréséhez.";
-                tbPrice.Text = "Ára: 95.000 Ft";
+                Infos.SetInfo(SoftwareFeatures.GpsDescription);
+                Infos.SetPrice($"Ára: {SoftwareFeatures.GpsPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentButton.Name == "headlightAssistant")
             {
-                tbInfos.Text = "Néha nehéz észrevenni időben, ha egy szemben lévő autó látótávolságba kerül. Ilyenkor a távolsági fényszórókat le kell kapcsolni. Ebben segítene a fényszóró asszisztens.";
-                tbPrice.Text = "Ára: 269.000 Ft";
+                Infos.SetInfo(SoftwareFeatures.HeadlightAssistantDescription);
+                Infos.SetPrice($"Ára: {SoftwareFeatures.HeadlightAssistantPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentButton.Name == "adaptiveLights")
             {
-                tbInfos.Text = "Fényviszonyokhoz alkalmazkodik az autó fényberendezései, ezzel kevesebb dologgal foglalkozhat a sofőr, így könnyebben odafigyelhet a balesetmentes vezetésre.";
-                tbPrice.Text = "Ára: 246.000 Ft";
+                Infos.SetInfo(SoftwareFeatures.AdaptiveLightsDescription);
+                Infos.SetPrice($"Ára: {SoftwareFeatures.AdaptiveLightsPrice.ToString("C", Formatting.CurrencyFormat)}");
             }
 
             if (Config == null)

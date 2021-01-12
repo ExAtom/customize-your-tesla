@@ -18,7 +18,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <ScrollViewer  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
+                <ScrollViewer   VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0" >
 
                     <StackPanel x:Name="navigationButtonContainer" Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
 
@@ -33,7 +33,6 @@
                         <usercontrols:ImageButton x:Name="btnSoftwarePage" ImageSource="Assets/Feature Icons/software.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Szoftver"></usercontrols:ImageButton>
                         <usercontrols:ImageButton x:Name="btnSummaryPage" ImageSource="Assets/Feature Icons/summary.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Összegzés"></usercontrols:ImageButton>
                         <usercontrols:ImageButton x:Name="btnCustomerDetailsPage" ImageSource="Assets/Feature Icons/details.png" Click="btnSwitchPage_Click" Style="{StaticResource NavigationBarStyle}" Content="Megrendelő adatai"></usercontrols:ImageButton>
-
                     </StackPanel>
 
                 </ScrollViewer>

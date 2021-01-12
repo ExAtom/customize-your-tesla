@@ -19,23 +19,11 @@ namespace TeslaCarConfigurator.Pages
 {
     public partial class BatteryConfiguration : PageBase
     {
-        private List<string[]> chosenBatteryTexts;
-
-
         public BatteryConfiguration()
         {
-            chosenBatteryTexts = new List<string[]>()
-            {
-                new string[2]{ "Ez a legkisebb választható akkumulátor, amit olyanoknak ajánlunk, akik kis távolságokra használnák.", $"Ára: {Battery.Prices[0]}FT" },
-                new string[2]{ "A 70 kWh-s akkumulátor már egy kicsivel erősebb, ideális választás városok között ingázóknak.", $"Ára: {Battery.Prices[1]}FT" },
-                new string[2]{ "A 80 kWh-s akkumulátor már 2 heti folyamatos városi használatot is képes kibírni.", $"Ára: {Battery.Prices[2]}FT" },
-                new string[2]{ "Ezt az akkumulátort azoknak ajánljuk, akik naponta hosszabb távokat szeretnének megtenni.", $"Ára: {Battery.Prices[3]}FT" },
-                new string[2]{ "A 100 kWh-s akkumulátort azoknak terveztük, akik naponta körbejárják az országot.", $"Ára: {Battery.Prices[4]}FT" },
-                new string[2]{ "A legerősebb akkumulátorunk olyanok igényeit is tökéletesen kielégíti, akik folyamatosan úton vannak Közép-Európa szerte.", $"Ára: {Battery.Prices[5]}FT" },
-            };
             InitializeComponent();
-
-
+            PageTitle.SetTitle("Akkumulátor kiválasztása");
+            Application.Current.MainWindow.MinWidth = 280;
         }
 
         public override void OnAttachedToFrame()
@@ -51,13 +39,42 @@ namespace TeslaCarConfigurator.Pages
             RadioButton rb = (RadioButton)sender;
             string name = rb.Name;
             byte index = byte.Parse(name.Replace("rbBatteryType", ""));
-            string[] texts = chosenBatteryTexts[index];
-            tbInfos.Text = texts[0];
-            tbPrice.Text = texts[1];
+            if (rb.Name == "rbBatteryType0")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[0]);
+                Infos.SetPrice($"Ára: {Battery.Prices[0].ToString("C", Formatting.CurrencyFormat)}");
+            }
+            if (rb.Name == "rbBatteryType1")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[1]);
+                Infos.SetPrice($"Ára: {Battery.Prices[1].ToString("C", Formatting.CurrencyFormat)}");
+            }
+            if (rb.Name == "rbBatteryType2")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[2]);
+                Infos.SetPrice($"Ára: {Battery.Prices[2].ToString("C", Formatting.CurrencyFormat)}");
+            }
+            if (rb.Name == "rbBatteryType3")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[3]);
+                Infos.SetPrice($"Ára: {Battery.Prices[3].ToString("C", Formatting.CurrencyFormat)}");
+            }
+            if (rb.Name == "rbBatteryType4")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[4]);
+                Infos.SetPrice($"Ára: {Battery.Prices[4].ToString("C", Formatting.CurrencyFormat)}");
+            }
+            if (rb.Name == "rbBatteryType5")
+            {
+                Infos.SetInfo(Battery.CapacityDescriptions[5]);
+                Infos.SetPrice($"Ára: {Battery.Prices[5].ToString("C", Formatting.CurrencyFormat)}");
+            }
+
             if (Config == null)
             {
                 return;
             }
+
             Config.Battery.CapacityIndex = index;
         }
 
@@ -66,11 +83,41 @@ namespace TeslaCarConfigurator.Pages
 
             if (Windows.ActualWidth <= 710)
             {
-                Menu.Width = 230;
+                Menu.Width = Double.NaN;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
             }
             else
             {
-                Menu.Width = 400;
+                Menu.Width = 430;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
             }
         }
     }

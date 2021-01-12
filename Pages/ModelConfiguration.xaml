@@ -6,12 +6,12 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Modell kiválasztása" Background="#FFC6CBD0">
+      Title="Modell kiválasztása" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <TextBlock TextWrapping="Wrap" TextAlignment="Right" Padding="40,5,100,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,97,0">
+                <TextBlock x:Name="tbTitle" TextWrapping="Wrap" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,10,97,0">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -45,7 +45,7 @@
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel1" GroupName="models" Checked="rbModelType_Checked"/>
                             </Viewbox>
-                            <TextBlock Text="20.610.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                            <TextBlock x:Name="tbPrice1" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
@@ -57,7 +57,7 @@
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel2" GroupName="models" Checked="rbModelType_Checked"/>
                             </Viewbox>
-                            <TextBlock Text="35.470.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                            <TextBlock x:Name="tbPrice2" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
@@ -69,7 +69,7 @@
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel3" GroupName="models" Checked="rbModelType_Checked"/>
                             </Viewbox>
-                            <TextBlock Text="41.640.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                            <TextBlock x:Name="tbPrice3" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
                         </Canvas>
                     </StackPanel>
                     <StackPanel Margin="30,10,0,0">
@@ -81,7 +81,7 @@
                             <Viewbox Height="30" Margin="50,20,0,20" Canvas.Left="140" Canvas.Top="-240">
                                 <RadioButton x:Name="rbModel4" GroupName="models" Checked="rbModelType_Checked"/>
                             </Viewbox>
-                            <TextBlock Text="53.180.000 Ft - tól" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
+                            <TextBlock x:Name="tbPrice4" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="39" Canvas.Top="-45" Height="27" Width="168" Foreground="White" FontSize="20"/>
                         </Canvas>
                     </StackPanel>
                 </WrapPanel>

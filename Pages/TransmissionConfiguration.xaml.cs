@@ -19,19 +19,11 @@ namespace TeslaCarConfigurator.Pages
 {
     public partial class TransmissionConfiguration : PageBase
     {
-        private List<string[]> chosenTransmissionTexts;
-
-
         public TransmissionConfiguration()
         {
-            chosenTransmissionTexts = new List<string[]>()
-            {
-                new string[2]{ "A manuális váltónál a sofőr tud váltani üres, rükverc, és 1-es sebesség között. ", "Alapból jár hozzá" },
-                new string[2]{ "A számítógépes vezérlésű váltót az autó számítógépes rendszere kezeli. A sofőr természetesen tudja a fizikai váltót is használni, de ezen felül hangvezérléssel is válthat. Az önvezetés funkció alapfeltétele. ", $"Ára: {Transmission.Prices[1]}FT" },
-            };
             InitializeComponent();
-
-
+            PageTitle.SetTitle("Váltótípus kiválasztása");
+            Application.Current.MainWindow.MinWidth = 280;
         }
 
         public override void OnAttachedToFrame()
@@ -40,34 +32,77 @@ namespace TeslaCarConfigurator.Pages
             Viewbox selectedVb = (Viewbox)transmissionOptionsContainer.Children[chosenTransmission];
             RadioButton selected = (RadioButton)selectedVb.Child;
             selected.IsChecked = true;
-        } 
+        }
 
         private void rbTransmissionType_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
             string name = rb.Name;
             byte index = byte.Parse(name.Replace("rbTransmissionType", ""));
-            string[] texts = chosenTransmissionTexts[index];
-            tbInfos.Text = texts[0];
-            tbPrice.Text = texts[1];
+
+            if (rb.Name == "rbTransmissionType0")
+            {
+                Infos.SetInfo(Transmission.TransmissionDescriptions[0]);
+                Infos.SetPrice($"Alapból jár hozzá");
+            }
+            if (rb.Name == "rbTransmissionType1")
+            {
+                Infos.SetInfo(Transmission.TransmissionDescriptions[1]);
+                Infos.SetPrice($"Ára: {Transmission.Prices[1].ToString("C", Formatting.CurrencyFormat)}");
+            }
+
             if (Config == null)
             {
                 return;
             }
+
             Config.Transmission.TypeIndex = index;
+
+            if (index == 0)
+            {
+                Config.SoftwareFeatures.HasSelfdriving = false;
+            }
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-           
-
             if (Windows.ActualWidth <= 710)
             {
-                Menu.Width = 230;
+                spMenu.Width = Double.NaN;
+                Panel menuParent = (Panel)spMenu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(spMenu);
+                    MobileContainer.Children.Add(spMenu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != MobileContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    MobileContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToMobile();
+                PageTitle.SwitchToMobile();
             }
             else
             {
-                Menu.Width = 400;
+                spMenu.Width = 400;
+                Panel menuParent = (Panel)spMenu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(spMenu);
+                    DesktopContainer.Children.Add(spMenu);
+                }
+
+                Panel infosParent = (Panel)Infos.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(Infos);
+                    DesktopContainer.Children.Add(Infos);
+                }
+                Infos.SwitchToDesktop();
+                PageTitle.SwitchToDesktop();
             }
         }
     }
