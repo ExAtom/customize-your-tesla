@@ -1,0 +1,50 @@
+﻿<UserControl  xmlns:accordion="clr-namespace:TeslaCarConfigurator.UserControls.Accordion" x:Class="TeslaCarConfigurator.UserControls.Summary.ExteriorSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TeslaCarConfigurator.UserControls.Summary"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <accordion:AccordionItem >
+            <accordion:AccordionItem.AccordionHeader>
+                <DockPanel>
+                    <Image Margin="0,0,10,0" DockPanel.Dock="Left" Width="32" Height="32" Source="../../Assets/SummaryIcons/exterior-summary-icon.png"></Image>
+                    <TextBlock DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource SummaryHeaderTitleText}" >Külső extrák</TextBlock>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right"   VerticalAlignment="Center"  Loaded="tbPrice_Loaded" Style="{DynamicResource SummaryCostText}"></TextBlock>
+                </DockPanel>
+            </accordion:AccordionItem.AccordionHeader>
+            <accordion:AccordionItem.AccordionContent>
+                <StackPanel>
+                    <StackPanel Margin="0,0,0,10">
+                        <DockPanel>
+                            <Image Margin="0,0,8,0" Width="15" Height="15"  DockPanel.Dock="Left"  Loaded="imgLinenRoof_Loaded"></Image>
+                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}"  Loaded="tbLinenRoofTitle_Loaded">Vászontető</TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"   DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}" Loaded="tbLinenRoofCost_Loaded" ></TextBlock>
+                        </DockPanel>
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbLinenRoofDescription_Loaded"  ></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,10">
+                        <DockPanel>
+                            <Image Margin="0,0,8,0" Width="15" Height="15" DockPanel.Dock="Left"  Loaded="imgSpoilers_Loaded"></Image>
+                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}" Loaded="tbSpoilersTitle_Loaded" >Spoilerek</TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"  DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}" Loaded="tbSpoilersCost_Loaded"  ></TextBlock>
+                        </DockPanel>
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbSpoilersDescription_Loaded" ></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <DockPanel>
+                            <Image Margin="0,0,8,0" Width="15" Height="15" DockPanel.Dock="Left"  Loaded="imgBottomLights_Loaded"></Image>
+                            <TextBlock VerticalAlignment="Center"  DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}"  Loaded="tbBottomLightsTitle_Loaded">Alulvilágítás</TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"   DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}"  Loaded="tbBottomLightsCost_Loaded"></TextBlock>
+                        </DockPanel>
+                        <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbBottomLightsDescription_Loaded" ></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </accordion:AccordionItem.AccordionContent>
+        </accordion:AccordionItem>
+    </Grid>
+</UserControl>

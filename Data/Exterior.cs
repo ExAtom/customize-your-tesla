@@ -10,6 +10,18 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
+        public static string LinenRoofDescription { get; private set; } = "A vászontető napjaink legdivatosabb autókialakítása.Nagy sebességnél kellemes hangot kelt.A mi vászontetőnk viszont nem csak divatos, de speciális funkciója is van.Gombonymásra visszahúzódik a csomagtartóba és nyitott lesz az utastér.";
+
+        public static int LinenRoofPrice { get; private set; } = 13900000;
+
+        public static int SpoilersPrice { get; private set; } = 5600000;
+
+        public static int BottomLightsPrice { get; private set; } = 1200000;
+
+        public static string SpoilersDescription { get; private set; } = "Spoilerek a hiányzó tapadást hozzák létre, így sokkal gyorsabban száguldozhat autójával, mint egyébként. Automatikusan állítja az autó szoftvere az állásukat, így lassításnál még nagyobb segítséget nyújt.";
+
+        public static string BottomLightsDescription { get; private set; } = "Azoknak ajánljuk, akik szeretnek kitűnni a tömegből. Egy LED sor világítja ki az autó alját, így önt jobban láthatják a sötétben és sokkal ütősebb lesz a megjelenése.";
+
         // vászontető
         public bool HasLinenRoof { get; set; }
 

@@ -10,9 +10,15 @@ namespace TeslaCarConfigurator.Data
     {
         public static int ByteLength { get; private set; } = 1;
 
-        public List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Szoftveres" };
+        public static List<string> AvailableTransmissions { get; set; } = new List<string>() { "Manuális", "Szoftveres" };
 
-        public static List<int> Prices { get; private set; } = new List<int>() { 0,60000 };
+        public static List<string> TransmissionDescriptions { get; set; } = new List<string>()
+        { 
+            "A manuális váltónál a sofőr tud váltani üres, rükverc, és 1-es sebesség között. ",
+            "A számítógépes vezérlésű váltót az autó számítógépes rendszere kezeli. A sofőr természetesen tudja a fizikai váltót is használni, de ezen felül hangvezérléssel is válthat. Az önvezetés funkció alapfeltétele."
+        };
+
+        public static List<int> Prices { get; private set; } = new List<int>() { 0, 60000 };
 
         // típus
         public string Type => AvailableTransmissions[TypeIndex];

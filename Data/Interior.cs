@@ -16,6 +16,42 @@ namespace TeslaCarConfigurator.Data
         public static List<string> AvailableColors { get; private set; } = new List<string>() { "Fekete", "Fehér", "Barna" };
         public static List<int> ColorPrices { get; private set; } = new List<int>() { 0, 500000, 600000 };
 
+        public static List<string> MaterialDescriptions { get; private set; } = new List<string>() 
+        { 
+            "A bio műanyag egy erősebb és környezetkímélőbb alternatíva. A textúrájának kidolgozása az aszfaltra hasonlít, ezzel egyé válhat az úttal, amin éppen halad.",
+            "Az öntött fa nem igazi fa, külseje üveges, de ez adja át a legtermészetesebb hatást. Mintha csak visszautaztunk volna az időben, de az autó megtartja prémium érzetét.",
+            "A jegelt üveg egy speciális felületcsiszolással készül, ezzel erősítve magát az anyagot, valamint az ujjlenyomatoktól is védi. A végeredmény egy hó textúrájára hasonlít. A legjobb választás téli kocsikázásra.",
+            "A krokodilbőr a legritkább fajtájú, Gangeszi aprókrokodil bőre. Elképesztően jóminőségű, tapintása eszméletlen és a szaga új autójéra hasonlít."
+        };
+
+        public static List<string> ColorDescriptions { get; private set; } = new List<string>() 
+        {
+            "Fekete. Milyen egyszerű. Milyen elegáns. Egyszerűen tökéletes. Az űrre és annak végtelenül csodálatosságára emlékeztet. Csodás választás.",
+            "A fehér kitisztultság, felsőbbrendűségre sugall. Vezetés közben páratlanul kiemelkedő érzése lehet a vezetőnek.",
+            "A barna a legtermészetesebb színünk. Az öntött fával vagy krokodilbőrrel együtt teljes az összhatás. Klasszikus és csodás."
+        };
+
+        public static int SeatHeatingPrice { get; private set; } = 150000;
+
+        public static string SeatHeatingDescription { get; private set; } = "Ülés fűtés és hűtés. Bármilyen idő legyen kint, a legkényelmesebb vezetést nyújtja.";
+
+        public static int SteeringWheelHeatingPrice { get; private set; } = 110000;
+
+        public static string SteeringWheelHeatingDescription { get; private set; } = "Kormánykerék fűtése és hűtése. Reggeli induláskor gyakran kényelmetlenül forró vagy hideg lehet a kormány, így az nehezíti a kormányzást. Ennek megoldása ez a beállítás.";
+
+        public static int SpineSupportPrice { get; private set; } = 69420;
+
+        public static string SpineSupportDescription { get; private set; } = "Hosszú utakon nagyban segíthet a gerinctámasz beszerelése. Britt tudósok szerint még a látása is javul tőle.";
+
+        public static int SunlightProtectionPrice { get; private set; } = 650000;
+
+        public static string SunlightProtectionDescription { get; private set; } = "Elég lesz a borzalmas műanyag fényvisszaverő lapokból, amiket senki se bír normálisan az ablkba. Ez az új technológia az autó kikapcsolásakor elsőtétíti az ablakokat, amin kereszül a napfény nem jut be az autóba.";
+
+        public static int DarkenedWindowsPrice { get; private set; } = 190000;
+
+        public static string DarkenedWindowsDescription { get; private set; } = "Kívülről senki se lát be, de belülről ki lát mindenki. Az eleganciapontja is kiemelkedően növekszik a járműnek ennek használatakor.";
+
+
         // ülésfűtés
         public bool HasSeatHeating { get; set; }
 
