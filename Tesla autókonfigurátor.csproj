@@ -285,7 +285,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="Styles\FormResources.xaml">
+<SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
+    <Page Include="Styles\PaintingResources.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -489,11 +496,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\InfosBackgroundMobile.png" />
-  </ItemGroup>
+    </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\SummaryIcons\interior-summary-icon.png" />
   </ItemGroup>
-  <ItemGroup>
+   <ItemGroup>
     <Resource Include="Assets\SummaryIcons\software-summary-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
