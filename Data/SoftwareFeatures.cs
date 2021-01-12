@@ -46,12 +46,12 @@ namespace TeslaCarConfigurator.Data
             HasAdaptiveLights = hasAdaptiveLights;
         }
 
-        public SoftwareFeatures(byte[] bytes) 
+        public SoftwareFeatures(byte[] bytes, byte transmissionType) 
         {
             byte data = bytes[0];
             byte selfdrivingMask = 0b_0000_0001;
             byte selfdriving = (byte)(data & selfdrivingMask);
-            HasSelfdriving = selfdriving > 0;
+            HasSelfdriving = selfdriving > 0 && transmissionType > 0;
 
             byte gpsMask = 0b_0000_0010;
             byte gps = (byte)(data & gpsMask);

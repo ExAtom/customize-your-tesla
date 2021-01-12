@@ -110,7 +110,7 @@ namespace TeslaCarConfigurator.Data
             Exterior = new Exterior(data.Skip(index).Take(Exterior.ByteLength).ToArray());
             index += Exterior.ByteLength;
 
-            SoftwareFeatures = new SoftwareFeatures(data.Skip(index).Take(SoftwareFeatures.ByteLength).ToArray());
+            SoftwareFeatures = new SoftwareFeatures(data.Skip(index).Take(SoftwareFeatures.ByteLength).ToArray(), Transmission.TypeIndex);
 
         }
 
