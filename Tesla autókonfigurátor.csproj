@@ -497,15 +497,21 @@
     <Resource Include="homepage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Feature Icons\arrow.png" />
+    <Resource Include="Assets\Feature Icons\battery.png" />
+    <Resource Include="Assets\Feature Icons\exterior.png" />
+    <Resource Include="Assets\Feature Icons\interior.png" />
+    <Resource Include="Assets\Feature Icons\model.png" />
+    <Resource Include="Assets\Feature Icons\next.png" />
+    <Resource Include="Assets\Feature Icons\painting.png" />
+    <Resource Include="Assets\Feature Icons\software.png" />
+    <Resource Include="Assets\Feature Icons\transmission.png" />
+    <Resource Include="Assets\Feature Icons\wheel.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Feature Icons\battery-summary-icon.png" />
-    <Resource Include="Assets\Feature Icons\exterior-summary-icon.png" />
-    <Resource Include="Assets\Feature Icons\model-summary-icon.png" />
-    <Resource Include="Assets\Feature Icons\painting-summary-icon.png" />
-    <Resource Include="Assets\Feature Icons\transmission-summary-icon.png" />
-    <Resource Include="Assets\Feature Icons\wheel-summary-icon.png" />
+    <Resource Include="Assets\Feature Icons\summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\details.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
