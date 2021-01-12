@@ -45,7 +45,7 @@
 
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció betöltése kóddal"  FontSize="20" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="20,40,20,0"></TextBlock>
+                    <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció betöltése kóddal" Style="{StaticResource SubtitleText}" Width="Auto"  Margin="20,40,20,0"></TextBlock>
                     <TextBox Name="tbToken" TextWrapping="Wrap" Margin="20,40,20,0" TextChanged="tbToken_TextChanged"></TextBox>
                     <Button Name="btnLoadFromToken" Margin="50,40,50,0" Click="btnLoadFromToken_Click" IsEnabled="False" Style="{StaticResource LandingButton}" >Tovább</Button>
                     <TextBlock Name="invalidTokenWarning" Foreground="Red" Visibility="Collapsed" Margin="20,30,20,0">A megadott kód érvénytelen.</TextBlock>

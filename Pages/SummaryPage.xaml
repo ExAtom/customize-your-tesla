@@ -1,4 +1,4 @@
-﻿<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.SummaryPage"
+<helpers:PageBase  xmlns:helpers="clr-namespace:TeslaCarConfigurator.Helpers" x:Class="TeslaCarConfigurator.Pages.SummaryPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,40 +6,23 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:accordion="clr-namespace:TeslaCarConfigurator.UserControls.Accordion" xmlns:usercontrols="clr-namespace:TeslaCarConfigurator.UserControls"
                    mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" >
+      Title="Összegzés" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <DockPanel Name="DesktopContainer">
+                    
+                </DockPanel>
+                <StackPanel Name="MobileContainer">
+                    
+                </StackPanel>
+                <StackPanel Visibility="Collapsed">
                     <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
-                        <TextBlock TextWrapping="Wrap" Text="Összegzés" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
-                            <TextBlock.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform AngleX="-21.161"/>
-                                    <RotateTransform/>
-                                    <TranslateTransform X="-11.613"/>
-                                </TransformGroup>
-                            </TextBlock.RenderTransform>
-                            <TextBlock.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <LinearGradientBrush.RelativeTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                            <TranslateTransform/>
-                                        </TransformGroup>
-                                    </LinearGradientBrush.RelativeTransform>
-                                    <GradientStop Color="#FF435467" Offset="0"/>
-                                    <GradientStop Color="#FF1B3755" Offset="1"/>
-                                    <GradientStop Color="#FF2F455E" Offset="0.284"/>
-                                </LinearGradientBrush>
-                            </TextBlock.Background>
-                        </TextBlock>
-                        <StackPanel x:Name="summaryAccordion" Margin="10,18,0,0"></StackPanel>
-                        <TextBlock Style="{StaticResource CostText}" Margin="15,10,0,0" Name="tbTotalPrice" FontSize="26"></TextBlock>
+                        <usercontrols:PageTitle x:Name="pageTitle"></usercontrols:PageTitle>
+                        <StackPanel x:Name="summaryAccordion" Margin="0,18,0,0"></StackPanel>
+                        <TextBlock TextAlignment="Center" Style="{StaticResource CostText}" Margin="15,10,0,0" Name="tbTotalPrice" FontSize="26"></TextBlock>
                     </StackPanel>
+
                     <StackPanel Name="SavePanel" HorizontalAlignment="Right" DockPanel.Dock="Right">
                         <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció mentése"  FontSize="20" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="Black" Margin="20,40,20,0"></TextBlock>
 
@@ -49,10 +32,19 @@
                         <TextBlock TextAlignment="Center" Margin="20,40,20,0" FontFamily="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro" FontWeight="Bold" FontSize="15">Vagy</TextBlock>
                         <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció megosztása" FontSize="20" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="Black" Margin="20,40,20,0"></TextBlock>
                         <usercontrols:ImageButton x:Name="btnCopyToClipboard" Margin="20,20" MaxWidth="250" Height="40" MinWidth="40" Click="btnCopyToClipboard_Click" Content="Vágólapra másol" FontSize="18" Style="{StaticResource ImageButton}" ImageSource="/Assets/Feature Icons/copy.png"></usercontrols:ImageButton>
+
+                    <StackPanel Name="SavePanel"  DockPanel.Dock="Right">
+                        <TextBlock Style="{StaticResource SubtitleText}" TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció mentése"  Width="Auto" Margin="20,40,20,0"></TextBlock>
+
+                        <Label  Name="nameInputLabel" Margin="20,20,20,0" >Konfiguráció neve</Label>
+                        <TextBox Name="tbConfigName"  TextWrapping="Wrap" Margin="20,0" TextChanged="tbConfigName_TextChanged"></TextBox>
+                        <Button Grid.Column="0" Name="btnSaveConfig" Height="30" IsEnabled="False" Click="btnSaveConfig_Click" VerticalAlignment="Top" Margin="0,10,0,0" MinWidth="40" UseLayoutRounding="False" MaxWidth="100">Mentés</Button>
+                        <TextBlock  TextAlignment="Center" Margin="20,40,20,0" FontFamily="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Bold" FontSize="25" >Vagy</TextBlock>
+                        <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció megosztása" Style="{StaticResource SubtitleText}" Margin="20,40,20,0"></TextBlock>
+                         <usercontrols:ImageButton x:Name="btnCopyToClipboard" Margin="20,20" MaxWidth="250" Height="40" MinWidth="40" Click="btnCopyToClipboard_Click" Content="Vágólapra másol" FontSize="18" Style="{StaticResource ImageButton}" ImageSource="/Assets/Feature Icons/copy.png"></usercontrols:ImageButton>
+
                     </StackPanel>
-                </DockPanel>
-                <StackPanel Name="MobileContainer"></StackPanel>
-                <StackPanel Visibility="Collapsed"></StackPanel>
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
     </Grid>

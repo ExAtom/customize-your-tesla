@@ -33,6 +33,24 @@
             </Style>
 
 
+            <Style x:Key="SubtitleText" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Black"></Setter>
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FF142850">
+                            
+                        </SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#ffdae1e7" Opacity="0.7" Direction="0" >
+                            
+                        </DropShadowEffect>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+            </Style>
 
             <Style x:Key="CostText" TargetType="TextBlock" BasedOn="{StaticResource SummaryCostText}" >
                 <Setter Property="Effect">
