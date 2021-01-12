@@ -8,6 +8,4 @@
         <Setter Property="Height" Value="50"></Setter>
     </Style>
     
-  
-
 </ResourceDictionary>

@@ -24,43 +24,43 @@
         <StackPanel Visibility="Visible">
             <StackPanel x:Name="Menu" Margin="0,10" DockPanel.Dock="Left" Width="387">
                 <usercontrols:PageTitle x:Name="PageTitle" Margin="0,0,0,20">
-                
+
                 </usercontrols:PageTitle>
 
-                    <Viewbox Height="30" Style="{StaticResource PageContent}">
-                        <RadioButton x:Name="rbColor1" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <StackPanel>
-                                    <TextBlock Text="Kristályfehér" Width="70"/>
-                                </StackPanel>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" Style="{StaticResource PageContent}">
-                        <RadioButton x:Name="rbColor2" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Mágjafekete" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" Style="{StaticResource PageContent}">
-                        <RadioButton x:Name="rbColor3" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Szürke Metál" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" Style="{StaticResource PageContent}">
-                        <RadioButton x:Name="rbColor4" GroupName="wheels" Checked="rbColorSet_Checked">
-                            <WrapPanel>
-                                <Image Source="../Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
-                                <TextBlock Text="Kék Metál" Width="70"/>
-                            </WrapPanel>
-                        </RadioButton>
-                    </Viewbox>
+                <Viewbox Height="30" Style="{StaticResource PageContent}">
+                    <RadioButton x:Name="rbColor1" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color1.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <StackPanel>
+                                <TextBlock Text="Kristályfehér" Width="70"/>
+                            </StackPanel>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" Style="{StaticResource PageContent}">
+                    <RadioButton x:Name="rbColor2" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color2.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Mágjafekete" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" Style="{StaticResource PageContent}">
+                    <RadioButton x:Name="rbColor3" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color3.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Szürke Metál" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
+                <Viewbox Height="30" Style="{StaticResource PageContent}">
+                    <RadioButton x:Name="rbColor4" GroupName="wheels" Checked="rbColorSet_Checked">
+                        <WrapPanel>
+                            <Image Source="../Assets/Color4.png" Width="16" Height="16" Margin="0,0,5,0" />
+                            <TextBlock Text="Kék Metál" Width="70"/>
+                        </WrapPanel>
+                    </RadioButton>
+                </Viewbox>
                 <Viewbox Height="30" Style="{StaticResource PageContent}">
                     <RadioButton x:Name="rbColor5" GroupName="wheels" Checked="rbColorSet_Checked">
                         <WrapPanel>
@@ -74,6 +74,4 @@
             <usercontrols:InfoPanel x:Name="Infos"></usercontrols:InfoPanel>
         </StackPanel>
     </Grid>
-
-
 </helpers:PageBase>
