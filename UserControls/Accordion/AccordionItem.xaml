@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TeslaCarConfigurator.UserControls.Accordion"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Style="{DynamicResource AccordionContainerStyle}">
-    <StackPanel>
+    <StackPanel Width="390">
         <Button Name="headerContainer" Style="{DynamicResource AccordionClosedHeaderStyle}" Click="OnHeaderClick"></Button>
         <StackPanel Visibility="Collapsed" Name="separator" Height="1" Background="#FF142850"></StackPanel>
         <Button Visibility="Collapsed" Name="contentContainer" Style="{DynamicResource AccordionContentStyle}"></Button>
