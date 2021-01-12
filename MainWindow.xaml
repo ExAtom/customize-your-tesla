@@ -23,7 +23,6 @@
                     <StackPanel x:Name="navigationButtonContainer"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
                         <Button Width="75" Margin="10,0" Name="btnLandingPage" Click="btnSwitchPage_Click" Content="Kezdőlap">
                         </Button>
-
                         <Button Width="75" Margin="10,0" Name="btnModelConfiguration" Click="btnSwitchPage_Click">Model</Button>
                         <Button Width="75" Margin="10,0" Name="btnBatteryConfiguration" Click="btnSwitchPage_Click">Akkumulátor</Button>
                         <Button Width="75" Margin="10,0" Name="btnTransmissionConfiguration" Click="btnSwitchPage_Click">Váltó</Button>

@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
                 <ResourceDictionary Source="Styles/AccordionResources.xaml"/>
                 <ResourceDictionary Source="Styles/SummaryResources.xaml"/>
+                <ResourceDictionary Source="Styles/PaintingResources.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
 

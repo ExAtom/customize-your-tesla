@@ -17,9 +17,6 @@ using TeslaCarConfigurator.Helpers;
 
 namespace TeslaCarConfigurator.Pages
 {
-    /// <summary>
-    /// Interaction logic for PaintingPage.xaml
-    /// </summary>
     public partial class PaintingPage : PageBase
     {
         public PaintingPage()
@@ -28,21 +25,16 @@ namespace TeslaCarConfigurator.Pages
             PageTitle.SetTitle("Fényezés kiválasztása");
         }
 
+        public bool mobileView = false;
+
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
 
             if (Windows.ActualWidth <= 710)
             {
-                Menu.Width = 230;
-            }
-            else
-            {
-                Menu.Width = 400;
-            }
-
-            if (Windows.ActualWidth <= 545)
-            {
+                Menu.Width = Double.NaN;
+                mobileView = true;
                 Panel menuParent = (Panel)Menu.Parent;
                 if (menuParent != null && menuParent != MobileContainer)
                 {
@@ -61,6 +53,7 @@ namespace TeslaCarConfigurator.Pages
             }
             else
             {
+                Menu.Width = 400;
                 Panel menuParent = (Panel)Menu.Parent;
                 if (menuParent != null && menuParent != DesktopContainer)
                 {
@@ -77,45 +70,36 @@ namespace TeslaCarConfigurator.Pages
                 Infos.SwitchToDesktop();
                 PageTitle.SwitchToDesktop();
             }
-
         }
-
-
 
         private void rbColorSet_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton currentColor = (RadioButton)sender;
-            /*if (currentColor.Name == "rbColor1")
+            if (currentColor.Name == "rbColor1")
             {
-                tbInfos.Text = "A kristályfehér az ártatlanság és a tökéletesség színe. Kiváló választás azon személyeknek, akik rendszeresen tisztítják autójukat és szeretik az egyszerűséget.";
-                tbPrice.Text = "Alap Festés";
+                Infos.SetInfo(Painting.ColorDescriptions[0]);
+                Infos.SetPrice("Alap festés");
             }
             if (currentColor.Name == "rbColor2")
             {
-                tbInfos.Text = "Máglyafekete fényezésünk a legelegánsabb. Tulajdonosa céltudatosságot sugall. Előnyös választás lehet, hiszen a szennyeződések nehezen vehetőek észre a kaszni felületen.";
-                tbPrice.Text = "Ára: 20.000 Ft";
+                Infos.SetInfo(Painting.ColorDescriptions[1]);
+                Infos.SetPrice($"Ára: {Painting.Prices[1].ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentColor.Name == "rbColor3")
             {
-                tbInfos.Text = "Impozáns szüke metál fényezésünk az elmúlt évek tapasztalatai alapján a legtöbbet választott szín. Tulajdonosa kreatív és társaságkedvelő valamint jó alkalmazkodóképességű.";
-                tbPrice.Text = "Ára: 29.000 Ft";
+                Infos.SetInfo(Painting.ColorDescriptions[2]);
+                Infos.SetPrice($"Ára: {Painting.Prices[2].ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentColor.Name == "rbColor4")
             {
-                tbInfos.Text = "A kék a víz, a harmónia, magabiztosság, kreativizmus és béke szimbóluma. Nagy valószínűséggel a járókelőknek is ez fog Önről eszükbe jutni, ha megláták a forgalomban.";
-                tbPrice.Text = "Ára: 38.000 Ft";
+                Infos.SetInfo(Painting.ColorDescriptions[3]);
+                Infos.SetPrice($"Ára: {Painting.Prices[3].ToString("C", Formatting.CurrencyFormat)}");
             }
             if (currentColor.Name == "rbColor5")
             {
-                tbInfos.Text = "Gyönyörű piros fényezésünk a szerelem és az energia színe. Tulajdonosa általában dinamikus és körültekintő, ugyanakkor hajlamos két végén égetni a gyertyát.";
-                tbPrice.Text = "Ára: 40.500 Ft";
+                Infos.SetInfo(Painting.ColorDescriptions[4]);
+                Infos.SetPrice($"Ára: {Painting.Prices[4].ToString("C", Formatting.CurrencyFormat)}");
             }
-
-            
-*/
-            /*$"Ára: {Painting.Prices[0].ToString("C", Formatting.CurrencyFormat)}";
-            Infos.SetInfo("a kristály............");
-            Infos.SetPrice("Ára: .....");*/
 
             if (Config == null)
             {
