@@ -59,6 +59,17 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <Style x:Key="ErrorText" TargetType="TextBlock">
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#FFFF1414"></SolidColorBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Light"></Setter>
+                <Setter Property="FontSize" Value="18"> </Setter>
+                <Setter Property="TextWrapping" Value="Wrap"> </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

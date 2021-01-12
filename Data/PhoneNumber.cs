@@ -38,6 +38,8 @@ namespace TeslaCarConfigurator.Data
 
         public bool IsCountrySelected => CallingCode != null;
 
+        public bool Isvalid => IsCountrySelected && !string.IsNullOrEmpty(Number);
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

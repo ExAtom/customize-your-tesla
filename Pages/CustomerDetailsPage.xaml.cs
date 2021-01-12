@@ -82,7 +82,7 @@ namespace TeslaCarConfigurator.Pages
                     DesktopContainer.Children.Add(col2);
                 }
 
-                col2.Margin = new Thickness(10,0,0,0);
+                col2.Margin = new Thickness(10, 0, 0, 0);
 
                 pageTitle.SwitchToDesktop();
             }
@@ -91,8 +91,17 @@ namespace TeslaCarConfigurator.Pages
 
         private void BuyCar(object sender, RoutedEventArgs e)
         {
-            MessageBarController.ShowSuccess("Sikeres vásárlás!", 9000);
+            bool isValid = ValidateForm();
+            if (isValid)
+            {
+                MessageBarController.ShowSuccess("Sikeres vásárlás!", 9000);
+                WriteReceipt();
+            }
 
+        }
+
+        private void WriteReceipt()
+        {
             var receiptOut = new List<string>();
 
             receiptOut.Add("Tesla Autó Konfigurátor\nSzámla\n\nKöszönjük, hogy nálunk vásárolt!\n----------\n");
@@ -150,6 +159,116 @@ namespace TeslaCarConfigurator.Pages
             receiptOut.Add($"----------\n\nAz autó kiszállítása egy hónapon belül megtörténik.");
 
             File.WriteAllLines("számla.txt", receiptOut);
+        }
+
+        private bool ValidateForm()
+        {
+            bool isValid = true;
+            tbFirstnameError.Visibility = Visibility.Collapsed;
+            tbLastnameError.Visibility = Visibility.Collapsed;
+            tbPhoneNumberError.Visibility = Visibility.Collapsed;
+            tbEmailAddressError.Visibility = Visibility.Collapsed;
+            tbCountryError.Visibility = Visibility.Collapsed;
+            tbZipCodeError.Visibility = Visibility.Collapsed;
+            tbProvinceError.Visibility = Visibility.Collapsed;
+            tbCityError.Visibility = Visibility.Collapsed;
+            tbAddressError.Visibility = Visibility.Collapsed;
+            tbCardNumberError.Visibility = Visibility.Collapsed;
+            tbSecurityCodeError.Visibility = Visibility.Collapsed;
+            tbCardFirstnameError.Visibility = Visibility.Collapsed;
+            tbCardLastnameError.Visibility = Visibility.Collapsed;
+            tbExpirationDateError.Visibility = Visibility.Collapsed;
+
+
+
+            CustomerDetailsViewModel vm = (CustomerDetailsViewModel)DataContext;
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.Firstname))
+            {
+                isValid = false;
+                tbFirstnameError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.Lastname))
+            {
+                isValid = false;
+                tbLastnameError.Visibility = Visibility.Visible;
+            }
+
+            if (!vm.CustomerDetails.PhoneNumber.Isvalid)
+            {
+                isValid = false;
+                tbPhoneNumberError.Visibility = Visibility.Visible;
+            }
+
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.EmailAddress))
+            {
+                isValid = false;
+                tbEmailAddressError.Visibility = Visibility.Visible;
+            }
+
+            if (vm.CustomerDetails.Country == null)
+            {
+                isValid = false;
+                tbCountryError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.ZipCode))
+            {
+                isValid = false;
+                tbZipCodeError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.Province))
+            {
+                isValid = false;
+                tbProvinceError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.City))
+            {
+                isValid = false;
+                tbCityError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.Address))
+            {
+                isValid = false;
+                tbAddressError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.CreditCard.CardNumber))
+            {
+                isValid = false;
+                tbCardNumberError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.CreditCard.SecurityCode))
+            {
+                isValid = false;
+                tbSecurityCodeError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.CreditCard.Firstname))
+            {
+                isValid = false;
+                tbCardFirstnameError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.CreditCard.Lastname))
+            {
+                isValid = false;
+                tbCardLastnameError.Visibility = Visibility.Visible;
+            }
+
+            if (string.IsNullOrEmpty(vm.CustomerDetails.CreditCard.ExpirationDate))
+            {
+                isValid = false;
+                tbExpirationDateError.Visibility = Visibility.Visible;
+            }
+
+            return isValid;
         }
 
         private void OnLoadingFailed()
