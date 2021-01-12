@@ -3,67 +3,52 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TeslaCarConfigurator"
-      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:TeslaCarConfigurator" xmlns:usercontrols="clr-namespace:TeslaCarConfigurator.UserControls"
+                   mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Váltó kiválasztása" Background="#FFC6CBD0" SizeChanged="Windows_SizeChanged" x:Name="Windows" >
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <DockPanel>
-                <StackPanel x:Name="Menu" Width="400" Margin="0,10" DockPanel.Dock="Left">
-                    <TextBlock TextWrapping="Wrap" Text="Váltótípus kiválasztása" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,0,0">
-                        <TextBlock.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform AngleX="-21.161"/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-11.613"/>
-                            </TransformGroup>
-                        </TextBlock.RenderTransform>
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <LinearGradientBrush.RelativeTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                        <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </LinearGradientBrush.RelativeTransform>
-                                <GradientStop Color="#FF435467" Offset="0"/>
-                                <GradientStop Color="#FF1B3755" Offset="1"/>
-                                <GradientStop Color="#FF2F455E" Offset="0.284"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                    <StackPanel Name="transmissionOptionsContainer" Margin="0,50,0,0"  >
-                        <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbTransmissionType0" Checked="rbTransmissionType_Checked" GroupName="transmission">
-                                <WrapPanel>
-                                    <TextBlock Text="Manuális"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
-                        <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
-                            <RadioButton Name="rbTransmissionType1" Checked="rbTransmissionType_Checked" GroupName="transmission">
-                                <WrapPanel>
-                                    <TextBlock Text="Szoftveres" FontSize="12"/>
-                                </WrapPanel>
-                            </RadioButton>
-                        </Viewbox>
-                        
-                    </StackPanel>
+            <StackPanel>
+                <DockPanel x:Name="DesktopContainer" Visibility="Visible">
+
+                </DockPanel>
+
+                <StackPanel x:Name="MobileContainer" Visibility="Visible">
+
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <Image Height="440" Width="277" MaxWidth="400" Margin="0,10,0,0" Source="../Assets/InfosBackground.png" Stretch="Fill"/>
-                    <Canvas>
-                        <TextBlock Text="Tesla Autó Konfigurátor" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="38" Canvas.Top="-438" Height="27" Width="233" Foreground="White" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="Hasznos Infó" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-389" Height="34" Width="167" Foreground="White" FontSize="25" FontWeight="Bold"/>
-                        <TextBlock x:Name="tbInfos" TextWrapping="Wrap" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-315" Height="250" Width="168" Foreground="White" FontSize="15"/>
-                        <TextBlock x:Name="tbPrice" Text="" TextAlignment="Center" InkCanvas.Left="54" Canvas.Left="86" Canvas.Top="-65" Height="27" Width="168" Foreground="White" FontSize="20"></TextBlock>
-                    </Canvas>
-                </StackPanel>
-            </DockPanel>
+            </StackPanel>
         </ScrollViewer>
+
+        <StackPanel Visibility="Visible">
+            <StackPanel x:Name="spMenu" Margin="0,10" DockPanel.Dock="Left" Width="400">
+                <usercontrols:PageTitle x:Name="PageTitle" Margin="0,0,0,20">
+
+                </usercontrols:PageTitle>
+
+                <StackPanel Name="transmissionOptionsContainer">
+                    <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
+                        <RadioButton Name="rbTransmissionType0" Checked="rbTransmissionType_Checked" GroupName="transmission">
+                            <WrapPanel>
+                                <TextBlock Text="Manuális"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+                    <Viewbox VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="50,10">
+                        <RadioButton Name="rbTransmissionType1" Checked="rbTransmissionType_Checked" GroupName="transmission">
+                            <WrapPanel>
+                                <TextBlock Text="Szoftveres" FontSize="12"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Viewbox>
+
+                </StackPanel>
+            </StackPanel>
+
+            <usercontrols:InfoPanel x:Name="Infos">
+                
+            </usercontrols:InfoPanel>
+            
+        </StackPanel>
     </Grid>
 </helpers:PageBase>
