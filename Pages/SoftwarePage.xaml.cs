@@ -46,6 +46,7 @@ namespace TeslaCarConfigurator.Pages
             gps.IsChecked = Config.SoftwareFeatures.HasGps;
             headlightAssistant.IsChecked = Config.SoftwareFeatures.HasHeadlightAssistant;
             adaptiveLights.IsChecked = Config.SoftwareFeatures.HasAdaptiveLights;
+            selfdriving.IsEnabled = Config.Transmission.TypeIndex != 0;
         }
 
         private void softwareSet_Checked(object sender, RoutedEventArgs e)

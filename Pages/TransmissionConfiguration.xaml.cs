@@ -40,7 +40,7 @@ namespace TeslaCarConfigurator.Pages
             Viewbox selectedVb = (Viewbox)transmissionOptionsContainer.Children[chosenTransmission];
             RadioButton selected = (RadioButton)selectedVb.Child;
             selected.IsChecked = true;
-        } 
+        }
 
         private void rbTransmissionType_Checked(object sender, RoutedEventArgs e)
         {
@@ -55,11 +55,16 @@ namespace TeslaCarConfigurator.Pages
                 return;
             }
             Config.Transmission.TypeIndex = index;
+
+            if (index == 0)
+            {
+                Config.SoftwareFeatures.HasSelfdriving = false;
+            }
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-           
+
 
             if (Windows.ActualWidth <= 710)
             {
