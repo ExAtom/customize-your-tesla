@@ -121,7 +121,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (interior.HasSeatHeating)
             {
                 TextBlock tb = (TextBlock)sender;
-                tb.Text = Interior.SeatHeatingPrice.ToString("C", Formatting.CurrencyFormat);
+                tb.Text = "+" + Interior.SeatHeatingPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -162,7 +162,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (interior.HasSteeringWheelHeating)
             {
                 TextBlock tb = (TextBlock)sender;
-                tb.Text = Interior.SteeringWheelHeatingPrice.ToString("C", Formatting.CurrencyFormat);
+                tb.Text = "+" + Interior.SteeringWheelHeatingPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -202,7 +202,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (interior.HasSpineSupport)
             {
                 TextBlock tb = (TextBlock)sender;
-                tb.Text = Interior.SpineSupportPrice.ToString("C", Formatting.CurrencyFormat);
+                tb.Text = "+" + Interior.SpineSupportPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -242,7 +242,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (interior.HasSunlightProtection)
             {
                 TextBlock tb = (TextBlock)sender;
-                tb.Text = Interior.SunlightProtectionPrice.ToString("C", Formatting.CurrencyFormat);
+                tb.Text = "+" + Interior.SunlightProtectionPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
@@ -281,7 +281,7 @@ namespace TeslaCarConfigurator.UserControls.Summary
             if (interior.HasDarkenedWindows)
             {
                 TextBlock tb = (TextBlock)sender;
-                tb.Text = Interior.DarkenedWindowsPrice.ToString("C", Formatting.CurrencyFormat);
+                tb.Text = "+" + Interior.DarkenedWindowsPrice.ToString("C", Formatting.CurrencyFormat);
             }
         }
 
