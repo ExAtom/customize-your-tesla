@@ -238,7 +238,9 @@
                             <StackPanel Grid.Row="3" Margin="20,40,20,0"  >
                                 <TextBlock FontSize="24" TextWrapping="Wrap" TextAlignment="Center" Style="{StaticResource CostText}" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" ></TextBlock>
 
-                                <Button Margin="0,20,0,0" MaxWidth="100" MinHeight="30" Click="BuyCar">Vásárlás</Button>
+                                <usercontrols:ImageButton Margin="0,20,0,0" MaxWidth="150" MinHeight="40" Click="BuyCar" Content="Vásárlás" Style="{StaticResource ImageButton}" ImageSource="/Assets/Feature Icons/buy.png"></usercontrols:ImageButton>
+
+
                             </StackPanel>
                         </Grid>
                     </StackPanel>

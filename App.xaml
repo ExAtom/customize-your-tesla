@@ -12,8 +12,8 @@
                 <ResourceDictionary Source="Styles/NavigationBarResources.xaml"/>
                 <ResourceDictionary Source="Styles/FormResources.xaml"/>
                 <ResourceDictionary Source="Styles/ScrollViewerResources.xaml"/>
-
                 <ResourceDictionary Source="Styles/PaintingResources.xaml"/>
+                <ResourceDictionary Source="Styles/LandingButtonResources.xaml"/>
 
 
             </ResourceDictionary.MergedDictionaries>
