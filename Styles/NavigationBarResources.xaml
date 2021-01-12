@@ -41,14 +41,13 @@
                                     <DropShadowEffect Color="#FF989898"></DropShadowEffect>
                                 </Border.Effect>
                                 <WrapPanel VerticalAlignment="Center">
-                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
                                     <ContentPresenter Content="{TemplateBinding Content}" Margin="10,0" VerticalAlignment="Center" ></ContentPresenter>
                                 </WrapPanel>
                             </Border>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="FontSize" Value="20" />
             </Trigger>
 
             <Trigger Property="IsPressed" Value="True">
@@ -63,14 +62,13 @@
                                     <DropShadowEffect Color="#FF494949"></DropShadowEffect>
                                 </Border.Effect>
                                 <WrapPanel VerticalAlignment="Center">
-                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
                                     <ContentPresenter Content="{TemplateBinding Content}" Margin="10,0" VerticalAlignment="Center" ></ContentPresenter>
                                 </WrapPanel>
                             </Border>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="FontSize" Value="20" />
             </Trigger>
 
             <Trigger Property="IsEnabled" Value="False">
@@ -125,7 +123,7 @@
                                     <DropShadowEffect Color="#FF989898"></DropShadowEffect>
                                 </Border.Effect>
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto">
-                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right"></Image>
+                                    <Image Source="{TemplateBinding ImageSource}" Margin="10,0,0,0" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
                                     <ContentPresenter Content="{TemplateBinding Content}" Margin="10,0" VerticalAlignment="Center" ></ContentPresenter>
                                 </StackPanel>
                             </Border>

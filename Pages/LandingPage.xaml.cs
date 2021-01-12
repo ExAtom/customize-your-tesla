@@ -22,6 +22,7 @@ namespace TeslaCarConfigurator.Pages
         public LandingPage()
         {
             InitializeComponent();
+            Application.Current.MainWindow.MinWidth = 420;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -72,5 +73,7 @@ namespace TeslaCarConfigurator.Pages
             }
             return result;
         }
+
+        
     }
 }
