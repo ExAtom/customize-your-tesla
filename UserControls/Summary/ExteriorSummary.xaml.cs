@@ -59,7 +59,6 @@ namespace TeslaCarConfigurator.UserControls.Summary
         private void tbLinenRoofTitle_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbLinenRoofTitle = (TextBlock)sender;
-            tbLinenRoofTitle.Text = "Vászontető";
             tbLinenRoofTitle.Foreground = exterior.HasLinenRoof ? Brushes.White : new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
         }
 
@@ -97,7 +96,6 @@ namespace TeslaCarConfigurator.UserControls.Summary
         private void tbSpoilersTitle_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbSpoilersTitle = (TextBlock)sender;
-            tbSpoilersTitle.Text = "Spoilerek";
             tbSpoilersTitle.Foreground = exterior.HasSpoilers ? Brushes.White : new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
         }
 
@@ -135,7 +133,6 @@ namespace TeslaCarConfigurator.UserControls.Summary
         private void tbBottomLightsTitle_Loaded(object sender, RoutedEventArgs e)
         {
             TextBlock tbBottomLightsTitle = (TextBlock)sender;
-            tbBottomLightsTitle.Text = "Alulvilágítás";
             tbBottomLightsTitle.Foreground = exterior.HasBottomLights ? Brushes.White : new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
         }
 

@@ -204,6 +204,9 @@
     <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
       <DependentUpon>BatterySummary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Summary\SoftwareSummary.xaml.cs">
+      <DependentUpon>SoftwareSummary.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Summary\ExteriorSummary.xaml.cs">
       <DependentUpon>ExteriorSummary.xaml</DependentUpon>
     </Compile>
@@ -282,6 +285,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="Styles\PaintingResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -333,6 +337,10 @@
     <Page Include="UserControls\Summary\BatterySummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Summary\SoftwareSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Summary\ExteriorSummary.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -478,6 +486,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\InfosBackgroundMobile.png" />
+    </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\interior-summary-icon.png" />
+  </ItemGroup>
+   <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\software-summary-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

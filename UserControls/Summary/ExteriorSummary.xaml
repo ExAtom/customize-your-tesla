@@ -20,7 +20,7 @@
                     <StackPanel Margin="0,0,0,10">
                         <DockPanel>
                             <Image Margin="0,0,8,0" Width="15" Height="15"  DockPanel.Dock="Left"  Loaded="imgLinenRoof_Loaded"></Image>
-                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummaryChosenOptionText}"  Loaded="tbLinenRoofTitle_Loaded"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}"  Loaded="tbLinenRoofTitle_Loaded">Vászontető</TextBlock>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"   DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}" Loaded="tbLinenRoofCost_Loaded" ></TextBlock>
                         </DockPanel>
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbLinenRoofDescription_Loaded"  ></TextBlock>
@@ -29,7 +29,7 @@
                     <StackPanel Margin="0,0,0,10">
                         <DockPanel>
                             <Image Margin="0,0,8,0" Width="15" Height="15" DockPanel.Dock="Left"  Loaded="imgSpoilers_Loaded"></Image>
-                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummaryChosenOptionText}" Loaded="tbSpoilersTitle_Loaded" ></TextBlock>
+                            <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}" Loaded="tbSpoilersTitle_Loaded" >Spoilerek</TextBlock>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"  DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}" Loaded="tbSpoilersCost_Loaded"  ></TextBlock>
                         </DockPanel>
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbSpoilersDescription_Loaded" ></TextBlock>
@@ -38,7 +38,7 @@
                     <StackPanel>
                         <DockPanel>
                             <Image Margin="0,0,8,0" Width="15" Height="15" DockPanel.Dock="Left"  Loaded="imgBottomLights_Loaded"></Image>
-                            <TextBlock VerticalAlignment="Center"  DockPanel.Dock="Left"  Style="{DynamicResource SummaryChosenOptionText}"  Loaded="tbBottomLightsTitle_Loaded"></TextBlock>
+                            <TextBlock VerticalAlignment="Center"  DockPanel.Dock="Left"  Style="{DynamicResource SummarySubtitleText}"  Loaded="tbBottomLightsTitle_Loaded">Alulvilágítás</TextBlock>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"   DockPanel.Dock="Right"  Style="{DynamicResource SummaryCostText}"  Loaded="tbBottomLightsCost_Loaded"></TextBlock>
                         </DockPanel>
                         <TextBlock VerticalAlignment="Center" TextWrapping="Wrap"  Style="{DynamicResource SummaryDescriptionText}" Loaded="tbBottomLightsDescription_Loaded" ></TextBlock>

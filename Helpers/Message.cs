@@ -109,6 +109,7 @@ namespace TeslaCarConfigurator.Helpers
 
         private void OnDismissed(object sender, RoutedEventArgs e)
         {
+            e.Handled = true;
             Dismissed?.Invoke();
             Dismissed = null;
             Closed?.Invoke();
@@ -118,6 +119,7 @@ namespace TeslaCarConfigurator.Helpers
 
         private void OnClicked(object sender, RoutedEventArgs e)
         {
+            e.Handled = true;
             Button button = (Button)sender;
             bool answer = button.Name == "popupContainer" || button.Name== "popupYesButton";
             Clicked?.Invoke(answer);

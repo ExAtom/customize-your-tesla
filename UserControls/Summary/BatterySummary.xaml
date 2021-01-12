@@ -17,7 +17,7 @@
             </accordion:AccordionItem.AccordionHeader>
             <accordion:AccordionItem.AccordionContent>
                 <StackPanel>
-                    <TextBlock Loaded="tbChosenText_Loaded" Style="{DynamicResource SummaryChosenOptionText}"  ></TextBlock>
+                    <TextBlock Loaded="tbChosenText_Loaded" Style="{DynamicResource SummarySubtitleText}"  ></TextBlock>
                     <TextBlock Loaded="tbDescription_Loaded" Style="{DynamicResource SummaryDescriptionText}"  ></TextBlock>
                 </StackPanel>
             </accordion:AccordionItem.AccordionContent>
