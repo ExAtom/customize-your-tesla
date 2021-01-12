@@ -64,12 +64,12 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                     <Label Content="Vezetéknév"/>
-                                    <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname, Mode=OneWay}"/>
+                                    <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Keresztnév"/>
-                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Firstname, Mode=OneWay}"/>
+                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Firstname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -92,7 +92,7 @@
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Email-cím"/>
-                                        <TextBox Height="20" MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                                        <TextBox Height="20" MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -118,7 +118,7 @@
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Irányítószám / ZIP"/>
-                                        <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode, Mode=OneWay}"/>
+                                        <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -131,12 +131,12 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                     <Label Content="Megye / Régió / Tartomány"/>
-                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Province, Mode=OneWay}"/>
+                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Province, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Város"/>
-                                        <TextBox  Height="20" Text="{Binding CustomerDetails.City, Mode=OneWay}"/>
+                                        <TextBox  Height="20" Text="{Binding CustomerDetails.City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -148,7 +148,7 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
                                     <Label Content="Utca, házszám, szobaszám"/>
-                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Address, Mode=OneWay}"/>
+                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -175,12 +175,12 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                         <Label Content="Bankkártyaszám"/>
-                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.CreditCard.CardNumber, Mode=OneWay}"/>
+                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.CreditCard.CardNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                         <StackPanel >
                                             <Label Content="Lejárat"/>
-                                            <TextBox  Height="20" Text="{Binding CustomerDetails.CreditCard.ExpirationDate, Mode=OneWay}"/>
+                                            <TextBox  Height="20" Text="{Binding CustomerDetails.CreditCard.ExpirationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
@@ -195,18 +195,18 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                         <Label Content="Vezetéknév"/>
-                                        <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Lastname, Mode=OneWay}"/>
+                                        <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Lastname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
                                         <StackPanel >
                                             <Label Content="Keresztnév"/>
-                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Firstname, Mode=OneWay}"/>
+                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Firstname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         </StackPanel>
                                     </StackPanel>
                                     <StackPanel Grid.Column="2" Margin="5,0,0,0">
                                         <StackPanel >
                                             <Label Content="Biztonsági kód"/>
-                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.SecurityCode, Mode=OneWay}"/>
+                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.SecurityCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>

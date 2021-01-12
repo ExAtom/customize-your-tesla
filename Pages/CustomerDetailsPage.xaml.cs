@@ -83,7 +83,7 @@ namespace TeslaCarConfigurator.Pages
             receiptOut.Add($"----------\n");
             receiptOut.Add($"Vásárló adatai\n");
             receiptOut.Add($"Név: {Config.CustomerDetails.Lastname} {Config.CustomerDetails.Firstname}");
-            receiptOut.Add($"Telefonszám: {Config.CustomerDetails.PhoneNumber.CallingCode.NativeName}{Config.CustomerDetails.PhoneNumber.Number}");
+            receiptOut.Add($"Telefonszám: {Config.CustomerDetails.PhoneNumber.CallingCode.Prefix}{Config.CustomerDetails.PhoneNumber.Number}");
             receiptOut.Add($"E-mail cím: {Config.CustomerDetails.EmailAddress}");
             receiptOut.Add($"---\n");
             receiptOut.Add($"Szállítási cím\n");
@@ -98,7 +98,7 @@ namespace TeslaCarConfigurator.Pages
             receiptOut.Add($"Lejárat: {Config.CustomerDetails.CreditCard.ExpirationDate}");
             receiptOut.Add($"Név: {Config.CustomerDetails.CreditCard.Lastname} {Config.CustomerDetails.CreditCard.Firstname}");
             receiptOut.Add($"Biztonsági kód: {Config.CustomerDetails.CreditCard.SecurityCode}");
-            receiptOut.Add($"----------\nAz autó kiszállítása egy hónapon belül megtörténik.");
+            receiptOut.Add($"----------\n\nAz autó kiszállítása egy hónapon belül megtörténik.");
 
             File.WriteAllLines("számla.txt", receiptOut);
         }
