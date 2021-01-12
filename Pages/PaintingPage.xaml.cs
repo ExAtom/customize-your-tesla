@@ -25,8 +25,6 @@ namespace TeslaCarConfigurator.Pages
             PageTitle.SetTitle("Fényezés kiválasztása");
         }
 
-        public bool mobileView = false;
-
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Windows.Title = $"{Windows.ActualWidth} x {Windows.ActualHeight}";
@@ -34,7 +32,6 @@ namespace TeslaCarConfigurator.Pages
             if (Windows.ActualWidth <= 710)
             {
                 Menu.Width = Double.NaN;
-                mobileView = true;
                 Panel menuParent = (Panel)Menu.Parent;
                 if (menuParent != null && menuParent != MobileContainer)
                 {

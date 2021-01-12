@@ -6,12 +6,12 @@
       xmlns:local="clr-namespace:TeslaCarConfigurator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Modell kiválasztása" Background="#FFC6CBD0">
+      Title="Modell kiválasztása" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <TextBlock TextWrapping="Wrap" TextAlignment="Right" Padding="40,5,100,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,0,97,0">
+                <TextBlock x:Name="tbTitle" TextWrapping="Wrap" TextAlignment="Center" Padding="40,5,0,5" FontSize="30" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="-22,10,97,0">
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>

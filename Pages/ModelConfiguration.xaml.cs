@@ -28,6 +28,7 @@ namespace TeslaCarConfigurator.Pages
             tbModel2.Text = "➤ 480 kilométer hatótávolság\n➤ 241 km/h végsebesség\n➤ 3.7 mp 0-100 km/h gyorsulás\n➤ Összkerék meghajtás";
             tbModel3.Text = "➤ 561 kilométer hatótávolság\n➤ 250 km/h végsebesség\n➤ 4.6 mp 0-100 km/h gyorsulás\n➤ Összkerék meghajtás";
             tbModel4.Text = "➤ 840+ kilométer hatótávolság\n➤ 320 km/h végsebesség\n➤ <2.1 mp 0-100 km/h gyorsulás\n➤ Három motoros összkerék meghajtás";
+            Application.Current.MainWindow.MinWidth = 320;
         }
 
         public override void OnAttachedToFrame()
@@ -70,6 +71,20 @@ namespace TeslaCarConfigurator.Pages
             if (Config == null)
             {
                 return;
+            }
+        }
+
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (Windows.ActualWidth <= 566)
+            {
+                tbTitle.Margin = new Thickness(-22, 10, 10, 0);
+                tbTitle.Padding = new Thickness(40, 5, 30, 5);
+            }
+            else
+            {
+                tbTitle.Margin = new Thickness(-22, 10, 97, 0);
+                tbTitle.Padding = new Thickness(40, 5, 0, 5);
             }
         }
     }
