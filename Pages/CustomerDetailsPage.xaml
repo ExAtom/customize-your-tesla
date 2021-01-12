@@ -55,8 +55,12 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0" Grid.Column="0">
+                        <StackPanel Grid.Row="0" Grid.Column="0"  >
+                            <TextBlock Style="{StaticResource FormGroupTitle}" Text="Elérhetőségek, személyes adatok"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -64,17 +68,17 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                     <Label Content="Vezetéknév"/>
-                                    <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Lastname, Mode=OneWay}"/>
+                                    <TextBox   Text="{Binding CustomerDetails.Lastname, Mode=OneWay}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Keresztnév"/>
-                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.Firstname, Mode=OneWay}"/>
+                                        <TextBox   Text="{Binding CustomerDetails.Firstname, Mode=OneWay}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,0">
+                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -92,15 +96,15 @@
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="Email-cím"/>
-                                        <TextBox Height="20" MinWidth="130" Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
+                                        <TextBox   Text="{Binding CustomerDetails.EmailAddress, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
-                        <StackPanel Grid.Row="2" Grid.Column="0"  Margin="0,20,0,0">
-                            <TextBlock FontSize="16">Szállítási cím</TextBlock>
+                        <StackPanel Grid.Row="3" Grid.Column="0"  Margin="0,20,0,0">
+                            <TextBlock Style="{StaticResource FormGroupTitle}">Szállítási cím</TextBlock>
                         </StackPanel>
-                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,5,0,0">
+                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,15,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="7*" />
@@ -118,25 +122,7 @@
                                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                     <StackPanel >
                                         <Label Content="ZIP-kód"/>
-                                        <TextBox Height="20" Text="{Binding CustomerDetails.ZipCode, Mode=OneWay}"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Grid>
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,15,0,0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
-                                    <ColumnDefinition Width="2*"/>
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
-                                    <Label Content="Megye / Régió / Tartomány"/>
-                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Province, Mode=OneWay}"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                                    <StackPanel >
-                                        <Label Content="Város"/>
-                                        <TextBox  Height="20" Text="{Binding CustomerDetails.City, Mode=OneWay}"/>
+                                        <TextBox  Text="{Binding CustomerDetails.ZipCode, Mode=OneWay}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -144,11 +130,29 @@
                         <StackPanel Grid.Row="5" Grid.Column="0" Margin="0,15,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                    <Label Content="Megye / Régió / Tartomány"/>
+                                    <TextBox   Text="{Binding CustomerDetails.Province, Mode=OneWay}"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <StackPanel >
+                                        <Label Content="Város"/>
+                                        <TextBox  Text="{Binding CustomerDetails.City, Mode=OneWay}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Grid.Row="6" Grid.Column="0" Margin="0,15,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
                                     <Label Content="Utca, házszám, szobaszám"/>
-                                    <TextBox  Height="20" Text="{Binding CustomerDetails.Address, Mode=OneWay}"/>
+                                    <TextBox   Text="{Binding CustomerDetails.Address, Mode=OneWay}"/>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -165,7 +169,7 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Grid.Row="0"  >
-                                <TextBlock FontSize="16">Bankkártyaadatok</TextBlock>
+                                <TextBlock Style="{StaticResource FormGroupTitle}" >Bankkártyaadatok</TextBlock>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Margin="0,15,0,0"  >
                                 <Grid>
@@ -175,12 +179,12 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                         <Label Content="Bankkártyaszám"/>
-                                        <TextBox MinWidth="130" Height="20" Text="{Binding CustomerDetails.CreditCard.CardNumber, Mode=OneWay}"/>
+                                        <TextBox  Text="{Binding CustomerDetails.CreditCard.CardNumber, Mode=OneWay}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                         <StackPanel >
                                             <Label Content="Lejárat"/>
-                                            <TextBox  Height="20" Text="{Binding CustomerDetails.CreditCard.ExpirationDate, Mode=OneWay}"/>
+                                            <TextBox  Text="{Binding CustomerDetails.CreditCard.ExpirationDate, Mode=OneWay}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
@@ -195,24 +199,24 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0" Margin="0,0,5,0">
                                         <Label Content="Vezetéknév"/>
-                                        <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Lastname, Mode=OneWay}"/>
+                                        <TextBox  Text="{Binding CustomerDetails.CreditCard.Lastname, Mode=OneWay}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
                                         <StackPanel >
                                             <Label Content="Keresztnév"/>
-                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.Firstname, Mode=OneWay}"/>
+                                            <TextBox  Text="{Binding CustomerDetails.CreditCard.Firstname, Mode=OneWay}"/>
                                         </StackPanel>
                                     </StackPanel>
                                     <StackPanel Grid.Column="2" Margin="5,0,0,0">
                                         <StackPanel >
                                             <Label Content="Biztonsági kód"/>
-                                            <TextBox Height="20" Text="{Binding CustomerDetails.CreditCard.SecurityCode, Mode=OneWay}"/>
+                                            <TextBox  Text="{Binding CustomerDetails.CreditCard.SecurityCode, Mode=OneWay}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
                             </StackPanel>
                             <StackPanel Grid.Row="3" Margin="40,40,40,0"  >
-                                <TextBlock FontSize="24" TextWrapping="Wrap" TextAlignment="Center" Style="{StaticResource SummaryCostText}" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" ></TextBlock>
+                                <TextBlock FontSize="24" TextWrapping="Wrap" TextAlignment="Center" Style="{StaticResource CostText}" Text="{Binding FormattedTotal, Mode=OneWay}" VerticalAlignment="Center" ></TextBlock>
                              
                                 <Button Margin="0,20,0,0" MaxWidth="100" MinHeight="30" Click="BuyCar">Vásárlás</Button>
                             </StackPanel>

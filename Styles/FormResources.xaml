@@ -77,4 +77,10 @@
         <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Semibold"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
     </Style>
+
+    <Style x:Key="FormGroupTitle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Black"></Setter>
+        <Setter Property="FontSize" Value="22"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+    </Style>
 </ResourceDictionary>
