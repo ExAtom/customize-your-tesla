@@ -7,7 +7,7 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Grid x:Name="Grid">
-                        <Border CornerRadius="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Background="{TemplateBinding Background}"/>
+                        <Border CornerRadius="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Background="{TemplateBinding Background}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -21,11 +21,11 @@
     <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
 
-        <Setter Property="Foreground" Value="#FF27496d"/>
+        <Setter Property="Foreground" Value="#FF00CADE"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
-                    <Grid x:Name="GridRoot" Width="6" Background="{x:Null}">
+                    <Grid x:Name="GridRoot" Width="9" Background="{x:Null}">
                         <Track x:Name="PART_Track"  IsDirectionReversed="true" Focusable="False">
                             <Track.Thumb>
                                 <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}"  Style="{DynamicResource StyledScrollThumb}"/>
@@ -41,16 +41,16 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
-                            <Setter  TargetName="Thumb" Property="Background">
+                            <Setter   Property="Foreground">
                                 <Setter.Value>
-                                    <SolidColorBrush Color="#ff142850"></SolidColorBrush>
+                                    <SolidColorBrush Color="#ff008491"></SolidColorBrush>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
                         <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-                            <Setter  TargetName="Thumb" Property="Background">
+                            <Setter   Property="Foreground">
                                 <Setter.Value>
-                                    <SolidColorBrush Color="#ff102040"></SolidColorBrush>
+                                    <SolidColorBrush Color="#ff005D66"></SolidColorBrush>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
