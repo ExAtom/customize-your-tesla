@@ -51,6 +51,7 @@ namespace TeslaCarConfigurator.Pages
                     MobileContainer.Children.Add(SavePanel);
                 }
                 pageTitle.SwitchToMobile();
+                SavePanel.HorizontalAlignment = HorizontalAlignment.Center;
             }
             else
             {
@@ -69,6 +70,7 @@ namespace TeslaCarConfigurator.Pages
                     DesktopContainer.Children.Add(SavePanel);
                 }
                 pageTitle.SwitchToDesktop();
+                SavePanel.HorizontalAlignment = HorizontalAlignment.Right;
             }
 
         }
