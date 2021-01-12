@@ -63,7 +63,7 @@
             <Style x:Key="ErrorText" TargetType="TextBlock">
                 <Setter Property="Foreground">
                     <Setter.Value>
-                        <SolidColorBrush Color="#FFEC1010"></SolidColorBrush>
+                        <SolidColorBrush Color="#FFFF1414"></SolidColorBrush>
                     </Setter.Value>
                 </Setter>
                 <Setter Property="FontFamily" Value="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro Light"></Setter>
