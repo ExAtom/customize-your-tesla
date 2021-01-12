@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeslaCarConfigurator"
         mc:Ignorable="d"
-        Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="280"   MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
+        Title="Tesla Autó Konfigurátor" Width="800" Height="600" MinWidth="280" MinHeight="300" Background="#FFC6CBD0" x:Name="Windows" SizeChanged="Windows_SizeChanged">
     <!--MinWidth="545" MaxWidth="1000" MaxHeight="600" MinHeight="300" -->
     <Grid>
         <DockPanel LastChildFill="True">

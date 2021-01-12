@@ -23,6 +23,7 @@ namespace TeslaCarConfigurator.Pages
         {
             InitializeComponent();
             PageTitle.SetTitle("Fényezés kiválasztása");
+            Application.Current.MainWindow.MinWidth = 280;
         }
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
