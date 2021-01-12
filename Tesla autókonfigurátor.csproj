@@ -475,5 +475,8 @@
   <ItemGroup>
     <Resource Include="Assets\InfosBackgroundMobile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SummaryIcons\interior-summary-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
