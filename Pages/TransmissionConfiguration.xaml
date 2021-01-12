@@ -46,9 +46,9 @@
             </StackPanel>
 
             <usercontrols:InfoPanel x:Name="Infos">
-                
+
             </usercontrols:InfoPanel>
-            
+
         </StackPanel>
     </Grid>
 </helpers:PageBase>
