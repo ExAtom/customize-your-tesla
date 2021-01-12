@@ -25,6 +25,8 @@ namespace TeslaCarConfigurator.Pages
         public CustomerDetailsPage()
         {
             InitializeComponent();
+            pageTitle.SetTitle("Vásárló adatai");
+            Application.Current.MainWindow.MinWidth = 410;
         }
 
         public override void OnAttachedToFrame()
@@ -38,6 +40,53 @@ namespace TeslaCarConfigurator.Pages
             DataContext = vm;
             vm.LoadingFailed += OnLoadingFailed;
             vm.Init();
+        }
+
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            if (Windows.ActualWidth <= 710)
+            {
+                Menu.Width = Double.NaN;
+                Panel col1Parent = (Panel)col1.Parent;
+                if (col1Parent != null && col1Parent != MobileContainer)
+                {
+                    col1Parent.Children.Remove(col1);
+                    MobileContainer.Children.Add(col1);
+                }
+
+                Panel col2Parent = (Panel)col2.Parent;
+                if (col2Parent != null && col2Parent != MobileContainer)
+                {
+                    col2Parent.Children.Remove(col2);
+                    MobileContainer.Children.Add(col2);
+                }
+
+                col2.Margin = new Thickness(0);
+
+                pageTitle.SwitchToMobile();
+            }
+            else
+            {
+                Panel col1Parent = (Panel)col1.Parent;
+                if (col1Parent != null && col1Parent != DesktopContainer)
+                {
+                    col1Parent.Children.Remove(col1);
+                    DesktopContainer.Children.Add(col1);
+                }
+
+                Panel col2Parent = (Panel)col2.Parent;
+                if (col2Parent != null && col2Parent != DesktopContainer)
+                {
+                    col2Parent.Children.Remove(col2);
+                    DesktopContainer.Children.Add(col2);
+                }
+
+                col2.Margin = new Thickness(10,0,0,0);
+
+                pageTitle.SwitchToDesktop();
+            }
+
         }
 
         private void BuyCar(object sender, RoutedEventArgs e)
