@@ -13,25 +13,25 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Margin="0,0,1,0">
-            <local:DropdownList x:Name="dl" Height="20" SelectedItemChanged="dl_SelectedItemChanged">
+            <local:DropdownList x:Name="dl" Height="30" SelectedItemChanged="dl_SelectedItemChanged">
                 <local:DropdownList.ListItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <usercontrols:FlagDisplay Width="20" Height="20" Flag="{Binding Mode=OneWay}"/>
-                            <TextBlock Text="{Binding DropdownText, Mode=OneWay}"></TextBlock>
+                            <usercontrols:FlagDisplay Width="30" Height="30" Flag="{Binding Mode=OneWay}"/>
+                            <TextBlock Margin="3,0,0,0" VerticalAlignment="Center" Text="{Binding DropdownText, Mode=OneWay}"></TextBlock>
 
                         </StackPanel>
                     </DataTemplate>
                 </local:DropdownList.ListItemTemplate>
                 <local:DropdownList.IconTemplate>
                     <DataTemplate>
-                        <usercontrols:FlagDisplay Width="20" Height="20" Flag="{Binding Mode=OneWay}"/>
+                        <usercontrols:FlagDisplay  Width="30" Height="30" Flag="{Binding Mode=OneWay}"/>
                     </DataTemplate>
                 </local:DropdownList.IconTemplate>
             </local:DropdownList>
         </StackPanel>
         <StackPanel Grid.Column="1" Margin="1,0,0,0" >
-            <TextBox x:Name="tb" Height="20" MaxLength="15" TextChanged="tb_TextChanged" />
+            <TextBox x:Name="tb" Height="30" MaxLength="15" TextChanged="tb_TextChanged" />
         </StackPanel>
     </Grid>
 </UserControl>

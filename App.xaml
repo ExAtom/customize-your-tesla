@@ -9,7 +9,12 @@
                 <ResourceDictionary Source="Styles/PopupResources.xaml"/>
                 <ResourceDictionary Source="Styles/AccordionResources.xaml"/>
                 <ResourceDictionary Source="Styles/SummaryResources.xaml"/>
+
+                <ResourceDictionary Source="Styles/FormResources.xaml"/>
+                <ResourceDictionary Source="Styles/ScrollViewerResources.xaml"/>
+
                 <ResourceDictionary Source="Styles/PaintingResources.xaml"/>
+
 
             </ResourceDictionary.MergedDictionaries>
 
@@ -23,6 +28,16 @@
                                 </DockPanel>
                             </StackPanel>
                         </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+
+            <Style x:Key="CostText" TargetType="TextBlock" BasedOn="{StaticResource SummaryCostText}" >
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect ShadowDepth="1" Direction="0" Color="Gray" Opacity="1" BlurRadius="6"/>
                     </Setter.Value>
                 </Setter>
             </Style>
