@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Kezdőlap" Background="#FFC6CBD0">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel>
+        <StackPanel VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap" Text="Üdvözlünk a Tesla Autó Konfigurátorunkban!" Margin="0,5" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Black" FontSize="30"/>
             <Rectangle RadiusX="20" MaxWidth="370" RadiusY="20" Stroke="Black" StrokeThickness="2" Height="200" Margin="0,20,0,10">
                 <Rectangle.Fill>
@@ -16,21 +16,14 @@
                 </Rectangle.Fill>
             </Rectangle>
             <TextBlock TextWrapping="Wrap" Margin="0,5" TextAlignment="Center" HorizontalAlignment="Center" FontSize="15"><Run Text="Ennek a programnak a segítségével mindenki saját igénye szerint tudja személyre szabni kedvenc Tesla autóját."/><LineBreak/><Run Text="A rendszer használata egyszerű, 8 + 2 ablakon keresztül végigvezet bennünket minden apró részleten, hogy"/><LineBreak/><Run Text="a jármű még inkább passzoljon mindenki "/><Run Text="elképzeléséhez"/><Run Text="."/></TextBlock>
-            <Grid Height="30" Margin="0,15">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
 
-                <Button Content="Kilépés" Grid.Column="0" Grid.Row="0" Margin="20,0" Click="btnClose_Click"/>
-                <Button Name="btnOpenSaved" Content="Mentett konfigurációk betöltése" Grid.Column="1" Grid.Row="0" Margin="40,0" Click="btnOpenSaved_Click"/>
-                <Button Name="btnStart" Content="Vágjunk bele!" Grid.Column="2" Grid.Row="0" Margin="20,0" Click="btnStart_Click"/>
-
-            </Grid>
+            <WrapPanel Margin="20,10" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource LandingButton}" Content="Kilépés" Margin="30,10" Click="btnClose_Click" MinHeight="30" MaxWidth="100"/>
+                <Button Style="{StaticResource LandingButton}" Name="btnOpenSaved" Content="Mentett konfigurációk" MinHeight="30" Margin="30,10" Click="btnOpenSaved_Click" MaxWidth="220">
+                </Button>
+                <Button Style="{StaticResource LandingButton}" Name="btnStart" Content="Vágjunk bele!" Margin="30,10" MinHeight="30" Click="btnStart_Click" MaxWidth="150"/>
+            </WrapPanel>
+            
             <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"><Run Text="A konfigurátort készítette: Csepi Szilveszter, Kékesi Ádám és Menyhárt Attila a JÁGISZ 11./A osztályos tanulói 2020.12-ban"/><LineBreak/><Run Text="Minden jog fenntartva!"/></TextBlock>
         </StackPanel>
     </ScrollViewer>

@@ -358,6 +358,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\LandingButtonResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\NavigationBarResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -456,6 +460,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="InfosBackgroundMobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

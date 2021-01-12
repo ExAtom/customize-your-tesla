@@ -36,18 +36,18 @@
                             </LinearGradientBrush>
                         </TextBlock.Background>
                     </TextBlock>
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" MaxWidth="200" MinWidth="100" MinHeight="40" Margin="10,10,0,0" Click="btnBackToHome_Click">Vissza a kezdőlapra</Button>
                     <StackPanel Margin="10,30,0,0">
                         <TextBlock Name="loadingSaveFailedWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Hiba történt a mentések betöltése közben</TextBlock>
                         <StackPanel Name="savedConfigsContainer" HorizontalAlignment="Left" Width="300" MinHeight="200" />
                         <TextBlock Name="overrideWarning" Margin="0,10,0,0" Visibility="Collapsed" Foreground="Red">Vigyázat! Ha betölt egy mentést, a most konfigurált autó elveszik!</TextBlock>
-
                     </StackPanel>
+                    <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" MaxWidth="200" MinWidth="100" MinHeight="40" Margin="10,10,0,0" Click="btnBackToHome_Click" Style="{StaticResource LandingButton}">Vissza a kezdőlapra</Button>
+
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right">
                     <TextBlock  TextAlignment="Center" TextWrapping="Wrap" Text="Konfiguráció betöltése kóddal"  FontSize="20" FontFamily="Segoe UI Black" Width="Auto" RenderTransformOrigin="0.5,0.5" Foreground="White" Margin="20,40,20,0"></TextBlock>
                     <TextBox Name="tbToken" TextWrapping="Wrap" Margin="20,40,20,0" TextChanged="tbToken_TextChanged"></TextBox>
-                    <Button Name="btnLoadFromToken" Margin="50,40,50,0" Click="btnLoadFromToken_Click" IsEnabled="False">Tovább</Button>
+                    <Button Name="btnLoadFromToken" Margin="50,40,50,0" Click="btnLoadFromToken_Click" IsEnabled="False" Style="{StaticResource LandingButton}" >Tovább</Button>
                     <TextBlock Name="invalidTokenWarning" Foreground="Red" Visibility="Collapsed" Margin="20,30,20,0">A megadott kód érvénytelen.</TextBlock>
                 </StackPanel>
             </DockPanel>
