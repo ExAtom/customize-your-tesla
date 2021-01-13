@@ -22,7 +22,9 @@
                         <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" MaxWidth="200" MinWidth="100" MinHeight="40" Margin="10,10,0,0" Click="btnBackToHome_Click" Style="{StaticResource LandingButton}">Vissza a kezdőlapra</Button>
                         <StackPanel Margin="10,30,0,0">
                             <TextBlock Name="loadingSaveFailedWarning" Margin="0,10,0,0" Visibility="Collapsed"  Style="{StaticResource ErrorText}" >Hiba történt a mentések betöltése közben</TextBlock>
-                            <StackPanel Name="savedConfigsContainer" HorizontalAlignment="Left" Width="300" MinHeight="200" />
+                            <ScrollViewer  HorizontalAlignment="Left" Width="300" MaxHeight="600">
+                                <StackPanel Name="savedConfigsContainer"></StackPanel>
+                            </ScrollViewer>
 
                             <TextBlock Name="overrideWarning" Margin="0,10,0,0" Visibility="Collapsed"  Style="{StaticResource ErrorText}">Vigyázat! Ha betölt egy mentést, a most konfigurált autó elveszik!</TextBlock>
 

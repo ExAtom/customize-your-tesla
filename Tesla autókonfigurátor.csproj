@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tesla.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -476,17 +479,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Feature Icons\arrow.png" />
-   </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
-  <Resource Include="Assets\Feature Icons\buy.png" />
+    <Resource Include="Assets\Feature Icons\buy.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Feature Icons\save.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Assets\Feature Icons\copy.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\tesla.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tesla.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

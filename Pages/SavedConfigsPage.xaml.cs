@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeslaCarConfigurator.Data;
 using TeslaCarConfigurator.Helpers;
+using TeslaCarConfigurator.UserControls;
 
 namespace TeslaCarConfigurator.Pages
 {
@@ -100,60 +101,14 @@ namespace TeslaCarConfigurator.Pages
 
         private UIElement GenerateSavedItemDisplay(Guid id, CarConfiguration savedConfig)
         {
-            DockPanel container = new DockPanel();
+            SavedConfigCard card = new SavedConfigCard(savedConfig?.ConfigName, savedConfig == null);
 
+            card.LoadConfigClick += () => { ChooseConfig(savedConfig); };
+            card.DeleteConfigClick += () => { DeleteConfig(id); };
 
-            TextBlock nameBox = new TextBlock()
-            {
-                Text = savedConfig?.ConfigName ?? "Hibás mentés.",
-                TextWrapping = TextWrapping.Wrap,
-                Margin = new Thickness(0, 0, 10, 0),
-                VerticalAlignment = VerticalAlignment.Center,
-                Foreground = savedConfig == null ? Brushes.Red : Brushes.Black
-            };
+            card.Margin = new Thickness(0, 0, 0, 20);
 
-            StackPanel buttonContainer = new StackPanel() { Orientation = Orientation.Horizontal };
-
-            Button deleteButton = new Button()
-            {
-                Width = 50,
-                Height = 50,
-                Content = new Image()
-                {
-                    Source = new BitmapImage(new Uri("../Assets/close.png", UriKind.Relative))
-                },
-                Style = (Style)Application.Current.FindResource("EmptyButtonStyle")
-            };
-            deleteButton.Click += (sender, e) =>
-            {
-                DeleteConfig(id);
-            };
-
-            buttonContainer.Children.Add(deleteButton);
-
-            if (savedConfig != null)
-            {
-                Button chooseButton = new Button()
-                {
-                    Width = 50,
-                    Height = 50,
-                    Content = new Image()
-                    {
-                        Source = new BitmapImage(new Uri("../Assets/arrow-circle-right-solid.png", UriKind.Relative))
-                    },
-                    Style = (Style)Application.Current.FindResource("EmptyButtonStyle")
-                };
-                chooseButton.Click += (sender, e) =>
-                {
-                    ChooseConfig(savedConfig);
-                };
-                buttonContainer.Children.Add(chooseButton);
-            }
-
-            DockPanel.SetDock(buttonContainer, Dock.Right);
-            container.Children.Add(buttonContainer);
-            container.Children.Add(nameBox);
-            return container;
+            return card;
         }
 
         private void DeleteConfig(Guid id)
