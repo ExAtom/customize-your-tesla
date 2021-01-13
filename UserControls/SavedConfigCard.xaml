@@ -27,11 +27,15 @@
 
                 <StackPanel>
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Foreground="White" Text="Teszt mentés" Padding="10" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro" FontWeight="SemiBold"></TextBlock>
+                        <TextBlock x:Name="tbName" Foreground="White"  Padding="10" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/TeslaCarConfigurator;component/Fonts/#Source Sans Pro" FontWeight="SemiBold"></TextBlock>
                     </WrapPanel>
                     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="/Assets/Feature Icons/delete.png" Margin="10,5,10,10" Height="30"></Image>
-                        <Image Source="/Assets/Feature Icons/arrow.png" Margin="10,5,10,10" Height="30"></Image>
+                        <Button  Style="{StaticResource EmptyButtonStyle}" Click="btnDelete_Click">
+                            <Image Source="/Assets/Feature Icons/delete.png" Margin="10,5,10,10" Height="30"></Image>
+                        </Button>
+                        <Button x:Name="btnLoad" Style="{StaticResource EmptyButtonStyle}" Click="btnLoad_Click">
+                            <Image Source="/Assets/Feature Icons/arrow.png" Margin="10,5,10,10" Height="30"></Image>
+                        </Button>
                     </WrapPanel>
                     
                 </StackPanel>

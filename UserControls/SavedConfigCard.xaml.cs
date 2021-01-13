@@ -20,9 +20,29 @@ namespace TeslaCarConfigurator.UserControls
     /// </summary>
     public partial class SavedConfigCard : UserControl
     {
-        public SavedConfigCard()
+        public event Action DeleteConfigClick;
+
+        public event Action LoadConfigClick;
+
+        public SavedConfigCard(string configName, bool hasError)
         {
             InitializeComponent();
+            tbName.Text = hasError ? "Hibás mentés." : configName;
+            btnLoad.Visibility = hasError ? Visibility.Collapsed : Visibility.Visible;
+            if (hasError)
+            {
+                tbName.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 20, 20));
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteConfigClick?.Invoke();
+        }
+
+        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        {
+            LoadConfigClick?.Invoke();
         }
     }
 }
