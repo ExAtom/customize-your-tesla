@@ -63,7 +63,15 @@ namespace TeslaCarConfigurator.Helpers
 
         public static void SaveState()
         {
+            try
+            {
+
             File.WriteAllLines(saveLocation, SavedConfigs.Select(c => c.Value == null ? "" : $"{c.Key}:{c.Value.ToToken()}"));
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         public static void AddOrOverride(CarConfiguration cfg)
