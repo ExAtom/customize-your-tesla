@@ -251,6 +251,9 @@
     <Compile Include="UserControls\PageTitle.xaml.cs">
       <DependentUpon>PageTitle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SavedConfigCard.xaml.cs">
+      <DependentUpon>SavedConfigCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Summary\BatterySummary.xaml.cs">
       <DependentUpon>BatterySummary.xaml</DependentUpon>
     </Compile>
@@ -410,6 +413,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\SavedConfigCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Summary\BatterySummary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -456,6 +463,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="InfosBackgroundMobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\saved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Feature Icons\arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
