@@ -133,6 +133,11 @@ namespace TeslaCarConfigurator.Pages
                 selected = rbColor4;
             }
 
+            if (chosenColorIndex == 4)
+            {
+                selected = rbColor5;
+            }
+
             if (selected == null)
             {
                 return;
