@@ -27,7 +27,51 @@ namespace TeslaCarConfigurator.Pages
         {
 
             InitializeComponent();
+            Application.Current.MainWindow.MinWidth = 430;
+            pageTitle.SetTitle("Összegzés");
+        }
 
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            if (Windows.ActualWidth <= 710)
+            {
+                Menu.Width = Double.NaN;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel savePanelParent = (Panel)SavePanel.Parent;
+                if (menuParent != null && savePanelParent != MobileContainer)
+                {
+                    savePanelParent.Children.Remove(SavePanel);
+                    MobileContainer.Children.Add(SavePanel);
+                }
+                pageTitle.SwitchToMobile();
+                SavePanel.HorizontalAlignment = HorizontalAlignment.Center;
+            }
+            else
+            {
+                Menu.Width = 400;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel infosParent = (Panel)SavePanel.Parent;
+                if (menuParent != null && infosParent != DesktopContainer)
+                {
+                    infosParent.Children.Remove(SavePanel);
+                    DesktopContainer.Children.Add(SavePanel);
+                }
+                pageTitle.SwitchToDesktop();
+                SavePanel.HorizontalAlignment = HorizontalAlignment.Right;
+            }
 
         }
 

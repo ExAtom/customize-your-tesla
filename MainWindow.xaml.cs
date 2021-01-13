@@ -87,7 +87,8 @@ namespace TeslaCarConfigurator
             btnNextPage.IsEnabled = router.HasConfig && buttonIndex < navigationButtonContainer.Children.Count - 1;
         }
 
-        private int FindNavButtonIndexByPage(PageBase page) {
+        private int FindNavButtonIndexByPage(PageBase page)
+        {
             int navButtonIndex = -1;
             string pageName = page.GetType().Name;
             IList navButtons = navigationButtonContainer.Children;
@@ -105,7 +106,22 @@ namespace TeslaCarConfigurator
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            Windows.Title = $"{Windows.Width} * {Windows.Height}";
+            if (Windows.ActualWidth <= 724)
+            {
+                btnNextPage.Content = "";
+            }
+            else
+            {
+                btnNextPage.Content = "Következő";
+            }
+            if (Windows.ActualWidth <= 570)
+            {
+                cdNext.Width = new GridLength(2, GridUnitType.Star);
+            }
+            else
+            {
+                cdNext.Width = new GridLength(6, GridUnitType.Star);
+            }
         }
     }
 }

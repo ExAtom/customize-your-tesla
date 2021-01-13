@@ -24,7 +24,52 @@ namespace TeslaCarConfigurator.Pages
         public SavedConfigsPage()
         {
             InitializeComponent();
+            pageTitle.SetTitle("Mentett konfigurációk");
 
+        }
+
+        private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            if (Windows.ActualWidth <= 710)
+            {
+                Menu.Width = double.NaN;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != MobileContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    MobileContainer.Children.Add(Menu);
+                }
+
+                Panel loadConfigPanelParent = (Panel)loadConfigPanel.Parent;
+                if (menuParent != null && loadConfigPanelParent != MobileContainer)
+                {
+                    loadConfigPanelParent.Children.Remove(loadConfigPanel);
+                    MobileContainer.Children.Add(loadConfigPanel);
+                }
+                loadConfigPanel.HorizontalAlignment = HorizontalAlignment.Center;
+                pageTitle.SwitchToMobile();
+            }
+            else
+            {
+                Menu.Width = 400;
+                Panel menuParent = (Panel)Menu.Parent;
+                if (menuParent != null && menuParent != DesktopContainer)
+                {
+                    menuParent.Children.Remove(Menu);
+                    DesktopContainer.Children.Add(Menu);
+                }
+
+                Panel loadConfigPanelParent = (Panel)loadConfigPanel.Parent;
+                if (menuParent != null && loadConfigPanelParent != DesktopContainer)
+                {
+                    loadConfigPanelParent.Children.Remove(loadConfigPanel);
+                    DesktopContainer.Children.Add(loadConfigPanel);
+                }
+                loadConfigPanel.HorizontalAlignment = HorizontalAlignment.Right;
+
+                pageTitle.SwitchToDesktop();
+            }
 
         }
 
