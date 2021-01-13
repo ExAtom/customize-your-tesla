@@ -106,8 +106,6 @@ namespace TeslaCarConfigurator
 
         private void Windows_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            Windows.Title = $"{Windows.Width} * {Windows.Height}";
-
             if (Windows.ActualWidth <= 724)
             {
                 btnNextPage.Content = "";
