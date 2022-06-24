@@ -281,9 +281,6 @@
     <Compile Include="UserControls\Summary\WheelsSummary.xaml.cs">
       <DependentUpon>WheelsSummary.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Wheels.xaml.cs">
-      <DependentUpon>Wheels.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Fonts\SourceSansPro-Black.ttf" />
@@ -453,10 +450,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Summary\WheelsSummary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Wheels.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
