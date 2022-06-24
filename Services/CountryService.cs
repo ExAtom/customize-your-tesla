@@ -11,7 +11,7 @@ namespace TeslaCarConfigurator.Services
 {
     public static class CountryService
     {
-        private const string apiUrl = "https://restcountries.eu/rest/v2/all?fields=callingCodes;flag;nativeName;alpha3Code";
+        private const string apiUrl = "https://restcountries.com/v2/all?fields=callingCodes,flag,nativeName,alpha3Code";
 
         private static HttpClient httpClient = new HttpClient();
 
